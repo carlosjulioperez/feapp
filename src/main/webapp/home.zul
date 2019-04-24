@@ -1,0 +1,38 @@
+<window title="Facturación electrónica - Menú principal" border="normal" width="350px" height="280px" apply="ec.cjpq.fe.shiro.HomeComposer">
+	<vbox vflex="1" hflex="1">
+		<hbox id="account" visible="false">
+			<grid >
+				<rows>
+					<row>	
+						<label id="user" />
+						<button id="logout" label="Cerrar sesión" image="/img/salir.gif"/>
+					</row>
+				</rows>
+			</grid>
+		</hbox>
+	
+		<grid vflex="1">
+			<rows>
+				<!-- Cola de autorización, Reenviar facturas -->
+				<row>
+					<a label="Configuración y secuencias" href="/fe/todos/empleadop12.zul"></a>	
+				</row>
+				<row>
+					<a label="Cola de Autorizaciones" href="/fe/todos/panel.zul"></a>	
+				</row>
+				<row>
+					<a label="Datos para Guía de Remisión" href="/fe/facturacion/datosguia.zul"></a>	
+				</row>
+				<row>
+					<a label="Datos para Retenciones" href="/fe/contabilidad/datosretencion.zul"></a>	
+				</row>
+				<row>
+					<a label="Datos para Notas de Crédito" href="/fe/facturacion/datosar.zul?tipo=NC"></a>	
+				</row>
+				<row>
+					<a label="Datos para Notas de Débito" href="/fe/facturacion/datosar.zul?tipo=ND"></a>	
+				</row>
+			</rows>
+		</grid>
+	</vbox>
+</window>

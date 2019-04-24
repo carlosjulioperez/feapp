@@ -1,0 +1,26 @@
+<?page title="Ingreso al sistema"?>
+<window id="loginwin" title="Ingreso al sistema" border="normal" width="350px">
+    <!-- this form-login-page form is also used as the form-error-page to ask for a login again. -->
+    <html style="color:red" if="${not empty requestScope.loginFailure}">
+		<![CDATA[ Credenciales incorrectas, pruebe de nuevo.<br/><br/> ]]>
+    </html>
+ 
+    <groupbox>
+	    <caption>Login</caption>
+	    <h:form id="f" name="loginform" action="" method="POST"
+	    xmlns:h="native">
+	        <grid>
+	            <rows>
+	                <row>Usuario: <textbox id="u" name="user" focus="true" /></row>
+	                <row>Clave: <textbox id="p" type="password" name="pass"/></row>
+	                <row visible="false" ><checkbox id="r" name="remember"/>¿Recordar?</row>
+	                <row spans="2">
+	                    <hbox>
+	                        <h:input type="submit" value="Login"/>
+	                    </hbox>
+	                </row>
+	            </rows>
+	        </grid>
+	    </h:form>
+    </groupbox>
+</window>

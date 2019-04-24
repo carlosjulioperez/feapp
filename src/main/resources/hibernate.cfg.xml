@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.password"></property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/oymar</property>
+        <property name="hibernate.connection.username">sql-ledger</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <mapping class="ec.cjpq.fe.model.Gifi" />
+        <mapping class="ec.cjpq.fe.model.Tiporet" />
+        <mapping class="ec.cjpq.fe.model.Oe" />
+        <mapping class="ec.cjpq.fe.model.Partscustomer" />
+        <mapping class="ec.cjpq.fe.model.Pricegroup" />
+        <mapping class="ec.cjpq.fe.model.Employee" />
+        <mapping class="ec.cjpq.fe.model.Customer" />
+        <mapping class="ec.cjpq.fe.model.Vr" />
+        <mapping class="ec.cjpq.fe.model.Contact" />
+        <mapping class="ec.cjpq.fe.model.Exchangerate" />
+        <mapping class="ec.cjpq.fe.model.Translation" />
+        <mapping class="ec.cjpq.fe.model.Inventory" />
+        <mapping class="ec.cjpq.fe.model.Ar" />
+        <mapping class="ec.cjpq.fe.model.Ap" />
+        <mapping class="ec.cjpq.fe.model.Lineitem" />
+        <mapping class="ec.cjpq.fe.model.Paymentmethod" />
+        <mapping class="ec.cjpq.fe.model.Assembly" />
+        <mapping class="ec.cjpq.fe.model.Curr" />
+        <mapping class="ec.cjpq.fe.model.OpeningGl" />
+        <mapping class="ec.cjpq.fe.model.Orderitems" />
+        <mapping class="ec.cjpq.fe.model.Shipto" />
+        <mapping class="ec.cjpq.fe.model.Partsvendor" />
+        <mapping class="ec.cjpq.fe.model.Tax" />
+        <mapping class="ec.cjpq.fe.model.Tipoid" />
+        <mapping class="ec.cjpq.fe.model.Recurringemail" />
+        <mapping class="ec.cjpq.fe.model.Cargo" />
+        <mapping class="ec.cjpq.fe.model.Retenc" />
+        <mapping class="ec.cjpq.fe.model.Partsgroup" />
+        <mapping class="ec.cjpq.fe.model.Address" />
+        <mapping class="ec.cjpq.fe.model.Vendortax" />
+        <mapping class="ec.cjpq.fe.model.NewIds" />
+        <mapping class="ec.cjpq.fe.model.Status" />
+        <mapping class="ec.cjpq.fe.model.Audittrail" />
+        <mapping class="ec.cjpq.fe.model.Br" />
+        <mapping class="ec.cjpq.fe.model.Language" />
+        <mapping class="ec.cjpq.fe.model.Yearend" />
+        <mapping class="ec.cjpq.fe.model.Partstax" />
+        <mapping class="ec.cjpq.fe.model.ApOpenInvoices" />
+        <mapping class="ec.cjpq.fe.model.DptTrans" />
+        <mapping class="ec.cjpq.fe.model.Jcitems" />
+        <mapping class="ec.cjpq.fe.model.Warehouse" />
+        <mapping class="ec.cjpq.fe.model.Gl" />
+        <mapping class="ec.cjpq.fe.model.Lots" />
+        <mapping class="ec.cjpq.fe.model.Partswarehouse" />
+        <mapping class="ec.cjpq.fe.model.Department" />
+        <mapping class="ec.cjpq.fe.model.FeColaAut" />
+        <mapping class="ec.cjpq.fe.model.Payment" />
+        <mapping class="ec.cjpq.fe.model.Tipodoc" />
+        <mapping class="ec.cjpq.fe.model.Trf" />
+        <mapping class="ec.cjpq.fe.model.Fifo" />
+        <mapping class="ec.cjpq.fe.model.Defaults" />
+        <mapping class="ec.cjpq.fe.model.Recurringprint" />
+        <mapping class="ec.cjpq.fe.model.Build" />
+        <mapping class="ec.cjpq.fe.model.Bank" />
+        <mapping class="ec.cjpq.fe.model.Project" />
+        <mapping class="ec.cjpq.fe.model.Parts" />
+        <mapping class="ec.cjpq.fe.model.Semaphore" />
+        <mapping class="ec.cjpq.fe.model.Invoicetax" />
+        <mapping class="ec.cjpq.fe.model.Recurring" />
+        <mapping class="ec.cjpq.fe.model.Business" />
+        <mapping class="ec.cjpq.fe.model.Customertax" />
+        <mapping class="ec.cjpq.fe.model.ArOpenInvoices" />
+        <mapping class="ec.cjpq.fe.model.Vendor" />
+        <mapping class="ec.cjpq.fe.model.Sic" />
+        <mapping class="ec.cjpq.fe.model.Invoice" />
+        <mapping class="ec.cjpq.fe.model.AccTrans" />
+        <mapping class="ec.cjpq.fe.model.Makemodel" />
+        <mapping class="ec.cjpq.fe.model.FeConfig" />
+        <mapping class="ec.cjpq.fe.model.Chart" />
+    </session-factory>
+</hibernate-configuration>

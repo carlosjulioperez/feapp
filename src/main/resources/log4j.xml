@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	
+    <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MMM-dd HH:mm:ss} [%t] %-5p %C{5}.%M(%L) - %m%n"/>
+        </layout>
+    </appender>
+    
+    <appender name="FILE" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/><!--Rollover at midnight each day.-->
+        <param name="File" value="/usr/local/fe/logs/fe.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <!-- <param name="ConversionPattern" value="%p [%t] %c.%M(%L) | %m%n"/> -->
+            <param name="ConversionPattern" value="%d{yyyy-MMM-dd HH:mm:ss} [%t] %-5p %C{5}.%M(%L) - %m%n"/>
+        </layout>
+    </appender>
+	
+	<!-- 
+    <logger name="org.hibernate.tool.hbm2ddl">
+        <level value="ERROR" />
+    </logger>
+ 	-->
+ 
+	<!-- Para hacer debub en las sentencias SQL. MOdificar show_sql = true en hibernate.cfg.xml
+    <logger name="org.hibernate.SQL">
+        <level value="DEBUG" />
+    </logger>
+    -->
+
+    <logger name="org.apache.shiro">
+        <level value="TRACE" />
+    </logger>
+
+    <logger name="org.apache.shiro.util.ThreadContext">
+        <level value="INFO" />
+    </logger>
+
+    <root>
+    	<priority value="WARN"/>
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+    </root>
+
+</log4j:configuration>

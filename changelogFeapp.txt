@@ -1,0 +1,48 @@
+Tareas
+
+	* Test:
+		mvn test -Dtest=classname
+		mvn clean test -Dtest=classname
+		mvn clean test -Dtest=xxxxTest#testA
+		
+		mvn test -Dtest=ec.cjpq.fe.dao.EntidadDaoTest
+		mvn test -Dtest=ec.cjpq.fe.util.CodigoTest
+		mvn test -Dtest=ec.cjpq.fe.jdbc.DBConnectionTest
+
+		mvn test -Dtest=ec.cjpq.cjfews.webservice.impl.CjfewsImplTest
+		
+		java -jar /usr/local/fe/fecola.jar FA 187373
+		
+		mvn test -Dtest=ec.cjpq.cjfews.test.UtileriaTest
+		mvn test -Dtest=ec.cjpq.cjfews.comprobante.JRDataSourceFactoryTest
+		mvn test -Dtest=ec.cjpq.cjfews.comprobante.TablaTest
+		mvn test -Dtest=ec.cjpq.cjfews.util.RideUtilTest
+
+	* Crear war:
+		mvn clean compile war:war
+
+	* Jetty:
+		mvn jetty:run -Djetty.http.port=9090
+
+	* Instalar local jar en Maven:
+		https://stackoverflow.com/questions/4955635/how-to-add-local-jar-files-to-a-maven-project
+
+		mvn install:install-file
+		   -Dfile=<path-to-file>
+		   -DgroupId=<group-id>
+		   -DartifactId=<artifact-id>
+		   -Dversion=<version>
+		   -Dpackaging=<packaging>
+		   -DgeneratePom=true
+
+		mvn install:install-file
+		   -Dfile=/home/carper/local/projects/cjerp/feapp/lib/cliente-ws-offline.jar
+		   -DgroupId=ec.gob.sri
+		   -DartifactId=cliente-ws-offline
+		   -Dversion=1.0
+		   -Dpackaging=jar
+		   -DgeneratePom=true
+
+		+ En una línea:
+		
+		mvn install:install-file -Dfile=/home/carper/local/projects/cjerp/feapp/lib/cliente-ws-offline.jar -DgroupId=ec.gob.sri -DartifactId=cliente-ws-offline -Dversion=1.0 -Dpackaging=jar -DgeneratePom=true

@@ -1,0 +1,182 @@
+<?xml version="1.0" ?>
+
+<project name="fe" default="sql-query">
+	<property name="appname" 	value="fe" />
+	<property name="dist.dir" 	value="../dist" />
+	<property name="libHT.dir" 	value="../libHT"/>
+
+	<property name="lib.dir" 	value="WebContent/WEB-INF/lib"/>
+	<property name="build.dir" 	value="build" />
+	
+	<!-- CREAR WAR -->   
+    <property name="war.dir" 		value="${dist.dir}/${appname}" />
+	<property name="war.file"		value="${dist.dir}/${appname}.war" />
+	<property name="webcontent.dir" value="WebContent" />
+	<property name="webinf.dir" 	value="WEB-INF" />
+
+	<property name="src.dir"	value="src"/>
+	<property name="cls.dir" 	value="build/classes" />
+	<property name="sql.dir" 	value="resources/sql"/>
+
+	<property name="pg_jar" 	value="${lib.dir}/postgresql-9.3-1102.jdbc4.jar"/>
+	<property name="pg_driver" 	value="org.postgresql.Driver"/>
+	
+	<!--
+	<property name="pg_url" 	value="jdbc:postgresql://192.168.56.101:5432/oymar"/>
+	<property name="pg_url" 	value="jdbc:postgresql://192.168.10.13:5432/oymar"/>
+	-->
+	<property name="pg_url" 	value="jdbc:postgresql://localhost:5432/oymar"/>
+	
+	<property name="pg_user" 	value="sql-ledger"/>
+	<property name="pg_pass" 	value="sql-ledger"/>
+
+	<property name="run.jar" 	value="../bin/fe.jar"/>
+	<property name="main.class" value="ec.cjpq.fe.util.ClienteWS"/>
+
+	<property name="cola.jar" 	value="../bin/fecola.jar"/>
+	<property name="cola.main.class" value="ec.cjpq.jdbc.ColaAut"/>
+	
+	<property name="autorizacionTest.jar" 	value="../bin/lib/autorizacionTest.jar"/>
+	<property name="proceso.main.class" value="ec.cjpq.fe.util.ProcesoMain"/>
+
+	<tstamp>
+		<format property="fecha" pattern="yyyy.MM.dd-HH.mm.ss" locale="es,EC"/>
+	</tstamp>
+	<property name="zip.file" 		value="${dist.dir}/${appname}-${fecha}-src.zip" />
+
+	<taskdef name="hibernatetool" classname="org.hibernate.tool.ant.HibernateToolTask" >
+		<classpath>
+			<fileset dir="${libHT.dir}">
+				<include name="**/*.jar"/>
+			</fileset>
+		</classpath>
+	</taskdef>
+
+	<target name="generar" description="Generar las clases Java de persistencia">
+		<hibernatetool destdir="src">
+			<!-- we use our hibernate.cfg.xml -->
+			<jdbcconfiguration 
+				configurationfile="resources/cfg/hibernate.cfg.xml"
+				revengfile="resources/cfg/hibernate.reveng.xml"
+	        	packagename="ec.cjpq.fe.model"
+	        	detectmanytomany="true"
+	        	detectoptimisticlock="true" 
+			/>
+			<classpath>
+				<path location="bin" />
+			</classpath>
+			<hbm2java jdk5="true" ejb3="true"/>
+			<hbm2cfgxml ejb3="true"/>
+		</hibernatetool>
+	</target>
+
+	<target name="sql-ddl">
+		<sql classpath="${pg_jar}"
+			driver="${pg_driver}" 
+			url="${pg_url}" 
+			userid="${pg_user}" password="${pg_pass}" 
+			print="yes"
+			src="${sql.dir}/ddl.sql">
+		</sql>
+	</target>
+
+	<target name="sql-insert">
+		<sql classpath="${pg_jar}"
+			driver="${pg_driver}" 
+			url="${pg_url}" 
+			userid="${pg_user}" password="${pg_pass}" 
+			print="yes"
+			src="${sql.dir}/insert.sql">
+		</sql>
+	</target>
+
+	<target name="sql-query">
+		<sql classpath="${pg_jar}"
+			encoding="UTF8"
+			driver="${pg_driver}" 
+			url="${pg_url}" 
+			userid="${pg_user}" password="${pg_pass}" 
+			print="yes"
+			src="${sql.dir}/query.sql">
+		</sql>
+	</target>
+
+	<target name="sql-update">
+		<sql classpath="${pg_jar}"
+			encoding="UTF8"
+			driver="${pg_driver}" 
+			url="${pg_url}" 
+			userid="${pg_user}" password="${pg_pass}" 
+			print="yes"
+			src="${sql.dir}/update.sql">
+		</sql>
+	</target>
+
+	<target name="zip" 
+		description="Comprime el proyecto en la carpeta de distribucion dist especificada. Se ignoran las librerias y las clases compiladas">
+		<zip destfile="${zip.file}">
+			<fileset dir="." excludes="${build.dir}/**, ${lib.dir}/**" />
+		</zip>
+	</target>
+
+	<target name="jar" description="Crea el jar ejecutable para del cliente WS">
+		<jar destfile="${run.jar}" basedir="${cls.dir}" excludes="**/test/*">
+			<manifest>
+				<attribute name="Autor" value="Carlos Julio Pérez Quizhpe"/>
+				<attribute name="Contactos" value="carlosjulioperez@gmail.com, claro:099 3208265"/>
+				<attribute name="Cliente" value="BC"/>
+				<attribute name="Main-Class" value="${main.class}"/>
+			</manifest>
+			<!-- Para agregar todas las librerías (no práctico para copiar el jar en la nube porque es muy grande) -->
+			<!-- <zipgroupfileset dir="${lib.dir}" includes="*.jar"/> -->
+			<zipgroupfileset dir="${lib.dir}" includes="*.jar"/>
+		</jar>
+	</target>
+
+	<target name="jar_cola" description="Crea el jar ejecutable para mandar a la cola los comprobantes">
+		<jar destfile="${cola.jar}" basedir="${cls.dir}" includes="**/jdbc/*, **/log4j.xml" >
+			<manifest>
+				<attribute name="Autor" value="Carlos Julio Pérez Quizhpe"/>
+				<attribute name="Contactos" value="carlosjulioperez@gmail.com, claro:099 3208265"/>
+				<attribute name="Cliente" value="BC"/>
+				<attribute name="Main-Class" value="${cola.main.class}"/>
+			</manifest>
+			<zipgroupfileset dir="${lib.dir}" includes="postgresql-9.3-1102.jdbc4.jar, log4j-1.2.16.jar"/>
+		</jar>
+	</target>
+
+	<target name="jar_test_autorizacion" description="Crea el jar ejecutable para los test de autorizacion">
+		<jar destfile="${autorizacionTest.jar}" basedir="${cls.dir}" excludes="**/test/**, **/ui/**, **/jdbc/**, **/shiro/**, **/shiro.ini " >
+			<manifest>
+				<attribute name="Autor" value="Carlos Julio Pérez Quizhpe"/>
+				<attribute name="Contactos" value="carlosjulioperez@gmail.com, claro:099 3208265"/>
+				<attribute name="Cliente" value="BC"/>
+				<attribute name="Main-Class" value="${proceso.main.class}"/>
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="war" description="Construye el archivo WAR">
+		
+        <mkdir dir="${war.dir}" />
+    	
+    	<!-- Copiar la carpeta WebContent -->
+    	<copy todir="${war.dir}">
+            <fileset dir="${webcontent.dir}">
+    			<exclude name="**/*.jar" /><!-- comentar para el caso de generar war con librerias incluidas -->
+    		</fileset>
+		</copy>
+    	
+    	<!-- Copiar las clases -->
+    	<copy todir="${war.dir}/${webinf.dir}">
+	        <fileset dir="build"/>
+   		</copy>
+
+    	<war destfile="${war.file}">
+            <fileset dir="${war.dir}">
+            	<exclude name="**/test/*.class" />
+            </fileset>
+        </war>
+    </target>
+
+</project>
