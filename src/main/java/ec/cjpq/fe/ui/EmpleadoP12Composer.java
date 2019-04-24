@@ -18,13 +18,6 @@ import org.zkoss.zul.Toolbarbutton;
 import ec.cjpq.fe.dao.EntidadDao;
 import ec.cjpq.fe.model.EmployeeId;
 
-/**
- * Controlador para actualizar los datos P12 del empleado
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2015-11-01, 02
- * 2015-11-07, 08
- * 2016-07-09 tip_ambiente
- */
 public class EmpleadoP12Composer extends GenericForwardComposer {
 	
 	//private static final Logger log = Logger.getLogger("EmpleadoP12Composer.class");

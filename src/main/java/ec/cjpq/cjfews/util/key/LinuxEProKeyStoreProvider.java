@@ -30,8 +30,3 @@ public class LinuxEProKeyStoreProvider extends PKCS11KeyStoreProvider {
 		return CONFIG;
 	}
 }
-
-/* Location:           C:\firmaDigital\ComprobantesDesktop.jar
- * Qualified Name:     ec.gob.sri.comprobantes.util.key.LinuxEProKeyStoreProvider
- * JD-Core Version:    0.7.0.1
- */

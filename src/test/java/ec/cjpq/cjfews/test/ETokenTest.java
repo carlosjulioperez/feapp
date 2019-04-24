@@ -17,14 +17,6 @@ import ec.cjpq.cjfews.util.X509Utils;
 import ec.cjpq.util.Utileria;
 import ec.gob.sri.firmaxades.test.FirmasGenericasXAdES;
 
-/**
- * Clase de prueba para validar certificados de eToken Pro 72k 
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2015-08-10, 13, 14, 15
- * 
- * Solución "Access restriction"
- * https://stackoverflow.com/questions/5172069/access-restriction-on-sun-security-pkcs11-sunpkcs11
- */
 public class ETokenTest {
 
 	private static Logger log = Logger.getLogger(ETokenTest.class);

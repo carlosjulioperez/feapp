@@ -21,21 +21,6 @@ import ec.cjpq.cjfews.comprobante.notadebito.NotaDebito;
 import ec.cjpq.cjfews.comprobante.retencion.ComprobanteRetencion;
 import ec.cjpq.util.Utileria;
 
-/**
- * Clase que ejecuta el proceso general de conversión, firma, autorizaión y envío de correo de los comprobantes
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2015-03-25, 27
- * 2015-06-11 Devolver el nombre del documento para descargar el RIDE
- * 2015-08-15 Firma con Token 
- * 2015-10-07 Ajustes para soporter lectura de configuración del empleado. 
- * 2015-12-18 Quitar parámetro "String... paramsRide"
- * 2015-12-22 Soporte para Guía de Remisión
- * 2016-06-08 Comprobante de Retención
- * 2016-07-19 Agregar Notas de Crédito a las firmas
- * 2016-07-27, 28 Agregar Notas de Débito
- * 2018-05-29,31 Cambio en la generación de clave de acceso (SRI)
- * 2018-05-04 Agregar getClaveInterna() SRI
- */
 public class ProcesoUtil {
 	
 	private static Logger log = Logger.getLogger(ProcesoUtil.class);

@@ -6,12 +6,6 @@ import com.thoughtworks.xstream.converters.UnmarshallingContext;
 import com.thoughtworks.xstream.io.HierarchicalStreamReader;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 
-/**
- * Converter para el nodo infoAdicional/campoAdicional
- * https://stackoverflow.com/questions/2533800/xstream-parse-attributes-and-values-at-the-same-time
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2015-03-18, 24
- */
 public class CampoAdicionalConverter implements Converter{
 
 	@SuppressWarnings("rawtypes")

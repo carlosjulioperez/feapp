@@ -28,18 +28,6 @@ import ec.cjpq.cjfews.comprobante.notacredito.NotaCredito;
 import ec.cjpq.cjfews.comprobante.notadebito.NotaDebito;
 import ec.cjpq.cjfews.comprobante.retencion.ComprobanteRetencion;
 
-/**
- * Prueba unitaria RideUtil
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2016-02-17
- * 2016-04-21 Prueba de GR de apracomsa
- * 2016-05-23 testGenerarFactura()
- * 2015-06-07 leyendaIVA
- * 2016-07-21 AGregar NC
- * 2016-08-02 Agregar ND
- * 2017-11-29 Pruebas con número de lote
- * 2018-02-07 Corregir para incluir las formas de pago
- */
 public class RideUtilTest extends TestCase{
 	
 	private Configuracion configuracion;
@@ -47,7 +35,11 @@ public class RideUtilTest extends TestCase{
     @Before
     public void setUp() {
     	configuracion = new Configuracion();
+
+        // Se especifican aquí los valores como artificio.
+        // Los valores se especifican desde fe.
     	configuracion.setDirectorioAutorizados("/usr/local/fe/dir/ca");
+    	configuracion.setEmisorRutaLogo("/img/oy_logo.jpg");
     }
 
     // https://www.mkyong.com/java/how-to-write-to-file-in-java-bufferedwriter-example/
@@ -93,10 +85,10 @@ public class RideUtilTest extends TestCase{
 	
     public void testGenerarFactura(){
 		String xmls[] = {
-			"FA-0917824435001-29012019-001001000000009",
-            "1803201901099217915500120050020000054031234567810"
+			"FA-0917824435001-29012019-001001000000009", //hp
+            "FA-0992176989001-09012019-004002000016868" //dell
 		};
-		String nombre = xmls[0];
+		String nombre = xmls[1];
 		String xml = "/usr/local/fe/dir/cg/"+ nombre +".xml";
 		XStream xs = XmlUtil.getFacturaXStream();
 		Factura factura = (Factura)xs.fromXML(new File(xml));
@@ -170,6 +162,4 @@ public class RideUtilTest extends TestCase{
 		rideUtil.generar(notaDebito , "NUMERO_0830", "FECHA_0830", "", false);
 	}
     
-    public void testEjecutar(){
-    }
 }

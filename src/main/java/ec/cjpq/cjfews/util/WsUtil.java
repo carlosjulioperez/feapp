@@ -34,20 +34,6 @@ import ec.gob.sri.comprobantes.ws.aut.AutorizacionComprobantesOffline;
 import ec.gob.sri.comprobantes.ws.aut.AutorizacionComprobantesOfflineService;
 import ec.gob.sri.comprobantes.ws.aut.RespuestaComprobante;
 
-/**
- * Utileruas de Web Services
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2015-03-27, 29
- * 2015-11-18 Agregar número de secuencia
- * 2015-12-16 Agregar clave de acceso 
- * 2015-12-17 Devolver el archivo generado por el SRI
- * 2016-02-11, 18 Guías de Remisión
- * 2016-02-24 Ajuste de número de secuencia
- * 2016-06-08, 12 Comprobante de Retención
- * 2016-07-20 Agregar NC
- * 2016-07-28 Agregar Notas de Débito
- * 2018-02-02 Agregar soporte Offline
- */
 public class WsUtil {
 
 	private static Logger log = Logger.getLogger(WsUtil.class);

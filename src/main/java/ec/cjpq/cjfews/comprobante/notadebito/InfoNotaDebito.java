@@ -6,11 +6,6 @@ import lombok.Data;
 
 import ec.cjpq.cjfews.comprobante.Parametro;
 
-/**
- * Pojo para el XML de la Informacion de la Nota de Débito
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2016-07-27
- */
 @Data
 public class InfoNotaDebito {
 

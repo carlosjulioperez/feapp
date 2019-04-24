@@ -7,11 +7,6 @@ import lombok.Data;
 import ec.cjpq.cjfews.comprobante.Parametro;
 import ec.cjpq.cjfews.comprobante.TotalImpuesto;
 
-/**
- * Pojo para el XML de la Informacion de la Nota de Credito
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2015-03-18, 24
- */
 @Data
 public class InfoNotaCredito {
 	

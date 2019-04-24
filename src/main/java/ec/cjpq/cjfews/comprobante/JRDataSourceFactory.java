@@ -10,24 +10,6 @@ import ec.cjpq.cjfews.comprobante.notacredito.NotaCredito;
 import ec.cjpq.cjfews.comprobante.notadebito.NotaDebito;
 import ec.cjpq.cjfews.comprobante.retencion.ComprobanteRetencion;
 
-/**
- * Clase Factory para llenar los beans para usarlos como fuente de datos en el reporte
- * Sirve tanto para probar el formato dentro de iReport como para producción
- * 
- * Agregar en Classpath de iReport-3.0.0
- * 		/home/carper/documentosCJ/proyectos/cjerp/workspace/dist/cjfews-comp.jar
- * 		/home/carper/documentosCJ/proyectos/cjerp/workspace/cjfes/lib/xstream-1.4.7.jar
- * 
- * Carpeta de reportes:
- * 		/home/carper/documentosCJ/proyectos/cjerp/workspace/cjfews-rep/src/generico/reportes
- * 
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2015-03-27
- * 2016-02-16 Agregar Guías de remisión
- * 2016-06-12 Agregar Retenciones
- * 2016-07-18, 21 Agregar Notas de crédito
- * 2016-08-02 Agregar Notas de débito
- */
 public class JRDataSourceFactory {
 
 	public static Factura[] getFacturaArray(){

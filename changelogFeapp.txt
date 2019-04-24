@@ -1,4 +1,22 @@
 Tareas
+	* TODO:
+		x Ajustar la ruta de los logotipos en los reportes
+		Eliminar comentarios en java
+		Ajustar configuración de logs
+		Eliminar (paquete model) los archivos generados por hibernate
+		Leer db.properties desde hibernate.xml
+
+		+ Ruta de archivos e imágenes:
+			/img/logo.jpg Se lee desde el sistema operativo.
+			
+			Poner los archivos en la ruta /opt/fe/
+				empresa/dir/ca
+				empresa/dir/cf
+				empresa/dir/cg
+				empresa/dir/cn
+				empresa/logs
+				empresa/p12s
+				empresa/logo.jpg
 
 	* Test:
 		mvn test -Dtest=classname

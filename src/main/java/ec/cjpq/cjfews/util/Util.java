@@ -13,11 +13,6 @@ import org.apache.log4j.Logger;
 import ec.cjpq.cjfews.comprobante.CampoAdicional;
 import ec.cjpq.util.Utileria;
 
-/**
- * Clase de Utilería del servicio web
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2015-03-24
- */
 public class Util {
 
 	private static final Logger log = Logger.getLogger(Util.class);

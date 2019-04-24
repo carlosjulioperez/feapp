@@ -5,11 +5,6 @@ import org.junit.Test;
 
 import ec.cjpq.cjfews.util.Util;
 
-/**
- * Clase de prueba para el dígito verificador
- * @author carper
- * 2015-03-24
- */
 public class DigitoVerficadorTest {
 
 	private static Logger log = Logger.getLogger(DigitoVerficadorTest.class);

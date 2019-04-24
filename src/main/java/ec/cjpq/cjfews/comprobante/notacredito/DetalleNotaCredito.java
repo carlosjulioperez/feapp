@@ -6,11 +6,6 @@ import lombok.Data;
 import ec.cjpq.cjfews.comprobante.DetAdicional;
 import ec.cjpq.cjfews.comprobante.Impuesto;
 
-/**
- * Pojo para el XML del nodo NotaCredito/Detalles/Detalle
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2015-03-18
- */
 @Data
 public class DetalleNotaCredito {
 	

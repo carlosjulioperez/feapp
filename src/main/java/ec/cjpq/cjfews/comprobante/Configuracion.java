@@ -2,12 +2,6 @@ package ec.cjpq.cjfews.comprobante;
 
 import lombok.Data;
 
-/**
- * Pojo para cargar la configuración del emisor
- * @author carper
- * 2015-03-18, 24, 31
- * 2015-10-05
- */
 @Data
 public class Configuracion {
 

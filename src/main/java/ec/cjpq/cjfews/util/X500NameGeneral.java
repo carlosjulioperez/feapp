@@ -69,9 +69,3 @@ public class X500NameGeneral
     return this.ST;
   }
 }
-
-
-/* Location:           C:\firmaDigital\ComprobantesDesktop.jar
- * Qualified Name:     ec.gob.sri.comprobantes.util.X500NameGeneral
- * JD-Core Version:    0.7.0.1
- */

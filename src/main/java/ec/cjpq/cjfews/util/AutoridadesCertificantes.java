@@ -44,9 +44,3 @@ public enum AutoridadesCertificantes
     return this.oid;
   }
 }
-
-
-/* Location:           C:\firmaDigital\ComprobantesDesktop.jar
- * Qualified Name:     ec.gob.sri.comprobantes.util.AutoridadesCertificantes
- * JD-Core Version:    0.7.0.1
- */

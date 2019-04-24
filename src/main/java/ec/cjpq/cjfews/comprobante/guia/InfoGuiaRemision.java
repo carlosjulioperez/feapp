@@ -2,11 +2,6 @@ package ec.cjpq.cjfews.comprobante.guia;
 
 import lombok.Data;
 
-/**
- * Pojo para el XML de la Informacion de la Guía de Remisión
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2015-12-21
- */
 @Data
 public class InfoGuiaRemision {
 

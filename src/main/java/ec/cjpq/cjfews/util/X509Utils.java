@@ -274,13 +274,3 @@ public class X509Utils
     }
   }
 }
-
-
-
-/* Location:           C:\firmaDigital\ComprobantesDesktop.jar
-
- * Qualified Name:     ec.gob.sri.comprobantes.util.X509Utils
-
- * JD-Core Version:    0.7.0.1
-
- */

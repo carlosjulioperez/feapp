@@ -22,28 +22,6 @@ import ec.cjpq.fe.model.FeConfig;
 import ec.cjpq.fe.util.Comprobante;
 import ec.cjpq.fe.util.Util;
 
-/**
- * Dao para entidades
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2015-03-10, 24, 31
- * 2015-04-02
- * 2015-05-25, 26
- * 2015-08-25
- * 2015-10-12 Refactorización de pruebas (creación de source folder "testsrc")
- * 2015-10-14 Ajustes para número en BigDecimal
- * 2015-12-28 testGetDatosGuiaRemision()
- * 2016-03-16
- * 2016-06-04 testGetConsultaRetencion
- * 2016-06-06 Considerar pagineo en consulta de retenciones
- * 2016-06-11 Campos adicionales para retenciones
- * 2016-07-21 Notas de crédito
- * 2016-08-01 Ajustes en testGetConsultaAp()
- * 2016-08-05 Agregar notes
- * 2016-09-01 Desglose de formas de pago (ar.notes) en consulta de facturas
- * 2017-08-27 Consulta de retenciones
- */
-
-//TODO: 0 TEST MODELO
 @SuppressWarnings({"unchecked"})
 public class EntidadDaoTest extends TestCase{
 	

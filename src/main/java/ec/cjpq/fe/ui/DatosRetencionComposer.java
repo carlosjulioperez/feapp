@@ -20,14 +20,7 @@ import ec.cjpq.fe.bean.DatosRetencion;
 import ec.cjpq.fe.dao.EntidadDao;
 import ec.cjpq.fe.util.Util;
 import ec.cjpq.fe.jdbc.ColaAut;
-/**
- * Consulta de Retenciones
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2016-06-05
- * 2016-06-06
- * 2016-06-09 Campos adicionales para consulta de retenciones
- * 2016-06-11 Validaciones para enviar a la cola
- */
+
 @SuppressWarnings("unchecked")
 public class DatosRetencionComposer extends GenericForwardComposer {
 	

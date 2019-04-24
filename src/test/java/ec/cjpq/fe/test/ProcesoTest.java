@@ -7,11 +7,6 @@ import ec.cjpq.cjfews.comprobante.factura.Factura;
 import ec.cjpq.fe.bean.ConfiguracionBean;
 import ec.cjpq.fe.bean.DocumentoBean;
 
-/**
- * Clase de prueba para Proceso
- * @author carper
- * 2016-01-13
- */
 public class ProcesoTest extends TestCase{
 	
 	public void test(){

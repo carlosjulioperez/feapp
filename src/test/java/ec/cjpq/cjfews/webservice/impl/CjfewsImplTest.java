@@ -19,23 +19,6 @@ import ec.cjpq.cjfews.comprobante.retencion.ComprobanteRetencion;
 import ec.cjpq.fe.bean.ConfiguracionBean;
 import ec.cjpq.fe.bean.DocumentoBean;
 
-/**
- * Clase de prueba de cliente de Web Service
- * @author carper
- * 2015-03-18, 24, 28
- * 2015-04-07
- * 2015-06-11
- * 2015-10-07 Configuracion
- * 2015-12-18 Descarga del RIDE solo por el documento
- * 2015-12-25 Guia de Remision
- * 2016-02-09, 11
- * 2016-06-12 Agregar la autorización de comprobantes de retención
- * 2016-07-21 Agregar NC al proceso
- * 2018-02-02 Probar Offline
- * 2018-02-07 Corregir para incluir las formas de pago
- * 2018-06-06 Pruebas de autorización de GR, 
- * 2018-10-30 Pruebas generales en CentOS
- */
 public class CjfewsImplTest extends TestCase{
 	
 	private static final Logger log = Logger.getLogger("CjfewsImplTest.class");

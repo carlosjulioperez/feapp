@@ -5,11 +5,6 @@ import java.util.logging.Level;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 
-/**
- * This code was taken almost in entirety from the Hibernate 3.1 
- * reference manual. The package name and formatting has been 
- * changed only.
- */
 public class HibernateUtil
 {
     private static final SessionFactory sessionFactory;

@@ -12,17 +12,6 @@ import ec.cjpq.cjfews.comprobante.notacredito.NotaCredito;
 import ec.cjpq.cjfews.comprobante.notadebito.NotaDebito;
 import ec.cjpq.cjfews.comprobante.notadebito.NotaDebitoImpuesto;
 
-/**
- * Clase para calcular los totales de la clase TotalComprobante
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2015-01-29
- * 2015-03-24, 27
- * 2016-05-20 Cambiar subtotal12 por subtotalIva y iva12 por totalIva
- * 2015-06-07 leyendaIVA
- * 2016-07-20 Optimizar código y considerar el cálculo de totales en NC 
- * 2016-07-28 Agregar cálculos para ND
- * 2019-01-29 leyendaIva a 12% por defecto
- */
 public class CalculoUtil {
 	
 	private BigDecimal totalIva;

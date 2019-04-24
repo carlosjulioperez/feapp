@@ -35,31 +35,6 @@ import ec.cjpq.cjfews.comprobante.retencion.InfoCompRetencion;
 import ec.cjpq.fe.dao.EntidadDao;
 import ec.cjpq.fe.util.Util;
 
-/**
- * Llenar un objeto Factura para enviar posteriormente al Web Service como argumento
- * @author carper
- * 2015-03-19, 23, 24, 25, 26, 31
- * 2015-10-07 Quitar doble llamada a "FeConfig c = new EntidadDao().getFeConfig((short) 1)". Cambio de FacturaBean a DocumentoBean
- * 2015-10-19 Util.transformarNuevaLineaEnEspacioEnBlanco()
- * 2015-11-07 Calculo correcto de <totalSinImpuestos />
- * 2015-12-02 Comentar el campo número de migo
- * 2015-12-09 Enviar correo con copia mediante campo customer.cc
- * 2015-12-16 Validación de código auxiliar para que no imprima vacío
- * 2016-01-04 Validar correctamente "configuracion.setEmailCc(emailCC);"
- * 2016-02-09 getGuiaRemision
- * 2016-05-20 Cambio de totalIva12 por baseImponible  y totalValorIva por totalIva
- * 2016-06-10, 11 Agregar proceso para retenciones y calcular correctamente el descuento
- * 2016-07-19, 20 Notas de crédito
- * 2016-07-28 Notas de débito 
- * 2016-08-03 Ajustes en proceso de RIDE
- * 2016-08-05 Cambio de funcionalidad para NC y ND
- * 2017-11-23 Usar notas internas para imprimir con NOTA en Información Adicional en NC
- * 2017-11-29 Concatenar número de lote en el código auxiliar
- * 2017-11-30 Ignorar caracteres después de "-"
- * 2018-06-12 Pruebas de autorización para un motivo genérico
- * 2019-02-05,10,11 Cálculo correcto de totales con Iva 0 y mayores que 0.
- * 2019-04-18 Cálculo correcto de totales con Iva 0 y mayores que 0 en NC
- */
 @SuppressWarnings({ "unchecked" })
 public class DocumentoBean {
 	

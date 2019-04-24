@@ -10,12 +10,6 @@ import ec.cjpq.fe.dao.EntidadDao;
 import ec.cjpq.fe.model.EmployeeId;
 import ec.cjpq.fe.model.FeColaAut;
 
-/**
- * Refactorización de clase de prueba para ejecutarlo en el servidor en la nube
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2015-11-08, 09
- * 2016-01-05 Agregar condicion en las autorizaciones
- */
 public class ProcesoMain {
 
 	private static final Logger log = Logger.getLogger("ProcesoMain.class");

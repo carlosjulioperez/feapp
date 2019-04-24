@@ -19,9 +19,3 @@ public class LinuxKeyStoreProvider
     return CONFIG;
   }
 }
-
-
-/* Location:           C:\firmaDigital\ComprobantesDesktop.jar
- * Qualified Name:     ec.gob.sri.comprobantes.util.key.LinuxKeyStoreProvider
- * JD-Core Version:    0.7.0.1
- */

@@ -23,11 +23,6 @@ import org.apache.log4j.Logger;
 import ec.cjpq.cjfews.comprobante.Configuracion;
 import ec.cjpq.util.Utileria;
 
-/**
- * Clase para Enviar correos electrónicos al cliente 
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2015-03-27
- */
 public class EmailUtil{
 
 	private static final Logger log = Logger.getLogger(EmailUtil.class);

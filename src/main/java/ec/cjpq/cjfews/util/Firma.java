@@ -39,12 +39,6 @@ import es.mityc.javasign.pkstore.keystore.KSStore;
 import es.mityc.javasign.xml.refs.InternObjectToSign;
 import es.mityc.javasign.xml.refs.ObjectToSign;
 
-/**
- * Firma de un archivo XML basado en GenericXMLSignature
- * Este fichero es parte de "Componentes de Firma XAdES 1.0.4".
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2014-08-07
- */
 public class Firma {
 
 	private static final Logger log = Logger.getLogger("Firma.class");

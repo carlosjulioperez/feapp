@@ -13,16 +13,6 @@ import org.apache.commons.lang.StringUtils;
 import org.zkoss.zk.ui.Sessions;
 import org.zkoss.zk.ui.util.Clients;
 
-/**
- * Clase de utilidades generales para preparar los objetos Bean previos para
- * enviar al WS
- * 
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro
- *         099 3208265 2015-03-24 2015-04-02 2015-06-11 
- * 2015-10-14 Ajustes en BigDecimal
- * 2015-10-19 transformarNuevaLineaEnEspacioEnBlanco
- * 2015-12-29 isNoVacia()
- */
 public class Util {
 
 	/**

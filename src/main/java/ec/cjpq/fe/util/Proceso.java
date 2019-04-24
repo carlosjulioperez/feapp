@@ -21,20 +21,6 @@ import ec.cjpq.fe.dao.EntidadDao;
 import ec.cjpq.fe.model.EmployeeId;
 import ec.cjpq.fe.model.FeColaAut;
 
-/**
- * Procesos de comprobantes electrónicos
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2015-10-28
- * 2015-11-18 Agregar número de secuencia
- * 2015-12-01, 02 Actualizar la secuencia del empleado
- * 2015-12-17 Grabar el nombre del archivo generado
- * 2016-02-18 Agregar las Guías de Remisión
- * 2016-02-24 Contemplar correctamente el número de secuencia
- * 2016-08-03 Agregar las N/D
- * 2016-08-04 Quitar los comprobantes seleccionados... quitarComprobante()
- * 2016-08-05 Actualizar los campos de autorización del SRI en las ND
- * 2017-09-18 Grabar la fecha sql-ledger en retenc en vez de la de autorización
- */
 public class Proceso {
 	
 	private static final Logger log = Logger.getLogger("Proceso.class");

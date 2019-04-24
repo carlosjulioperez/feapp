@@ -3,12 +3,6 @@ package ec.cjpq.cjfews.comprobante;
 import java.io.InputStream;
 import java.util.Properties;
 
-/**
- * Clase de utilidad para obtener el valor de la tabla según el archivo tabla.properties
- *
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro
- * 2016-08-31
- */
 public class Tabla {
 
 	public static String getValor(String codigo){

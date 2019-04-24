@@ -23,18 +23,6 @@ import ec.cjpq.cjfews.util.RideUtil;
 import ec.cjpq.cjfews.util.Util;
 
 
-/**
- * Servicio del WebService Cjfews
- * @author carper
- * 2015-03-17, 18, 23, 24
- * 2015-06-11 Descarga de RIDE: downloadFile
- * 2015-12-18 Reenvio de RIDE
- * 2015-12-25 Guia de Remision
- * 2016-06-08 Comprobante de Retención
- * 2016-06-15 Generar el PDF en descargarRide();
- * 2016-07-19, 21 Agregar Notas de Crédito a las firmas
- * 2016-07-27, 28 Agregar Notas de Débito
- */
 public class CjfewsImpl {
 	
 	private static final Logger log = Logger.getLogger("CjfewsImpl.class");

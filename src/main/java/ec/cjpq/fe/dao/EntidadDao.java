@@ -28,41 +28,6 @@ import ec.cjpq.fe.util.Comprobante;
 import ec.cjpq.fe.util.HibernateUtil;
 import ec.cjpq.fe.util.Util;
 
-/**
- * DAO general para las entidades
- * @author carper
- * 2015-03-10, 24, 31
- * 2015-04-02
- * 2015-05-25 
- * 2015-06-24 Cambio a java 1.6
- * 2015-07-03 Agregar cambios pedidos por Hugo
- * 2015-08-25 Leer los datos p12 del usuario
- * 2015-10-01 getEmployeeId()
- * 2015-11-07 actualizarEmployee()
- * 2015-11-18 actualizarEmployee() y actualizarFactura()
- * 2015-12-09 Enviar correo con copia mediante campo customer.cc
- * 2015-12-15 Modificar campos de código principal y auxiliar del reporte. LEFT OUTER JOIN
- * 2016-01-05 getListadoFeColaAut(String condicion)
- * 2016-02-18 getSecuenciaComprobanteEmpleado()
- * 2016-02-29 getComprobanteRetencion()
- * 2016-03-15
- * 2016-06-01 Validación de IVA actual en tabla "tax"
- * 2016-06-04 Consulta de retenciones
- * 2016-06-06 Considerar pagineo en consulta de retenciones
- * 2016-06-09 Agregar columnas en la consulta de retenciones
- * 2016-06-12 Consulta de retención por el id
- * 2016-07-09 tipAmbiente
- * 2016-07-26 Consulta para Notas de Débito
- * 2016-07-27 Ajustes de validación para getDatosArInvoice()
- * 2016-07-28 Agregar filtro id para getConsultaApString()
- * 2016-08-01 Ajustes en getMotivosAp()
- * 2016-08-04 Quitar comprobantes de la cola quitarDeColaAutorizacion(). Agregar filtro para NO autorizados getListadoFeColaAut()
- * 2016-08-05 Agregar notes, actualizarAp()
- * 2017-09-21 Actualizar campo source acc_trans al autorizar retenciones
- * 2017-11-29 Incluir lotes en las facturas
- * 2018-04-24 Filtrar por Mensaje
- * 2019-02-14 Agregar unidad en la descripción
- */
 @SuppressWarnings({"unchecked", "rawtypes"})
 public class EntidadDao {
 	

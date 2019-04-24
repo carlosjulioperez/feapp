@@ -19,12 +19,6 @@ import ec.cjpq.fe.bean.DatosAp;
 import ec.cjpq.fe.dao.EntidadDao;
 import ec.cjpq.fe.util.Util;
 
-/**
- * Consulta de Notas de Débito
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2016-07-27
- * 2016-08-03 Validación de factura referenciada
- */
 @SuppressWarnings("unchecked")
 public class DatosNotasDebitoComposer extends GenericForwardComposer {
 	

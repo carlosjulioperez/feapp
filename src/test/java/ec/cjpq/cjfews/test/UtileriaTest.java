@@ -8,13 +8,6 @@ import org.junit.Test;
 
 import ec.cjpq.cjfews.util.Util;
 
-/**
- * Prueba para las Utilerías del sistema
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2015-03-24, 31
- * 2015-12-17 Buscar el por el texto E-mail
- * 2015-12-18 Leer datos del xml firmado y autorizado
- */
 @SuppressWarnings({"unused"})
 public class UtileriaTest {
 

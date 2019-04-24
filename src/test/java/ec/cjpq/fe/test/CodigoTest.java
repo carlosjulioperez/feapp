@@ -15,16 +15,6 @@ import ec.cjpq.cjfews.comprobante.factura.Factura;
 import ec.cjpq.fe.util.Comprobante;
 import ec.cjpq.fe.util.Util;
 
-/**
- * Clase de pruebas generales
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2015-06-26
- * 2015-12-16, 19 Secuencia de la factura
- * 2016-06-13 fecha en formato SQL-Ledger a partir de un String
- * 2017-08-27 Pruebas para CR las fechas deben tener el separador / y no -
- * 2017-11-23 Usar notas internas para imprimir con NOTA en Información Adicional en NC
- * 2017-11-30 Obtener el substring antes del "-" en el número de lote
- */
 public class CodigoTest extends TestCase{
 	
 	private String getMensaje(){

@@ -5,13 +5,6 @@ import ec.cjpq.fe.dao.EntidadDao;
 import ec.cjpq.fe.model.EmployeeId;
 import ec.cjpq.fe.model.FeConfig;
 
-/**
- * Llenar un objeto Configuracion para enviar posteriormente al Web Service como argumento
- * @author carper
- * 2015-03-19, 27, 31
- * 2015-10-05
- * 2016-07-10
- */
 public class ConfiguracionBean {
 
 	public Configuracion getConfiguracion(){

@@ -4,11 +4,6 @@ import java.util.List;
 
 import lombok.Data;
 
-/**
- * Pojo para el XML de los Destinatarios de la Guía de Remisión
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2015-12-21
- */
 @Data
 public class Destinatario {
 

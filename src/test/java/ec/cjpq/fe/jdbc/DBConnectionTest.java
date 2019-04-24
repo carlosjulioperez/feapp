@@ -11,13 +11,6 @@ import org.apache.log4j.Logger;
 
 import ec.cjpq.fe.jdbc.DBConnection;
 
-/**
- * Clase de prueba para las conexiones JDBC
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2015-05-26
- * 2015-06-24 Cambio a java 1.6
- * 2016-08-29 Migración a Maven
- */
 public class DBConnectionTest extends TestCase{
 	
 	private static final Logger log = Logger.getLogger("DBConnectionTest.class");

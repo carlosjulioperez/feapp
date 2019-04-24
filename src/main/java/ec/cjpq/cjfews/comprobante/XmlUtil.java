@@ -16,17 +16,7 @@ import ec.cjpq.cjfews.comprobante.notadebito.NotaDebito;
 import ec.cjpq.cjfews.comprobante.notadebito.NotaDebitoImpuesto;
 import ec.cjpq.cjfews.comprobante.retencion.ComprobanteRetencion;
 import ec.cjpq.cjfews.comprobante.retencion.InfoCompRetencion;
-/**
- * Clase para manipular los datos de los comprobantes de venta en TXT
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2015-03-18, 24, 27
- * 2015-12-22 Soporte para Guía de Remisión
- * 2016-05-23
- * 2016-06-08 Comprobante de Retención
- * 2016-06-12 Corregir el tag "impuesto" en el XML
- * 2016-07-28 Notas de Débito
- * 2016-09-01 Agregar formas de pago
-*/
+
 public class XmlUtil {
 	
 	//TODO: Aplicar código en fepe

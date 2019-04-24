@@ -19,9 +19,3 @@ public class WindowsOtherKeyStoreProvider
     return config;
   }
 }
-
-
-/* Location:           C:\firmaDigital\ComprobantesDesktop.jar
- * Qualified Name:     ec.gob.sri.comprobantes.util.key.WindowsOtherKeyStoreProvider
- * JD-Core Version:    0.7.0.1
- */

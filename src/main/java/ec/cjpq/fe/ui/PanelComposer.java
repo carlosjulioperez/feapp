@@ -44,20 +44,6 @@ import ec.cjpq.fe.model.FeColaAut;
 import ec.cjpq.fe.util.Proceso;
 import ec.cjpq.fe.util.Util;
 
-/**
- * Clase controladora para el panel principal de Facturación Electrónica
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2015-06-09, 11, 26
- * 2015-08-26, 27
- * 2015-09-09
- * 2015-10-03, 04, 05, 07, 11
- * 2015-12-16 Validar que se envíen correctamente el número de autorización y la fecha
- * 2015-12-18 reenviarRIDE() 
- * 2016-06-11 Corregir el pagineo
- * 2016-06-15 Generar el PDF en descargarRide();
- * 2016-08-04 QUitar comprobantes de la cola quitarComprobantes()
- * 2018-04-25 Agregar filtro en Mensaje
- */
 public class PanelComposer extends GenericForwardComposer {
 	
 	private static final Logger log = Logger.getLogger("PanelComposer.class");

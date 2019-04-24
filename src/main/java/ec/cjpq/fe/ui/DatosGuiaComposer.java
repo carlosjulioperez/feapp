@@ -20,11 +20,6 @@ import ec.cjpq.fe.dao.EntidadDao;
 import ec.cjpq.fe.util.Util;
 import ec.cjpq.fe.jdbc.ColaAut;
 
-/**
- * Controlador para actualizar los datos para la Guía de Remisión
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2016-03-11, 13, 14, 15, 16, 17
- */
 public class DatosGuiaComposer extends GenericForwardComposer {
 	
 	private static final Logger log = Logger.getLogger("DatosGuiaComposer.class");

@@ -2,12 +2,6 @@ package ec.cjpq.cjfews.comprobante;
 
 import lombok.Getter;
 
-/**
- * Parámetros del sistema para realizar validaciones en el lado del cliente WS
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2015-03-24
- * 2016-05-20
- */
 @Getter
 public class Parametro {
 

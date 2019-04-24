@@ -25,21 +25,6 @@ import ec.cjpq.cjfews.comprobante.notadebito.NotaDebito;
 import ec.cjpq.cjfews.comprobante.retencion.ComprobanteRetencion;
 import ec.cjpq.util.Utileria;
 
-/**
- * Utileria para imprimir los RIDE
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2015-03-26, 27
- * 2015-06-10 Generación de RIDE FA
- * 2015-12-16 Crear bandera para envío de RIDE
- * 2015-12-17, 18 reenviarRIDE()
- * 2016-02-17 Generar la Guía de Remisión
- * 2016-02-25 Renombrar parámetros para el envío correcto al reporte
- * 2016-06-12 Generar el Comprobante de Retención
- * 2016-07-20 Agregar Notas de crédito
- * 2016-07-28 Agregar Notas de Débito
- * 2018-02-07 Corregir para incluir las formas de pago
- * 2019-01-10 Enviar el logo de acuerdo a la configuración de la empresa
- */
 public class RideUtil {
 
 	private static final Logger log = Logger.getLogger(RideUtil.class);
@@ -60,9 +45,10 @@ public class RideUtil {
 		Map<String, Object> parametrosReporte = new HashMap<String, Object>();
 		parametrosReporte.put("NUM_AUT",   parametros.get("numeroAutorizacion"));
 		parametrosReporte.put("FECHA_AUT", parametros.get("fechaAutorizacion"));
+        //parametrosReporte.put("LOGO",      getClass().getResourceAsStream(configuracion.getEmisorRutaLogo()));
 		parametrosReporte.put("LOGO",      configuracion.getEmisorRutaLogo() );
+        //log.warn(configuracion.getEmisorRutaLogo());
 		
-        //parametrosReporte.put("LOGO", 			getClass().getResourceAsStream("/img/logo.jpg"));
 		return parametrosReporte;
 	}
 

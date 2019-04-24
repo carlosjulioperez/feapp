@@ -23,13 +23,6 @@ import ec.cjpq.fe.dao.EntidadDao;
 import ec.cjpq.fe.util.Util;
 import ec.cjpq.fe.jdbc.ColaAut;
 
-/**
- * Consulta de Notas de Crédito 
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2016-07-17
- * 2016-07-27 Validación de la factura de referencia
- * 2016-08-05 Cambio de funcionalidad para NC y ND
- */
 @SuppressWarnings("unchecked")
 public class DatosArComposer extends GenericForwardComposer {
 	

@@ -8,19 +8,6 @@ import java.sql.SQLException;
 
 import org.apache.log4j.Logger;
 
-/**
- * Poner en cola los comprobantes desde Sql-Ledger
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * http://www.mkyong.com/jdbc/jdbc-preparestatement-example-insert-a-record/
- *
- * 2015-05-26
- * 2015-06-01
- * 2016-03-17 cambiar ponerCola de private a public
- * 2016-06-12 Agregar RE al proceso ponerColaRetencion() y reorganización de código
- * 2016-07-17 Agregar NC al proceso
- * 2016-07-27 Agregar ND al proceso
- * 2016-08-05 Cambio de funcionalidad para NC y ND
- */
 public class ColaAut {
 
 	private static final Logger log = Logger.getLogger(ColaAut.class);

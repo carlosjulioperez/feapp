@@ -4,11 +4,6 @@ import javax.xml.bind.annotation.XmlType;
 
 import lombok.Data;
 
-/**
- * Pojo para el XML del nodo Impuestos/Impuesto
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2016-06-08
- */
 @Data
 @XmlType(name="comprobanteRetencionImpuesto")
 public class Impuesto {

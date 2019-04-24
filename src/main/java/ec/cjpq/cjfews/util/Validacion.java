@@ -20,12 +20,6 @@ import ec.cjpq.util.Utileria;
 import es.mityc.firmaJava.libreria.xades.ResultadoValidacion;
 import es.mityc.firmaJava.libreria.xades.ValidarFirmaXML;
 
-/**
- * Valida si un archivo XML es válido
- * Este fichero es parte de "Componentes de Firma XAdES 1.1.7".
- * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
- * 2014-08-07
- */
 public class Validacion {
 
 	private static final Logger log = Logger.getLogger("Validacion.class");
