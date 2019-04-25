@@ -4,25 +4,25 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.Iterator;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-
-import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
+
+import java.security.cert.X509Certificate;
 
 import ec.cjpq.util.Utileria;
 import es.mityc.firmaJava.libreria.xades.ResultadoValidacion;
 import es.mityc.firmaJava.libreria.xades.ValidarFirmaXML;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Validacion {
 
-	private static final Logger log = Logger.getLogger("Validacion.class");
+	private static final Logger log = LogManager.getLogger("Validacion.class");
 
 	public boolean validarArchivo(String archivo, String... imp){
 		boolean valor = false;

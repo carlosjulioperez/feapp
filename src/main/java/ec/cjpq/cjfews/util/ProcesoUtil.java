@@ -6,11 +6,8 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.nio.charset.Charset;
-import java.util.Random;
 import java.util.Date;
-
-import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.Logger;
+import java.util.Random;
 
 import ec.cjpq.cjfews.comprobante.Configuracion;
 import ec.cjpq.cjfews.comprobante.XmlUtil;
@@ -20,10 +17,13 @@ import ec.cjpq.cjfews.comprobante.notacredito.NotaCredito;
 import ec.cjpq.cjfews.comprobante.notadebito.NotaDebito;
 import ec.cjpq.cjfews.comprobante.retencion.ComprobanteRetencion;
 import ec.cjpq.util.Utileria;
+import org.apache.commons.lang.StringUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class ProcesoUtil {
 	
-	private static Logger log = Logger.getLogger(ProcesoUtil.class);
+	private static Logger log = LogManager.getLogger(ProcesoUtil.class);
 	//TODO: Considerar la fecha de emisión (sistema) en la clave de acceso para todos los compribantes electrónicos
 	//Determinar si esto origina el error de secuencial registrado...
 

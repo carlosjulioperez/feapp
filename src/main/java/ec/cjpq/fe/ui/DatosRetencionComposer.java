@@ -1,12 +1,17 @@
 package ec.cjpq.fe.ui;
 
 import java.sql.SQLException;
+
 import java.util.List;
 
+import ec.cjpq.fe.bean.DatosRetencion;
+import ec.cjpq.fe.dao.EntidadDao;
+import ec.cjpq.fe.jdbc.ColaAut;
+import ec.cjpq.fe.util.Util;
 import lombok.Getter;
 import lombok.Setter;
-
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
@@ -16,15 +21,10 @@ import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Paging;
 import org.zkoss.zul.event.PagingEvent;
 
-import ec.cjpq.fe.bean.DatosRetencion;
-import ec.cjpq.fe.dao.EntidadDao;
-import ec.cjpq.fe.util.Util;
-import ec.cjpq.fe.jdbc.ColaAut;
-
 @SuppressWarnings("unchecked")
 public class DatosRetencionComposer extends GenericForwardComposer {
 	
-	private static final Logger log = Logger.getLogger("DatosRetencionComposer.class");
+	private static final Logger log = LogManager.getLogger("DatosRetencionComposer.class");
 
 	private AnnotateDataBinder binder;
 

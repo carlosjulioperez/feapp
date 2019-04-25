@@ -10,10 +10,7 @@ import java.net.URL;
 import javax.xml.namespace.QName;
 import javax.xml.ws.BindingProvider;
 
-import org.apache.log4j.Logger;
-
 import com.thoughtworks.xstream.XStream;
-
 import ec.cjpq.cjfews.comprobante.Configuracion;
 import ec.cjpq.cjfews.comprobante.factura.Factura;
 import ec.cjpq.cjfews.comprobante.guia.GuiaRemision;
@@ -22,21 +19,19 @@ import ec.cjpq.cjfews.comprobante.notadebito.NotaDebito;
 import ec.cjpq.cjfews.comprobante.retencion.ComprobanteRetencion;
 import ec.cjpq.util.Utileria;
 import ec.gob.sri.comprobantes.ws.Comprobante;
-//import ec.gob.sri.comprobantes.ws.RecepcionComprobantes;
-//import ec.gob.sri.comprobantes.ws.RecepcionComprobantesService;
 import ec.gob.sri.comprobantes.ws.RecepcionComprobantesOffline;
 import ec.gob.sri.comprobantes.ws.RecepcionComprobantesOfflineService;
 import ec.gob.sri.comprobantes.ws.RespuestaSolicitud;
 import ec.gob.sri.comprobantes.ws.aut.Autorizacion;
-//import ec.gob.sri.comprobantes.ws.aut.AutorizacionComprobantes;
-//import ec.gob.sri.comprobantes.ws.aut.AutorizacionComprobantesService;
 import ec.gob.sri.comprobantes.ws.aut.AutorizacionComprobantesOffline;
 import ec.gob.sri.comprobantes.ws.aut.AutorizacionComprobantesOfflineService;
 import ec.gob.sri.comprobantes.ws.aut.RespuestaComprobante;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class WsUtil {
 
-	private static Logger log = Logger.getLogger(WsUtil.class);
+	private static Logger log = LogManager.getLogger(WsUtil.class);
 	
 	private Configuracion configuracion;
 	private Factura factura = null;

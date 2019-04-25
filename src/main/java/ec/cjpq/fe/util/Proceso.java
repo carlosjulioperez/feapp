@@ -7,8 +7,6 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.log4j.Logger;
-
 import ec.cjpq.cjfews.comprobante.Configuracion;
 import ec.cjpq.cjfews.comprobante.factura.Factura;
 import ec.cjpq.cjfews.comprobante.guia.GuiaRemision;
@@ -20,10 +18,12 @@ import ec.cjpq.fe.bean.DocumentoBean;
 import ec.cjpq.fe.dao.EntidadDao;
 import ec.cjpq.fe.model.EmployeeId;
 import ec.cjpq.fe.model.FeColaAut;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Proceso {
 	
-	private static final Logger log = Logger.getLogger("Proceso.class");
+	private static final Logger log = LogManager.getLogger("Proceso.class");
 	
 	public void autorizarComprobante(Configuracion configuracion, List <FeColaAut> seleccionados, EmployeeId employee){
 		Iterator iterator = seleccionados.iterator();

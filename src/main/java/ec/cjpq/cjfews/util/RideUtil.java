@@ -5,16 +5,6 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperExportManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.data.JRBeanArrayDataSource;
-import net.sf.jasperreports.engine.util.JRLoader;
-
-import org.apache.log4j.Logger;
-
 import ec.cjpq.cjfews.comprobante.CalculoUtil;
 import ec.cjpq.cjfews.comprobante.Configuracion;
 import ec.cjpq.cjfews.comprobante.Parametro;
@@ -24,10 +14,19 @@ import ec.cjpq.cjfews.comprobante.notacredito.NotaCredito;
 import ec.cjpq.cjfews.comprobante.notadebito.NotaDebito;
 import ec.cjpq.cjfews.comprobante.retencion.ComprobanteRetencion;
 import ec.cjpq.util.Utileria;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.data.JRBeanArrayDataSource;
+import net.sf.jasperreports.engine.util.JRLoader;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class RideUtil {
 
-	private static final Logger log = Logger.getLogger(RideUtil.class);
+	private static final Logger log = LogManager.getLogger(RideUtil.class);
 	private Parametro parametro;
 	private Configuracion configuracion;
 	private String documento;

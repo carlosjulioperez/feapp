@@ -1,15 +1,11 @@
 package ec.cjpq.cjfews.webservice.impl;
 
-import com.thoughtworks.xstream.XStream;
-
-import ec.cjpq.util.Utileria;
-
 import java.io.File;
+
 import javax.activation.DataHandler;
 import javax.activation.FileDataSource;
 
-import org.apache.log4j.Logger;
-
+import com.thoughtworks.xstream.XStream;
 import ec.cjpq.cjfews.comprobante.Configuracion;
 import ec.cjpq.cjfews.comprobante.Parametro;
 import ec.cjpq.cjfews.comprobante.XmlUtil;
@@ -21,11 +17,13 @@ import ec.cjpq.cjfews.comprobante.retencion.ComprobanteRetencion;
 import ec.cjpq.cjfews.util.ProcesoUtil;
 import ec.cjpq.cjfews.util.RideUtil;
 import ec.cjpq.cjfews.util.Util;
-
+import ec.cjpq.util.Utileria;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class CjfewsImpl {
 	
-	private static final Logger log = Logger.getLogger("CjfewsImpl.class");
+	private static final Logger log = LogManager.getLogger("CjfewsImpl.class");
 
 	public String autorizarFactura(Factura factura, Configuracion configuracion) {
 		return new ProcesoUtil().procesarFactura(factura, configuracion);

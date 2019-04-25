@@ -1,20 +1,20 @@
 package ec.cjpq.cjfews.util;
 
 import javax.xml.namespace.QName;
-import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathFactory;
 
-import org.apache.log4j.Logger;
+import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
 
 import ec.cjpq.util.Utileria;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class LectorXPath {
 
-	private static final Logger log = Logger.getLogger(LectorXPath.class);
+	private static final Logger log = LogManager.getLogger(LectorXPath.class);
 
 	private String xmlFile;
 	private Document xmlDocument;

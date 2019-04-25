@@ -1,14 +1,12 @@
 package ec.cjpq.fe.bean;
 
 import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.math.BigDecimal;
+
+import java.io.StringWriter;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 
 import ec.cjpq.cjfews.comprobante.CampoAdicional;
 import ec.cjpq.cjfews.comprobante.Configuracion;
@@ -35,6 +33,8 @@ import ec.cjpq.cjfews.comprobante.retencion.ComprobanteRetencion;
 import ec.cjpq.cjfews.comprobante.retencion.InfoCompRetencion;
 import ec.cjpq.fe.dao.EntidadDao;
 import ec.cjpq.fe.util.Util;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @SuppressWarnings({ "unchecked" })
 public class DocumentoBean {

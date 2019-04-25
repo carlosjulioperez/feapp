@@ -2,10 +2,11 @@ package ec.cjpq.fe.ui;
 
 import java.util.List;
 
+import ec.cjpq.fe.bean.DatosAp;
+import ec.cjpq.fe.dao.EntidadDao;
+import ec.cjpq.fe.util.Util;
 import lombok.Getter;
 import lombok.Setter;
-
-import org.apache.log4j.Logger;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
@@ -15,14 +16,13 @@ import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Paging;
 import org.zkoss.zul.event.PagingEvent;
 
-import ec.cjpq.fe.bean.DatosAp;
-import ec.cjpq.fe.dao.EntidadDao;
-import ec.cjpq.fe.util.Util;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @SuppressWarnings("unchecked")
 public class DatosNotasDebitoComposer extends GenericForwardComposer {
 	
-	private static final Logger log = Logger.getLogger("DatosNotasDebitoComposer.class");
+	private static final Logger log = LogManager.getLogger("DatosNotasDebitoComposer.class");
 
 	private AnnotateDataBinder binder;
 

@@ -1,13 +1,18 @@
 package ec.cjpq.fe.ui;
 
 import java.sql.SQLException;
+
 import java.util.HashMap;
 import java.util.Map;
 
+import ec.cjpq.fe.bean.DatosGuiaRemision;
+import ec.cjpq.fe.dao.EntidadDao;
+import ec.cjpq.fe.jdbc.ColaAut;
+import ec.cjpq.fe.util.Util;
 import lombok.Getter;
 import lombok.Setter;
-
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zkplus.databind.AnnotateDataBinder;
@@ -15,14 +20,9 @@ import org.zkoss.zul.Button;
 import org.zkoss.zul.Textbox;
 import org.zkoss.zul.Toolbarbutton;
 
-import ec.cjpq.fe.bean.DatosGuiaRemision;
-import ec.cjpq.fe.dao.EntidadDao;
-import ec.cjpq.fe.util.Util;
-import ec.cjpq.fe.jdbc.ColaAut;
-
 public class DatosGuiaComposer extends GenericForwardComposer {
 	
-	private static final Logger log = Logger.getLogger("DatosGuiaComposer.class");
+	private static final Logger log = LogManager.getLogger("DatosGuiaComposer.class");
 
 	private AnnotateDataBinder binder;
 

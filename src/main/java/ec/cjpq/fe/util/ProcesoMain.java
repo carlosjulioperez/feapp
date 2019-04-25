@@ -2,17 +2,17 @@ package ec.cjpq.fe.util;
 
 import java.util.List;
 
-import org.apache.log4j.Logger;
-
 import ec.cjpq.cjfews.comprobante.Configuracion;
 import ec.cjpq.fe.bean.ConfiguracionBean;
 import ec.cjpq.fe.dao.EntidadDao;
 import ec.cjpq.fe.model.EmployeeId;
 import ec.cjpq.fe.model.FeColaAut;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class ProcesoMain {
 
-	private static final Logger log = Logger.getLogger("ProcesoMain.class");
+	private static final Logger log = LogManager.getLogger("ProcesoMain.class");
 	
 	private static EmployeeId employee = null;
 	private static Configuracion configuracion = null;

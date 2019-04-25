@@ -8,14 +8,14 @@ import java.util.List;
 
 import javax.xml.xpath.XPathConstants;
 
-import org.apache.log4j.Logger;
-
 import ec.cjpq.cjfews.comprobante.CampoAdicional;
 import ec.cjpq.util.Utileria;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Util {
 
-	private static final Logger log = Logger.getLogger(Util.class);
+	private static final Logger log = LogManager.getLogger(Util.class);
 	
 	public static boolean firmar(String archivoAFirmar, String archivoFirmado,
 			String directorioDestino, String p12, String clave){
