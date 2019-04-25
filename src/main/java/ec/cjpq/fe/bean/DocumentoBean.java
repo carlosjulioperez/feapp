@@ -7,6 +7,7 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import ec.cjpq.cjfews.comprobante.CampoAdicional;
@@ -38,7 +39,7 @@ import ec.cjpq.fe.util.Util;
 @SuppressWarnings({ "unchecked" })
 public class DocumentoBean {
 	
-	private static final Logger log = Logger.getLogger("DocumentoBean.class");
+	private static final Logger log = LogManager.getLogger("DocumentoBean.class");
 	private Configuracion configuracion;
 
 	private Parametro parametro;

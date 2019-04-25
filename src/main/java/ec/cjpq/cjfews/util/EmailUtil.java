@@ -1,12 +1,14 @@
 package ec.cjpq.cjfews.util;
 
+import ec.cjpq.util.Utileria;
+
 import java.util.Date;
 import java.util.Map;
 import java.util.Properties;
-
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
+
 import javax.mail.BodyPart;
 import javax.mail.Message;
 import javax.mail.Multipart;
@@ -18,15 +20,15 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import ec.cjpq.cjfews.comprobante.Configuracion;
-import ec.cjpq.util.Utileria;
 
 public class EmailUtil{
 
-	private static final Logger log = Logger.getLogger(EmailUtil.class);
-	
+	private static final Logger log = LogManager.getLogger(EmailUtil.class);
+
     public boolean sendEmail(Configuracion configuracion, Map <String, String>p){
  
     	boolean valor = false;
