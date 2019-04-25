@@ -140,7 +140,7 @@ public class EntidadDaoTest extends TestCase{
 		}
 	}
 
-	public void testGetDatosArInvoice(){
+	public void _testGetDatosArInvoice(){
 		try {
 			String numero[] = { "001-001-000021055" };
 			Object []datos = new EntidadDao().getDatosArInvoice( numero [0]);
@@ -156,7 +156,7 @@ public class EntidadDaoTest extends TestCase{
 		assertEquals(o.getId().getDescription(), "Guayaquil");
 	}
 	
-	public void _testConfiguracion(){
+	public void testConfiguracion(){
 		FeConfig config = new EntidadDao().getFeConfig((short) 1);
 		//assertEquals(config.getEmiRazSocial(), "APRACOM S.A.");
 	    log.warn(config.getEmiRazSocial());
