@@ -1,10 +1,16 @@
 Tareas
 	* TODO:
 		x Ajustar la ruta de los logotipos en los reportes
-		Eliminar comentarios en java
+		x Eliminar comentarios en java
+		x Eliminar (paquete model) los archivos generados por hibernate
 		Ajustar configuración de logs
-		Eliminar (paquete model) los archivos generados por hibernate
+		Considerar fe_cola al cambiar la biblioteca de logs
+
 		Leer db.properties desde hibernate.xml
+		hibernate connection from external properties files
+
+		https://stackoverflow.com/questions/25684785/how-to-read-database-configuration-parameter-using-properties-file-in-hibernate
+
 
 		+ Ruta de archivos e imágenes:
 			/img/logo.jpg Se lee desde el sistema operativo.

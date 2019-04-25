@@ -5,12 +5,6 @@
     <property name="dist.dir"             value="../dist" />
     <property name="libHT.dir"            value="../libHT/"/>
 
-    <property name="ilib.dir"             value="../libIReport" />
-    <property name="jar.data"             value="${dist.dir}/cjfews-rep-1.0.jar" />
-    <property name="comp.jar"             value="cjfews-comp-1.0.jar" />
-    <property name="reports.dir"          value="src/main/reports" />
-    <property name="generico.dir"         value="${reports.dir}/generico" />
-
     <property name="target.dir"           value="target" />
     <property name="cls.dir"              value="target/classes" />
 
@@ -25,56 +19,12 @@
     </tstamp>
     <property name="zip.file" value="${dist.dir}/${appname}-${fecha}-src.zip" />
 
-    <taskdef name="hibernatetool" classname="org.hibernate.tool.ant.HibernateToolTask" >
-        <classpath>
-            <fileset dir="${libHT.dir}">
-                <include name="**/*.jar"/>
-            </fileset>
-        </classpath>
-    </taskdef>
-
-    <target name="generar" description="Generar las clases Java de persistencia">
-        <hibernatetool destdir="src">
-            <!-- we use our hibernate.cfg.xml -->
-            <jdbcconfiguration 
-                configurationfile="resources/cfg/hibernate.cfg.xml"
-                revengfile="resources/cfg/hibernate.reveng.xml"
-                packagename="ec.cjpq.fe.model"
-                detectmanytomany="true"
-                detectoptimisticlock="true" 
-                />
-            <classpath>
-                <path location="bin" />
-            </classpath>
-            <hbm2java jdk5="true" ejb3="true"/>
-            <hbm2cfgxml ejb3="true"/>
-        </hibernatetool>
-    </target>
-
-    <target name="ilib" >
-        <delete file="${ilib.dir}/${comp.jar}"/>
-        <jar destfile="${ilib.dir}/${comp.jar}" basedir="${cls.dir}" includes="**/comprobante/**"/>
-    </target>	
-
     <target name="zip" 
         description="Comprime el proyecto en la carpeta de distribucion dist especificada. Se ignoran las librerias y las clases compiladas">
         <zip destfile="${zip.file}">
             <fileset dir="." excludes="${target.dir}/**, lib/**" />
         </zip>
     </target>
-
-    <target name="borrarExistente"
-        description="Borra el jar destino si existe...">
-        <delete file="${jar.data}"/>
-    </target>
-
-    <target name="jar" depends="borrarExistente">
-        <jar destfile="${jar.data}">
-            <fileset dir="${reports.dir}" includes="**/*.jpg" />
-            <fileset dir="${generico.dir}" includes="**/*.jasper"/>
-        </jar>
-    </target>
-
 
     <target name="fecola" description="Crea el jar ejecutable para mandar a la cola los comprobantes">
         <jar destfile="${cola.jar}" basedir="${cls.dir}" includes="**/jdbc/*, **/log4j.xml" >

@@ -59,7 +59,7 @@ public class ColaAut {
 	
 		try {
 			String mensaje1 = "Comprobante %s # %s enviado a la cola de autorizaciones...";
-			dbConnection =  DBConnectionBurned.getConnection();
+			dbConnection =  DBConnection.getConnection();
 
 			ps1 = dbConnection.prepareStatement(sqlQueryCola);
 			ps1.setString(1, tipo);

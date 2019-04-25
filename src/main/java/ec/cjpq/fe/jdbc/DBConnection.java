@@ -10,7 +10,8 @@ public class DBConnection {
     public static Connection getConnection() {
         Properties props = new Properties();
         Connection con = null;
-        
+
+        //TODO Actualizar
         String resourceName = "jdbc.properties"; // could also be a constant
 		ClassLoader loader = Thread.currentThread().getContextClassLoader();
 		try(InputStream resourceStream = loader.getResourceAsStream(resourceName)) {

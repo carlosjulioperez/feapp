@@ -61,7 +61,7 @@ public class EntidadDaoTest extends TestCase{
 		log.warn( o.getName()+" "+o.getGifiAccno()+" "+o.getEmail()+" "+o.getCc()+" "+o.getPhone() );
 	}
 
-	public void testGetConsultaRetencion(){
+	public void _testGetConsultaRetencion(){
 		try {
 			//List<RetencionBean> lista = new EntidadDao().getConsultaRetencion( "%SERRANO ROMERO%", "FAC", "3941", "16-05-2016", "16-05-2016" ); 
 			//List<DatosRetencion> lista = new EntidadDao().getConsultaRetencion( "%TAME%", "", "", "06-01-2016", "06-01-2016", 0, 20 );
@@ -140,9 +140,9 @@ public class EntidadDaoTest extends TestCase{
 		}
 	}
 
-	public void _testGetDatosArInvoice(){
+	public void testGetDatosArInvoice(){
 		try {
-			String numero[] = { "004-002-000005516" };
+			String numero[] = { "001-001-000021055" };
 			Object []datos = new EntidadDao().getDatosArInvoice( numero [0]);
 			System.out.println("Fecha: " + datos[0]);
 			System.out.println("Id   : " + datos[1]);
@@ -158,7 +158,8 @@ public class EntidadDaoTest extends TestCase{
 	
 	public void _testConfiguracion(){
 		FeConfig config = new EntidadDao().getFeConfig((short) 1);
-		assertEquals(config.getEmiRazSocial(), "APRACOM S.A.");
+		//assertEquals(config.getEmiRazSocial(), "APRACOM S.A.");
+	    log.warn(config.getEmiRazSocial());
 	}
 
 	public void _testGetP12Employee(){
@@ -224,13 +225,13 @@ public class EntidadDaoTest extends TestCase{
 		}
 	}
 
-	public void actualizarSecuenciaFactura(){
+	public void _actualizarSecuenciaFactura(){
 		int numero = new EntidadDao().getSecuenciaFactura((short)1);
 		if (numero > 0)
 			System.out.println( "Nueva secuencia de factura: "+numero );
 	}
 	
-	public void actualizarSecuenciaFacturaEmpleado(){
+	public void _actualizarSecuenciaFacturaEmpleado(){
 		int numero = new EntidadDao().getSecuenciaComprobanteEmpleado(Comprobante.FACTURA, "ap_cromero");
 		if (numero > 0)
 			System.out.println( "Nueva secuencia de factura de empleado: "+numero );

@@ -244,14 +244,6 @@ public class EntidadDao {
 		return listado;
 	}
 
-	/**
-     * Listado de Objetos para usarlo en el pagineo
-     * @author carper CARLOS JULIO PEREZ QUIZHPE carlosjulioperez@gmail.com claro 099 3208265
-     * 2015-06-09
-     * 2016-08-04 Filtrar para ver los comprobantes NO autorizados
-     * 2018-04-24 Filtrar por Mensaje
-     * @return
-     */
     public List <FeColaAut> getListadoFeColaAut(String tipoComprobante, String cliente, String mensaje, boolean noAutorizados, int firstResult, int maxResults){
 		
         tx = session.beginTransaction();
