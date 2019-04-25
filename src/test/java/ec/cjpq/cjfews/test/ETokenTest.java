@@ -8,7 +8,8 @@ import java.security.Provider;
 import java.security.cert.X509Certificate;
 import java.util.Enumeration;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 
 import com.sun.security.auth.callback.TextCallbackHandler;
@@ -19,7 +20,7 @@ import ec.gob.sri.firmaxades.test.FirmasGenericasXAdES;
 
 public class ETokenTest {
 
-	private static Logger log = Logger.getLogger(ETokenTest.class);
+	private static Logger log = LogManager.getLogger(ETokenTest.class);
 	private String archivo 	= "/usr/local/fe/dir/cg/FA-1791867726001-29062009-001001000000001.xml";
 	private String dirCF	= "/usr/local/fe/dir/cf";
 	private String tokenID 	= "BCE_IKEY2032";

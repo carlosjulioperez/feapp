@@ -6,10 +6,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import junit.framework.TestCase;
-
-import org.apache.log4j.Logger;
-
 import ec.cjpq.cjfews.comprobante.notadebito.Motivo;
 import ec.cjpq.fe.bean.DatosAp;
 import ec.cjpq.fe.bean.DatosAr;
@@ -21,13 +17,16 @@ import ec.cjpq.fe.model.FeColaAut;
 import ec.cjpq.fe.model.FeConfig;
 import ec.cjpq.fe.util.Comprobante;
 import ec.cjpq.fe.util.Util;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
-@SuppressWarnings({"unchecked"})
-public class EntidadDaoTest extends TestCase{
+public class EntidadDaoTest{
 	
-	private static final Logger log = Logger.getLogger("EntidadDaoTest.class");
+	private static Logger log = LogManager.getLogger(EntidadDaoTest.class);
 
-	public void _testGetDatosGuiaRemision(){
+	public void testGetDatosGuiaRemision(){
 		try {
 			DatosGuiaRemision o = new EntidadDao().getDatosGuiaRemision(111435);
 			assertEquals(o.getTransportistaId(), "0918056664001");
@@ -37,7 +36,7 @@ public class EntidadDaoTest extends TestCase{
 		//assertEquals(o.getTransportistaId(), "transportista ID") ;
 	}
 
-	public void _testGetConsultaGuiaRemision(){
+	public void testGetConsultaGuiaRemision(){
 		try {
 			DatosGuiaRemision o = new EntidadDao().getConsultaGuiaRemision("004-002-000003270");
 			log.warn(o.getId());
@@ -61,7 +60,7 @@ public class EntidadDaoTest extends TestCase{
 		log.warn( o.getName()+" "+o.getGifiAccno()+" "+o.getEmail()+" "+o.getCc()+" "+o.getPhone() );
 	}
 
-	public void _testGetConsultaRetencion(){
+	public void testGetConsultaRetencion(){
 		try {
 			//List<RetencionBean> lista = new EntidadDao().getConsultaRetencion( "%SERRANO ROMERO%", "FAC", "3941", "16-05-2016", "16-05-2016" ); 
 			//List<DatosRetencion> lista = new EntidadDao().getConsultaRetencion( "%TAME%", "", "", "06-01-2016", "06-01-2016", 0, 20 );
@@ -88,7 +87,7 @@ public class EntidadDaoTest extends TestCase{
 		}
 	}
 	
-	public void _testGetConsultaAr(){
+	public void testGetConsultaAr(){
 		try {
 			DatosAr dar = new DatosAr();
 			
@@ -108,7 +107,7 @@ public class EntidadDaoTest extends TestCase{
 		}
 	}
 	
-	public void _testGetConsultaAp(){
+	public void testGetConsultaAp(){
 		try {
 			
 			String []numero = {"123504", "122762"};
@@ -140,7 +139,7 @@ public class EntidadDaoTest extends TestCase{
 		}
 	}
 
-	public void _testGetDatosArInvoice(){
+	public void testGetDatosArInvoice(){
 		try {
 			String numero[] = { "001-001-000021055" };
 			Object []datos = new EntidadDao().getDatosArInvoice( numero [0]);
@@ -151,7 +150,7 @@ public class EntidadDaoTest extends TestCase{
 		}
 	}
 	
-	public void _testListaDepartamentos(){
+	public void testListaDepartamentos(){
 		Department o = new EntidadDao().getDepartments(11272); 
 		assertEquals(o.getId().getDescription(), "Guayaquil");
 	}
@@ -159,15 +158,15 @@ public class EntidadDaoTest extends TestCase{
 	public void testConfiguracion(){
 		FeConfig config = new EntidadDao().getFeConfig((short) 1);
 		//assertEquals(config.getEmiRazSocial(), "APRACOM S.A.");
-	    log.warn(config.getEmiRazSocial());
+	    log.warn( config.getEmiRazSocial() );
 	}
 
-	public void _testGetP12Employee(){
+	public void testGetP12Employee(){
 		EmployeeId employeeId = new EntidadDao().getEmployeeByLogin("ap_cromero");
 		assertEquals(employeeId.getP12Archivo(), "/usr/local/fe/p12s/ana_maria_valladares_lopez.p12");
 	}
 
-	public void _testGetFactura(){
+	public void testGetFactura(){
 		int n[]={128229};
 		
 		boolean imprimirPorConsola = true;
@@ -237,18 +236,18 @@ public class EntidadDaoTest extends TestCase{
 			System.out.println( "Nueva secuencia de factura de empleado: "+numero );
 	}
 
-	public void _testActualizarFactura(){
+	public void testActualizarFactura(){
 		new EntidadDao().actualizarFactura(new Integer(31430), "1811201504381909921791550010325194521", "001-001-005243");
 	}
 	
-	public void _testListadoAutorizarComprobante(){
+	public void testListadoAutorizarComprobante(){
 		List <FeColaAut> seleccionados = new EntidadDao().getListadoFeColaAut("WHERE colaId=14");
 		for (FeColaAut o: seleccionados){
 			log.warn(o.getNumeroSl());
 		}
 	}
 	
-	public void _testActualizarDatosRetencion(){
+	public void testActualizarDatosRetencion(){
 		String fecha = "2016-06-13T00:39:59-05:00";
 		fecha = fecha.substring(0, 10);
 		
@@ -261,5 +260,10 @@ public class EntidadDaoTest extends TestCase{
 			e.printStackTrace();
 		}
 	}
+
+    @Test
+    public void runTest(){
+        testConfiguracion();
+    }
 	
 }

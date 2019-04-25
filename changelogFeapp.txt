@@ -1,10 +1,13 @@
 Tareas
 	* TODO:
+		Optimizar bibliotecas empleadas
+		hibernate-annotations
+
 		x Ajustar la ruta de los logotipos en los reportes
 		x Eliminar comentarios en java
 		x Eliminar (paquete model) los archivos generados por hibernate
 		x Leer db.properties desde hibernate.xml
-		Ajustar configuración de logs
+		x Ajustar configuración de logs
 		Considerar fe_cola al cambiar la biblioteca de logs
 
 		hibernate connection from external properties files
@@ -24,22 +27,25 @@ Tareas
 				empresa/logo.jpg
 
 	* Test:
-		mvn test -Dtest=classname
-		mvn clean test -Dtest=classname
-		mvn clean test -Dtest=xxxxTest#testA
-		
-		mvn test -Dtest=ec.cjpq.fe.dao.EntidadDaoTest
-		mvn test -Dtest=ec.cjpq.fe.util.CodigoTest
-		mvn test -Dtest=ec.cjpq.fe.jdbc.DBConnectionTest
+		$ mvn dependency:tree
 
-		mvn test -Dtest=ec.cjpq.cjfews.webservice.impl.CjfewsImplTest
+		$ mvn test -Dtest=classname
+		$ mvn clean test -Dtest=classname
+		$ mvn clean test -Dtest=xxxxTest#testA
 		
-		java -jar /usr/local/fe/fecola.jar FA 187373
-		
-		mvn test -Dtest=ec.cjpq.cjfews.test.UtileriaTest
-		mvn test -Dtest=ec.cjpq.cjfews.comprobante.JRDataSourceFactoryTest
-		mvn test -Dtest=ec.cjpq.cjfews.comprobante.TablaTest
-		mvn test -Dtest=ec.cjpq.cjfews.util.RideUtilTest
+		$ mvn test -Dtest=ec.cjpq.cjfews.comprobante.TablaTest
+		$ mvn test -Dtest=ec.cjpq.fe.jdbc.DBConnectionTest
+
+		$ mvn test -Dtest=ec.cjpq.fe.dao.EntidadDaoTest
+
+		$ mvn test -Dtest=ec.cjpq.fe.util.CodigoTest
+
+		$ mvn test -Dtest=ec.cjpq.cjfews.webservice.impl.CjfewsImplTest
+		$ java -jar /usr/local/fe/fecola.jar FA 187373
+
+		$ mvn test -Dtest=ec.cjpq.cjfews.test.UtileriaTest
+		$ mvn test -Dtest=ec.cjpq.cjfews.comprobante.JRDataSourceFactoryTest
+		$ mvn test -Dtest=ec.cjpq.cjfews.util.RideUtilTest
 
 	* Crear war:
 		mvn clean compile war:war

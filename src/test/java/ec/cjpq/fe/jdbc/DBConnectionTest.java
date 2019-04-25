@@ -5,18 +5,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import junit.framework.TestCase;
-
-import org.apache.log4j.Logger;
-
 import ec.cjpq.fe.jdbc.DBConnection;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.junit.Test;
 
-public class DBConnectionTest extends TestCase{
+public class DBConnectionTest{
 	
-	private static final Logger log = Logger.getLogger("DBConnectionTest.class");
+	private static final Logger log = LogManager.getLogger("DBConnectionTest.class");
      
     private static final String QUERY = "SELECT * FROM fe_cola_aut WHERE tipo_comp='NC'";
  
+    @Test
     public void test(){
                  
         //using try-with-resources to avoid closing resources (boiler plate code)

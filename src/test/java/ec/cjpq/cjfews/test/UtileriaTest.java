@@ -3,15 +3,15 @@ package ec.cjpq.cjfews.test;
 import java.io.File;
 import java.io.IOException;
 
-import org.apache.log4j.Logger;
-import org.junit.Test;
-
 import ec.cjpq.cjfews.util.Util;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.junit.Test;
 
 @SuppressWarnings({"unused"})
 public class UtileriaTest {
 
-	private static Logger log = Logger.getLogger(UtileriaTest.class);
+	private static Logger log = LogManager.getLogger(UtileriaTest.class);
 
 	private String documento 		= "FA-0990549591001-10062016-004001000000035.xml";
 

@@ -1,13 +1,13 @@
 package ec.cjpq.cjfews.test;
 
-import org.apache.log4j.Logger;
-import org.junit.Test;
-
 import ec.cjpq.cjfews.util.Util;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.junit.Test;
 
 public class DigitoVerficadorTest {
 
-	private static Logger log = Logger.getLogger(DigitoVerficadorTest.class);
+	private static Logger log = LogManager.getLogger(DigitoVerficadorTest.class);
 
 	//@Test
 	public void run(){

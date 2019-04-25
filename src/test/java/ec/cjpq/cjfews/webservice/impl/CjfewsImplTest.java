@@ -5,11 +5,6 @@ import java.io.InputStream;
 
 import javax.activation.DataHandler;
 
-import junit.framework.TestCase;
-import org.junit.Before;
-
-import org.apache.log4j.Logger;
-
 import ec.cjpq.cjfews.comprobante.Configuracion;
 import ec.cjpq.cjfews.comprobante.factura.Factura;
 import ec.cjpq.cjfews.comprobante.guia.GuiaRemision;
@@ -18,10 +13,14 @@ import ec.cjpq.cjfews.comprobante.notadebito.NotaDebito;
 import ec.cjpq.cjfews.comprobante.retencion.ComprobanteRetencion;
 import ec.cjpq.fe.bean.ConfiguracionBean;
 import ec.cjpq.fe.bean.DocumentoBean;
+import junit.framework.TestCase;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.junit.Before;
 
 public class CjfewsImplTest extends TestCase{
 	
-	private static final Logger log = Logger.getLogger("CjfewsImplTest.class");
+	private static final Logger log = LogManager.getLogger("CjfewsImplTest.class");
 	private Configuracion configuracion;
 	
     @Before
