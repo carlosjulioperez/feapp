@@ -252,18 +252,17 @@
             <version>3.4.2</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>5.2.9.Final</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-annotations -->
-        <!-- <dependency> -->
-        <!--     <groupId>org.hibernate</groupId> -->
-        <!--     <artifactId>hibernate&#45;annotations</artifactId> -->
-        <!--     <version>3.2.1.ga</version> -->
-        <!-- </dependency> -->
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate</artifactId>
+		    <version>3.2.5.ga</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-annotations -->
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-annotations</artifactId>
+		    <version>3.2.1.ga</version>
+		</dependency>
 
         <!-- https://mvnrepository.com/artifact/javax.transaction/jta -->
         <dependency>

@@ -22,7 +22,7 @@
         <!-- https://www.boraji.com/index.php/hibernate&#45;5&#45;log4j&#45;2&#45;configuration&#45;example -->
         <!-- Log everything in hibernate -->
         <Logger name="org.hibernate" level="info" additivity="false">
-            <AppenderRef ref="Console" />
+            <AppenderRef ref="LogToConsole" />
         </Logger>
 
         <!-- asynchronous loggers -->
