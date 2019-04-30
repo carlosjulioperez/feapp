@@ -17,13 +17,12 @@ import ec.cjpq.cjfews.comprobante.retencion.ComprobanteRetencion;
 import ec.cjpq.cjfews.util.ProcesoUtil;
 import ec.cjpq.cjfews.util.RideUtil;
 import ec.cjpq.cjfews.util.Util;
-import ec.cjpq.util.Utileria;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class CjfewsImpl {
 	
-	private static final Logger log = LogManager.getLogger("CjfewsImpl.class");
+	private static final Logger log = LogManager.getLogger(CjfewsImpl.class);
 
 	public String autorizarFactura(Factura factura, Configuracion configuracion) {
 		return new ProcesoUtil().procesarFactura(factura, configuracion);
@@ -97,7 +96,7 @@ public class CjfewsImpl {
 			FileDataSource dataSource = new FileDataSource(archivo);
 			fileDataHandler = new DataHandler(dataSource);
 		} catch (Exception e) {
-			log.warn(Utileria.stack2String(e));
+			log.warn(Util.stack2String(e));
 		}
 		return fileDataHandler;
 	}

@@ -19,6 +19,12 @@
     </Appenders>
     <Loggers>
 
+        <!-- https://www.boraji.com/index.php/hibernate&#45;5&#45;log4j&#45;2&#45;configuration&#45;example -->
+        <!-- Log everything in hibernate -->
+        <Logger name="org.hibernate" level="info" additivity="false">
+            <AppenderRef ref="Console" />
+        </Logger>
+
         <!-- asynchronous loggers -->
         <AsyncLogger name="ec.cjpq" level="debug" additivity="false">
             <AppenderRef ref="LogToRollingRandomAccessFile"/>

@@ -20,7 +20,6 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
 import ec.cjpq.cjfews.comprobante.Configuracion;
-import ec.cjpq.util.Utileria;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -120,7 +119,7 @@ public class EmailUtil{
 			transport.close();
 			valor = true;
 		} catch (Exception e) {
-			log.warn(Utileria.stack2String(e));
+			log.warn(Util.stack2String(e));
 		}
     	return valor;
     }

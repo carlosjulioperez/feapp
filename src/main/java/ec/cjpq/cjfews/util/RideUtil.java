@@ -13,7 +13,6 @@ import ec.cjpq.cjfews.comprobante.guia.GuiaRemision;
 import ec.cjpq.cjfews.comprobante.notacredito.NotaCredito;
 import ec.cjpq.cjfews.comprobante.notadebito.NotaDebito;
 import ec.cjpq.cjfews.comprobante.retencion.ComprobanteRetencion;
-import ec.cjpq.util.Utileria;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
@@ -69,7 +68,7 @@ public class RideUtil {
 			
 			log.warn("Se ha generado el comprobante FA-RIDE: " + nombreFisico);
 		} catch (JRException e) {
-			log.warn(Utileria.stack2String(e));
+			log.warn(Util.stack2String(e));
 		}
 	}
 
@@ -91,7 +90,7 @@ public class RideUtil {
 			
 			//log.warn("Se ha generado el comprobante GR-RIDE: " + nombreFisico);
 		} catch (JRException e) {
-			log.warn(Utileria.stack2String(e));
+			log.warn(Util.stack2String(e));
 		}
 	}
 	
@@ -112,7 +111,7 @@ public class RideUtil {
 			
 			//log.warn("Se ha generado el comprobante GR-RIDE: " + nombreFisico);
 		} catch (JRException e) {
-			log.warn(Utileria.stack2String(e));
+			log.warn(Util.stack2String(e));
 		}
 	}
 	
@@ -133,7 +132,7 @@ public class RideUtil {
 			
 			//log.warn("Se ha generado el comprobante NC-RIDE: " + nombreFisico);
 		} catch (JRException e) {
-			log.warn(Utileria.stack2String(e));
+			log.warn(Util.stack2String(e));
 		}
 	}
 
@@ -154,7 +153,7 @@ public class RideUtil {
 			
 			//log.warn("Se ha generado el comprobante NC-RIDE: " + nombreFisico);
 		} catch (JRException e) {
-			log.warn(Utileria.stack2String(e));
+			log.warn(Util.stack2String(e));
 		}
 	}
 
@@ -473,7 +472,7 @@ public class RideUtil {
 
 			return pdfAutorizado;
 		}catch (Exception e) {
-			log.warn( Utileria.stack2String(e));
+			log.warn( Util.stack2String(e));
 			return null;
 		}
 	}

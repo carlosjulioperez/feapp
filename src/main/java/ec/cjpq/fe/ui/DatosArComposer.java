@@ -28,7 +28,7 @@ public class DatosArComposer extends GenericForwardComposer {
 	
 	private Window winAr;
 	
-	private static final Logger log = LogManager.getLogger("DatosArComposer.class");
+	private static final Logger log = LogManager.getLogger(DatosArComposer.class);
 
 	private AnnotateDataBinder binder;
 

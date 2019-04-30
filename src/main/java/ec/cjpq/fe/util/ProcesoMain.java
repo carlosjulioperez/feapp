@@ -12,7 +12,7 @@ import org.apache.logging.log4j.Logger;
 
 public class ProcesoMain {
 
-	private static final Logger log = LogManager.getLogger("ProcesoMain.class");
+	private static final Logger log = LogManager.getLogger(ProcesoMain.class);
 	
 	private static EmployeeId employee = null;
 	private static Configuracion configuracion = null;

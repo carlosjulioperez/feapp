@@ -22,7 +22,7 @@ import org.zkoss.zul.Toolbarbutton;
 
 public class DatosGuiaComposer extends GenericForwardComposer {
 	
-	private static final Logger log = LogManager.getLogger("DatosGuiaComposer.class");
+	private static final Logger log = LogManager.getLogger(DatosGuiaComposer.class);
 
 	private AnnotateDataBinder binder;
 

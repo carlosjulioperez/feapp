@@ -14,7 +14,6 @@ import org.xml.sax.SAXException;
 
 import java.security.cert.X509Certificate;
 
-import ec.cjpq.util.Utileria;
 import es.mityc.firmaJava.libreria.xades.ResultadoValidacion;
 import es.mityc.firmaJava.libreria.xades.ValidarFirmaXML;
 import org.apache.logging.log4j.LogManager;
@@ -22,7 +21,7 @@ import org.apache.logging.log4j.Logger;
 
 public class Validacion {
 
-	private static final Logger log = LogManager.getLogger("Validacion.class");
+	private static final Logger log = LogManager.getLogger(Validacion.class);
 
 	public boolean validarArchivo(String archivo, String... imp){
 		boolean valor = false;
@@ -38,7 +37,7 @@ public class Validacion {
 			is = new FileInputStream(archivo);
 		} catch (FileNotFoundException e1) {
 			log.warn("El archivo especificado no existe...");
-			log.warn(Utileria.stack2String(e1));
+			log.warn(Util.stack2String(e1));
 			return false;
 		}
 		
@@ -55,7 +54,7 @@ public class Validacion {
             //TODOs: CDODIGO ORIGINAL: results = vXml.validar(doc, "./", null, new TimeStampValidator()) ;
             results = null;
         } catch(Exception e){
-            log.warn(Utileria.stack2String(e));
+            log.warn(Util.stack2String(e));
         }
 		
         // Se muestra por consola el resultado de la validación
@@ -102,7 +101,7 @@ public class Validacion {
             db = dbf.newDocumentBuilder();
         } catch (ParserConfigurationException ex) {
             log.warn("Error interno al parsear la firma");
-            log.warn(Utileria.stack2String(ex));
+            log.warn(Util.stack2String(ex));
             return null;
         }
 
@@ -114,7 +113,7 @@ public class Validacion {
             doc = null;
         } catch (IOException ex) {
             log.warn("Error interno al validar firma");
-            log.warn(Utileria.stack2String(ex));
+            log.warn(Util.stack2String(ex));
         } finally {
             dbf = null;
             db = null; 

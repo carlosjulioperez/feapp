@@ -13,7 +13,7 @@ import ec.cjpq.cjfews.comprobante.retencion.ComprobanteRetencion;
 public class JRDataSourceFactory {
 
 	public static Factura[] getFacturaArray(){
-		String xml = "/usr/local/fe/dir/cg/FA-0992176989001-09012019-004002000016868.xml";
+		String xml = "/usr/local/fe/dir/cg/FA-0917824435001-29012019-001001000000008.xml";
 		
 		Factura[] arreglo = new Factura[1];
 		XStream xs = XmlUtil.getFacturaXStream();

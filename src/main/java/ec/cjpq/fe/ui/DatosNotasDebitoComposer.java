@@ -22,7 +22,7 @@ import org.apache.logging.log4j.Logger;
 @SuppressWarnings("unchecked")
 public class DatosNotasDebitoComposer extends GenericForwardComposer {
 	
-	private static final Logger log = LogManager.getLogger("DatosNotasDebitoComposer.class");
+	private static final Logger log = LogManager.getLogger(DatosNotasDebitoComposer.class);
 
 	private AnnotateDataBinder binder;
 

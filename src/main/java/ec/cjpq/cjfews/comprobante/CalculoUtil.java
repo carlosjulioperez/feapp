@@ -1,7 +1,5 @@
 package ec.cjpq.cjfews.comprobante;
 
-import ec.cjpq.util.Utileria;
-
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -11,6 +9,7 @@ import ec.cjpq.cjfews.comprobante.notacredito.DetalleNotaCredito;
 import ec.cjpq.cjfews.comprobante.notacredito.NotaCredito;
 import ec.cjpq.cjfews.comprobante.notadebito.NotaDebito;
 import ec.cjpq.cjfews.comprobante.notadebito.NotaDebitoImpuesto;
+import ec.cjpq.cjfews.util.Util;
 
 public class CalculoUtil {
 	
@@ -60,8 +59,8 @@ public class CalculoUtil {
 		
 		Parametro p = new Parametro();
 		
-		BigDecimal baseImponible = Utileria.parseToBigDecimal(impuesto.getBaseImponible());
-		BigDecimal valor = Utileria.parseToBigDecimal(impuesto.getValor());
+		BigDecimal baseImponible = Util.parseToBigDecimal(impuesto.getBaseImponible());
+		BigDecimal valor = Util.parseToBigDecimal(impuesto.getValor());
 
 		if (impuesto.getCodigo().equals(p.getIvaCodigo())){
 			if (impuesto.getCodigoPorcentaje().equals(p.getIva0Codigo()))
@@ -98,7 +97,7 @@ public class CalculoUtil {
 		
 		// Calcular los totales de los descuentos...
 		for (Detalle detalle : factura.getDetalles())
-			totalDescuento = totalDescuento.add ( Utileria.parseToBigDecimal(detalle.getDescuento())).setScale(2, RoundingMode.HALF_UP);
+			totalDescuento = totalDescuento.add ( Util.parseToBigDecimal(detalle.getDescuento())).setScale(2, RoundingMode.HALF_UP);
 		
 		return obtenerTotales();
 	}
@@ -111,7 +110,7 @@ public class CalculoUtil {
 		}
 
 		for (DetalleNotaCredito detalle : notaCredito.getDetalles())
-			totalDescuento = totalDescuento.add ( Utileria.parseToBigDecimal(detalle.getDescuento())).setScale(2, RoundingMode.HALF_UP);
+			totalDescuento = totalDescuento.add ( Util.parseToBigDecimal(detalle.getDescuento())).setScale(2, RoundingMode.HALF_UP);
 
 		return obtenerTotales();
 	}
@@ -122,8 +121,8 @@ public class CalculoUtil {
 		for (NotaDebitoImpuesto impuesto: notaDebito.getInfoNotaDebito().getImpuestos()){
 			Parametro p = new Parametro();
 			
-			BigDecimal baseImponible = Utileria.parseToBigDecimal(impuesto.getBaseImponible());
-			BigDecimal valor = Utileria.parseToBigDecimal(impuesto.getValor());
+			BigDecimal baseImponible = Util.parseToBigDecimal(impuesto.getBaseImponible());
+			BigDecimal valor = Util.parseToBigDecimal(impuesto.getValor());
 	
 			if (impuesto.getCodigo().equals(p.getIvaCodigo())){
 				if (impuesto.getCodigoPorcentaje().equals(p.getIva0Codigo()))

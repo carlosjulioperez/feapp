@@ -41,7 +41,7 @@ import org.zkoss.zul.event.PagingEvent;
 
 public class PanelComposer extends GenericForwardComposer {
 	
-	private static final Logger log = LogManager.getLogger("PanelComposer.class");
+	private static final Logger log = LogManager.getLogger(PanelComposer.class);
 	private AnnotateDataBinder binder;
 
 	@Getter @Setter

@@ -1,21 +1,21 @@
 package ec.cjpq.fe.util;
 
 import java.math.BigDecimal;
-
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import junit.framework.TestCase;
+import org.junit.Test;
 
 import ec.cjpq.cjfews.comprobante.Configuracion;
 import ec.cjpq.cjfews.comprobante.InfoTributaria;
 import ec.cjpq.cjfews.comprobante.factura.Factura;
 import ec.cjpq.fe.util.Comprobante;
 import ec.cjpq.fe.util.Util;
+import static org.junit.Assert.*;
 
-public class CodigoTest extends TestCase{
+public class CodigoTest {
 	
 	private String getMensaje(){
 		
@@ -36,16 +36,16 @@ public class CodigoTest extends TestCase{
 	}
 	
 
-	public void _testGetVarArgs(){
+	public void testGetVarArgs(){
 		getVarArgs("uno", "dos", "tres");
 	}
 	
-	public void _testFecha(){
+	public void testFecha(){
 		SimpleDateFormat dateFormat = new SimpleDateFormat("ddMMyyyy");
 		System.out.println(dateFormat.format(new Date()));
 	}
 	
-	public void _testPeridoFiscal(){
+	public void testPeridoFiscal(){
 		String fecha = "05-12-2014";
 		System.out.println( fecha.substring(3).replaceAll("-", "/") );
 		System.out.println( fecha.substring(0,2) );
@@ -54,7 +54,7 @@ public class CodigoTest extends TestCase{
 		System.out.println( fecha.replaceAll("-", "/") );
 	}
 	
-	public void _test(){
+	public void test(){
 		System.out.println(Comprobante.FACTURA.toString());
 		System.out.println("FA-123".substring(0,2));
 		
@@ -88,12 +88,12 @@ public class CodigoTest extends TestCase{
 		c.setEmailCc("CAMBIADO");
 	}
 
-	public void _testGetFechaSQLLedger(){
+	public void testGetFechaSQLLedger(){
 		String fecha = "2015-06-24T16:21:02.046-05:00";
 		System.out.println(fecha.substring(0, 10));
 	}
 	
-	public void _testSecuenciaFactura(){
+	public void testSecuenciaFactura(){
 		String secuencia = "004-002-000003557";
 		String[] cadena = secuencia.split("-");
 
@@ -110,7 +110,7 @@ public class CodigoTest extends TestCase{
 		System.out.println(factura.getInfoTributaria().getSecuencial());
 	}
 	
-	public void _testConversionFecha(){
+	public void testConversionFecha(){
 		DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		try {
 			Date date = format.parse("2016-06-13");
@@ -120,7 +120,7 @@ public class CodigoTest extends TestCase{
 		}
 	}
 	
-	public void _testDoubles(){
+	public void testDoubles(){
 		Double valor = new Double(0);
 		Double v1 = new Double(10);
 		Double v2 = new Double(20);
@@ -130,7 +130,7 @@ public class CodigoTest extends TestCase{
 		System.out.println(valor);
 	}
 	
-	public void _testFormaPago(){
+	public void testFormaPago(){
 
 		String notasInternas = "FP,19,900,30,dias\nFP,16,260.20,5,dias"; 
 
@@ -155,8 +155,7 @@ public class CodigoTest extends TestCase{
 	}
     
     //2017-11-23
-    public void _testNota(){
-
+    public void testNota(){
 		String notasInternas = "NOTA,Producto defectuoso"; 
 		if ( notasInternas.substring(0, 4).equals("NOTA") ) {
 		    String[] cadena = notasInternas.split(",");
@@ -171,5 +170,10 @@ public class CodigoTest extends TestCase{
         String numeroLote = "Lot017277V-0817";
         numeroLote = numeroLote.split("-")[0];
 	    System.out.println(numeroLote);
+    }
+    
+    @Test
+    public void runTest(){
+        testNumeroLote();
     }
 }

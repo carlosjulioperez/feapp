@@ -16,7 +16,6 @@ import ec.cjpq.cjfews.comprobante.guia.GuiaRemision;
 import ec.cjpq.cjfews.comprobante.notacredito.NotaCredito;
 import ec.cjpq.cjfews.comprobante.notadebito.NotaDebito;
 import ec.cjpq.cjfews.comprobante.retencion.ComprobanteRetencion;
-import ec.cjpq.util.Utileria;
 import org.apache.commons.lang.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -108,7 +107,7 @@ public class ProcesoUtil {
 				log.warn("No se pudo firmar la Factura XML");
 
 		}catch (Exception e) {
-			log.warn( Utileria.stack2String(e));
+			log.warn( Util.stack2String(e));
 		}
 		return retorno;
 	}
@@ -170,7 +169,7 @@ public class ProcesoUtil {
 				log.warn("No se pudo firmar la GR XML");
 			
 		}catch (Exception e) {
-			log.warn( Utileria.stack2String(e));
+			log.warn( Util.stack2String(e));
 		}
 		return retorno;
 	}
@@ -234,7 +233,7 @@ public class ProcesoUtil {
 				log.warn("No se pudo firmar la RE XML");
 			
 		}catch (Exception e) {
-			log.warn( Utileria.stack2String(e));
+			log.warn( Util.stack2String(e));
 		}
 		return retorno;
 	}
@@ -295,7 +294,7 @@ public class ProcesoUtil {
 				log.warn("No se pudo firmar la NC XML");
 
 		}catch (Exception e) {
-			log.warn( Utileria.stack2String(e));
+			log.warn( Util.stack2String(e));
 		}
 		return retorno;
 	}
@@ -358,7 +357,7 @@ public class ProcesoUtil {
 				log.warn("No se pudo firmar la NC XML");
 
 		}catch (Exception e) {
-			log.warn( Utileria.stack2String(e));
+			log.warn( Util.stack2String(e));
 		}
 		return retorno;
 	}

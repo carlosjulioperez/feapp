@@ -1,18 +1,23 @@
 package ec.cjpq.fe.util;
 
-import junit.framework.TestCase;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import org.junit.Test;
 
 import ec.cjpq.cjfews.comprobante.Configuracion;
 import ec.cjpq.cjfews.comprobante.factura.Factura;
 import ec.cjpq.fe.bean.ConfiguracionBean;
 import ec.cjpq.fe.bean.DocumentoBean;
 
-public class ProcesoTest extends TestCase{
+public class ProcesoTest {
 	
-	public void test(){
+    private static Logger log = LogManager.getLogger(ProcesoTest.class);
+	
+    @Test
+	public void runTest(){
 		Configuracion configuracion = new ConfiguracionBean().getConfiguracion();
-		//Factura factura = new DocumentoBean(configuracion).getFactura( 114982 ); //114982, 114048
-		Factura factura = new DocumentoBean(configuracion).getFactura( 115620 );
-		//System.out.println(factura.getInfoFactura().getTotalConImpuestos().;
+		Factura factura = new DocumentoBean(configuracion).getFactura(828);
+        log.warn(factura.getInfoFactura());
 	}
 }

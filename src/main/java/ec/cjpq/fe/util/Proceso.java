@@ -23,7 +23,7 @@ import org.apache.logging.log4j.Logger;
 
 public class Proceso {
 	
-	private static final Logger log = LogManager.getLogger("Proceso.class");
+	private static final Logger log = LogManager.getLogger(Proceso.class);
 	
 	public void autorizarComprobante(Configuracion configuracion, List <FeColaAut> seleccionados, EmployeeId employee){
 		Iterator iterator = seleccionados.iterator();

@@ -39,7 +39,7 @@ import org.apache.logging.log4j.Logger;
 @SuppressWarnings({ "unchecked" })
 public class DocumentoBean {
 	
-	private static final Logger log = LogManager.getLogger("DocumentoBean.class");
+	private static final Logger log = LogManager.getLogger(DocumentoBean.class);
 	private Configuracion configuracion;
 
 	private Parametro parametro;
@@ -120,6 +120,8 @@ public class DocumentoBean {
 				factura = new Factura();
 				factura.setId("comprobante");
 				factura.setVersion("1.0.0");
+
+                log.warn(factura.getId());
 
 				//------------------------------------------------
 				InfoTributaria infoT = getInfoTributaria();
@@ -222,7 +224,8 @@ public class DocumentoBean {
 						
 					impuesto.setBaseImponible(baseImp.toString());
 					impuesto.setValor(val.toString());
-					detalle.getImpuestos().add(impuesto);
+					//TODO Debug Detalle
+                    detalle.getImpuestos().add(impuesto);
 					
 					factura.getDetalles().add(detalle);
 				}

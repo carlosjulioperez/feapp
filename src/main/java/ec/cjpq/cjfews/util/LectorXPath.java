@@ -8,7 +8,6 @@ import javax.xml.xpath.XPathFactory;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
 
-import ec.cjpq.util.Utileria;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -30,7 +29,7 @@ public class LectorXPath {
 			this.xmlDocument = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(this.xmlFile);
 			this.xPath = XPathFactory.newInstance().newXPath();
 		} catch (Exception e) {
-	        log.warn(Utileria.stack2String(e));
+	        log.warn(Util.stack2String(e));
 		}
 	}
 
@@ -39,7 +38,7 @@ public class LectorXPath {
 			XPathExpression xPathExpression = this.xPath.compile(expression);
 			return xPathExpression.evaluate(this.xmlDocument, returnType);
 		} catch (Exception e) {
-	        log.warn(Utileria.stack2String(e));
+	        log.warn(Util.stack2String(e));
 		}
 		return null;
 	}

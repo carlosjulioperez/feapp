@@ -959,7 +959,7 @@ public class EntidadDao {
 			session.getTransaction().commit();
 		} catch (HibernateException e) {
 			session.getTransaction().rollback();
-			String mensaje = Utileria.stack2String(e);
+			String mensaje = Util.stack2String(e);
 			log.warn(mensaje);
 		} 
 		return retorno;

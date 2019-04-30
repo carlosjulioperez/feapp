@@ -17,7 +17,6 @@ import ec.cjpq.cjfews.comprobante.guia.GuiaRemision;
 import ec.cjpq.cjfews.comprobante.notacredito.NotaCredito;
 import ec.cjpq.cjfews.comprobante.notadebito.NotaDebito;
 import ec.cjpq.cjfews.comprobante.retencion.ComprobanteRetencion;
-import ec.cjpq.util.Utileria;
 import ec.gob.sri.comprobantes.ws.Comprobante;
 import ec.gob.sri.comprobantes.ws.RecepcionComprobantesOffline;
 import ec.gob.sri.comprobantes.ws.RecepcionComprobantesOfflineService;
@@ -96,7 +95,7 @@ public class WsUtil {
         	
         	log.warn("Intentando conectarme con Web Service del SRI...");
 //        	int intentos = 5;
-//        	if ( ! Utileria.isExisteConexion(getWebServiceRecepcion(wsRecepcion), intentos) ){
+//        	if ( ! Util.isExisteConexion(getWebServiceRecepcion(wsRecepcion), intentos) ){
 //        		log.warn("El servicio RECEPCION DE COMPROBANTES no está disponible...");
 //        		return;
 //        	}
@@ -117,7 +116,7 @@ public class WsUtil {
             	//log.warn("Estado de solicitud: " + estado);
 
 	            if (estado.equals(Constante.RECIBIDA.toString())){
-//	            	if ( ! Utileria.isExisteConexion(getWebServiceAutorizacion(wsAutorizacion), intentos) ){
+//	            	if ( ! Util.isExisteConexion(getWebServiceAutorizacion(wsAutorizacion), intentos) ){
 //	            		log.warn("El servicio AUTORIZACION DE COMPROBANTES no está disponible...");
 //	            		return;
 //	            	}
@@ -137,7 +136,7 @@ public class WsUtil {
 					valor = men;
 	            }
 	        } catch (Exception e) {
-	        	String men = Utileria.stack2String(e);
+	        	String men = Util.stack2String(e);
 	        	log.warn(men);
 	        	//log.warn("Tiempo agotado para conectarse a los servidores del SRI...");
 	            valor = men;
@@ -283,7 +282,7 @@ public class WsUtil {
 			valor = mensajeRespuesta.toString();
 
         } catch (Exception e) {
-			valor = Utileria.stack2String(e);
+			valor = Util.stack2String(e);
 			log.warn(valor);
 		}
         return valor;
@@ -332,7 +331,7 @@ public class WsUtil {
 		try {
 			valor = new URL(wsdl);
 		} catch (MalformedURLException e) {
-			log.warn(Utileria.stack2String(e));
+			log.warn(Util.stack2String(e));
 		}
 		return valor;
 	}

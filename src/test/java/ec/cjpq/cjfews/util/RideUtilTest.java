@@ -17,8 +17,8 @@ import org.w3c.dom.NodeList;
 
 import java.io.PrintWriter;
 
-import junit.framework.TestCase;
 import org.junit.Before;
+import org.junit.Test;
 
 import ec.cjpq.cjfews.comprobante.Configuracion;
 import ec.cjpq.cjfews.comprobante.XmlUtil;
@@ -28,7 +28,7 @@ import ec.cjpq.cjfews.comprobante.notacredito.NotaCredito;
 import ec.cjpq.cjfews.comprobante.notadebito.NotaDebito;
 import ec.cjpq.cjfews.comprobante.retencion.ComprobanteRetencion;
 
-public class RideUtilTest extends TestCase{
+public class RideUtilTest {
 	
 	private Configuracion configuracion;
 
@@ -52,7 +52,7 @@ public class RideUtilTest extends TestCase{
         }        
     }
 
-    public void _testWriteToFile(){
+    public void testWriteToFile(){
         writeFile("/tmp/filename.txt","Hello File");
     }
 
@@ -60,7 +60,7 @@ public class RideUtilTest extends TestCase{
     // https://www.baeldung.com/java-write-to-file
 
     // http://www.java2s.com/Code/Java/XML/GetcharacterdataCDATAfromxmldocument.htm
-    public void _testCdata() throws Exception {
+    public void testCdata() throws Exception {
         File file = new File("/home/carper/tmp/1803201901099217915500120050020000054031234567810.xml");
         DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
         Document doc = builder.parse(file);
@@ -99,7 +99,7 @@ public class RideUtilTest extends TestCase{
 		rideUtil.generar(factura, "NUMERO_PRUEBA", "FECHA_PRUEBA", "", false);
     }
     
-	public void _testGenerarGuiaRemision(){
+	public void testGenerarGuiaRemision(){
 		String xmls[] = {
 			"GR-0918056664001-11022016-004001000000001", 
 			"GR-0918056664001-11022016-004001000000002", 
@@ -117,7 +117,7 @@ public class RideUtilTest extends TestCase{
 		rideUtil.generar(guiaRemision, "NUMERO_PRUEBA", "FECHA_PRUEBA", "", false);
 	}
 
-	public void _testGenerarComprobanteRetencion(){
+	public void testGenerarComprobanteRetencion(){
 		String xmls[] = {
 			"RE-1768161550001-13062016-004001000000004"
 		};
@@ -132,7 +132,7 @@ public class RideUtilTest extends TestCase{
 		rideUtil.generar(comprobanteRetencion , "NUMERO_PRUEBA", "FECHA_PRUEBA", "", false);
 	}
 
-	public void _testGenerarNotaCredito(){
+	public void testGenerarNotaCredito(){
 		String xmls[] = {
 			"NC-0990351260001-15072016-004001000000001"
 		};
@@ -147,7 +147,7 @@ public class RideUtilTest extends TestCase{
 		rideUtil.generar(notaCredito , "NUMERO_PRUEBA", "FECHA_PRUEBA", "", false);
 	}
 	
-	public void _testGenerarNotaDebito(){
+	public void testGenerarNotaDebito(){
 		String xmls[] = {
 			"ND-0990985936001-03082016-004001000000001"
 		};
@@ -162,4 +162,8 @@ public class RideUtilTest extends TestCase{
 		rideUtil.generar(notaDebito , "NUMERO_0830", "FECHA_0830", "", false);
 	}
     
+    @Test
+    public void runTest(){
+        testWriteToFile(); 
+    }
 }

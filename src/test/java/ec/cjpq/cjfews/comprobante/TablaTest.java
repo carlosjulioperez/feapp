@@ -6,7 +6,6 @@ import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 
 // https://www.mkyong.com/unittest/junit-4-tutorial-1-basic-usage/
-//TODO Test modelo
 public class TablaTest{
 	private static Logger log = LogManager.getLogger(TablaTest.class);
 

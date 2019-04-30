@@ -20,7 +20,6 @@ import ec.cjpq.fe.model.EmployeeId;
 
 public class EmpleadoP12Composer extends GenericForwardComposer {
 	
-	//private static final Logger log = Logger.getLogger("EmpleadoP12Composer.class");
 	private AnnotateDataBinder binder;
 	
 	@Getter @Setter

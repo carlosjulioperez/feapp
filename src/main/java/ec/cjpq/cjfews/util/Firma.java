@@ -25,7 +25,6 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
-import ec.cjpq.util.Utileria;
 import es.mityc.firmaJava.libreria.utilidades.UtilidadTratarNodo;
 import es.mityc.firmaJava.libreria.xades.DataToSign;
 import es.mityc.firmaJava.libreria.xades.EnumFormatoFirma;
@@ -41,7 +40,7 @@ import org.apache.logging.log4j.Logger;
 
 public class Firma {
 
-	private static final Logger log = LogManager.getLogger("Firma.class");
+	private static final Logger log = LogManager.getLogger(Firma.class);
 	
     private String archivoAFirmar;
 	private String archivoFirmado;
@@ -118,7 +117,7 @@ public class Firma {
             docSigned = (Document) res[0];
         } catch (Exception ex) {
             log.warn("Error realizando la firma");
-            log.warn(Utileria.stack2String(ex));
+            log.warn(Util.stack2String(ex));
             return false;
         }
 
@@ -175,7 +174,7 @@ public class Firma {
             UtilidadTratarNodo.saveDocumentToOutputStream(document, fos, true);
         } catch (FileNotFoundException e) {
             log.warn("Error al salvar el documento");
-            log.warn(Utileria.stack2String(e));
+            log.warn(Util.stack2String(e));
             System.exit(-1);
         }
     }
@@ -203,7 +202,7 @@ public class Firma {
             serializer.transform(new DOMSource(document), new StreamResult(new File(pathfile)));
         } catch (TransformerException e) {
             log.warn("Error al salvar el documento");
-            log.warn(Utileria.stack2String(e));
+            log.warn(Util.stack2String(e));
             System.exit(-1);
         }
     }
@@ -226,19 +225,19 @@ public class Firma {
         	doc = dbf.newDocumentBuilder().parse(new FileInputStream(resource));
         } catch (ParserConfigurationException ex) {
             log.warn("Error al parsear el documento");
-            log.warn(Utileria.stack2String(ex));
+            log.warn(Util.stack2String(ex));
             System.exit(-1);
         } catch (SAXException ex) {
             log.warn("Error al parsear el documento");
-            log.warn(Utileria.stack2String(ex));
+            log.warn(Util.stack2String(ex));
             System.exit(-1);
         } catch (IOException ex) {
             log.warn("Error al parsear el documento");
-            log.warn(Utileria.stack2String(ex));
+            log.warn(Util.stack2String(ex));
             System.exit(-1);
         } catch (IllegalArgumentException ex) {
             log.warn("Error al parsear el documento");
-            log.warn(Utileria.stack2String(ex));
+            log.warn(Util.stack2String(ex));
             System.exit(-1);
         }
         return doc;
@@ -264,7 +263,7 @@ public class Firma {
             serializer.transform(new DOMSource(doc), new StreamResult(stringWriter));
         } catch (TransformerException e) {
             log.warn("Error al imprimir el documento");
-            log.warn(Utileria.stack2String(e));
+            log.warn(Util.stack2String(e));
             System.exit(-1);
         }
 
@@ -286,19 +285,19 @@ public class Firma {
             storeManager = new KSStore(ks, new PassStoreKS(clave));
         } catch (KeyStoreException ex) {
             log.warn("No se puede generar KeyStore PKCS12");
-            log.warn(Utileria.stack2String(ex));
+            log.warn(Util.stack2String(ex));
             System.exit(-1);
         } catch (NoSuchAlgorithmException ex) {
             log.warn("No se puede generar KeyStore PKCS12");
-            log.warn(Utileria.stack2String(ex));
+            log.warn(Util.stack2String(ex));
             System.exit(-1);
         } catch (CertificateException ex) {
             log.warn("No se puede generar KeyStore PKCS12");
-            log.warn(Utileria.stack2String(ex));
+            log.warn(Util.stack2String(ex));
             System.exit(-1);
         } catch (IOException ex) {
             log.warn("No se puede generar KeyStore PKCS12");
-            log.warn(Utileria.stack2String(ex));
+            log.warn(Util.stack2String(ex));
             System.exit(-1);
         }
         return storeManager;

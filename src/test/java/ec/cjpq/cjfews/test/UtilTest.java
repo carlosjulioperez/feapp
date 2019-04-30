@@ -9,9 +9,9 @@ import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 
 @SuppressWarnings({"unused"})
-public class UtileriaTest {
+public class UtilTest {
 
-	private static Logger log = LogManager.getLogger(UtileriaTest.class);
+	private static Logger log = LogManager.getLogger(UtilTest.class);
 
 	private String documento 		= "FA-0990549591001-10062016-004001000000035.xml";
 

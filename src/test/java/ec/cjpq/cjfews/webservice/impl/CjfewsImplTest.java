@@ -2,8 +2,13 @@ package ec.cjpq.cjfews.webservice.impl;
 
 import java.io.FileOutputStream;
 import java.io.InputStream;
-
 import javax.activation.DataHandler;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import org.junit.Before;
+import org.junit.Test;
 
 import ec.cjpq.cjfews.comprobante.Configuracion;
 import ec.cjpq.cjfews.comprobante.factura.Factura;
@@ -13,14 +18,10 @@ import ec.cjpq.cjfews.comprobante.notadebito.NotaDebito;
 import ec.cjpq.cjfews.comprobante.retencion.ComprobanteRetencion;
 import ec.cjpq.fe.bean.ConfiguracionBean;
 import ec.cjpq.fe.bean.DocumentoBean;
-import junit.framework.TestCase;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.junit.Before;
 
-public class CjfewsImplTest extends TestCase{
+public class CjfewsImplTest{
 	
-	private static final Logger log = LogManager.getLogger("CjfewsImplTest.class");
+	private static final Logger log = LogManager.getLogger(CjfewsImplTest.class);
 	private Configuracion configuracion;
 	
     @Before
@@ -92,8 +93,8 @@ public class CjfewsImplTest extends TestCase{
 		log.warn(resultado);
 	}
 
-	public void test(){
-        // 2019-01-08 Pruebas generales en CentOS
+    @Test
+	public void runTestest(){
 		descargarRIDE(); //OK
         
 		//autorizarFactura(); //

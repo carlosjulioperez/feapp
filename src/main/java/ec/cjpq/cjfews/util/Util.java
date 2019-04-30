@@ -4,14 +4,19 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.math.BigDecimal;
+import java.sql.Timestamp;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
-
 import javax.xml.xpath.XPathConstants;
 
-import ec.cjpq.cjfews.comprobante.CampoAdicional;
-import ec.cjpq.util.Utileria;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import ec.cjpq.cjfews.comprobante.CampoAdicional;
 
 public class Util {
 
@@ -38,7 +43,7 @@ public class Util {
 					ios.close();
 				}
 			} catch (Exception e) {
-				log.warn(Utileria.stack2String(e));			
+				log.warn(stack2String(e));			
 			}
 		}
 	}
@@ -133,7 +138,7 @@ public class Util {
 			LectorXPath reader = new LectorXPath(xmlDocument.getPath());
 			valor = (String) reader.leerArchivo(expression, XPathConstants.STRING);
 		} catch (Exception e) {
-			log.warn(Utileria.stack2String(e));
+			log.warn(stack2String(e));
 		}
 		return valor;
 	}
@@ -150,4 +155,71 @@ public class Util {
 	    return respuesta;
 	}
 	
+    public static String getColumna(Object columna){
+		return columna==null ? new String(): columna.toString();
+	}
+
+	public static BigDecimal parseToBigDecimal(String valor){
+		return new BigDecimal( parseToDouble (valor) );
+	}
+
+	public static double parseToDouble(String valor){
+		double numero=0;
+		try{
+			numero = Double.parseDouble(valor);
+		}catch(Exception e){
+			numero = 0;
+		}
+		return numero;
+	}
+
+	public static int parseToInt(String valor){
+		int numero=0;
+		try{
+			numero = Integer.parseInt(valor);
+		}catch(Exception e){
+			numero = 0;
+		}
+		return numero;
+	}
+	
+    public static long parseToLong(String valor){
+		long numero=0;
+		try{
+			numero = Long.parseLong(valor);
+		}catch(Exception e){
+			numero = 0;
+		}
+		return numero;
+	}
+
+	public static short parseToShort(String valor){
+		short numero=0;
+		try{
+			numero = Short.parseShort(valor);
+		}catch(Exception e){
+			numero = 0;
+		}
+		return numero;
+	}	
+
+    public static String stack2String(Exception e){
+        try {
+            StringWriter sw = new StringWriter();
+            PrintWriter pw = new PrintWriter(sw);
+            e.printStackTrace(pw);
+
+            Calendar cal = new GregorianCalendar();
+            StringBuilder sb = new StringBuilder();
+            sb.append("\r\n====== MENSAJE DEL SISTEMA [");
+            sb.append(new Timestamp(cal.getTimeInMillis()).toString());
+            sb.append("] \r\n" + sw.toString() + "======\r\n" );
+
+            return sb.toString();
+        } catch (Exception e1) {
+            String mensaje = "Stack2StringErroneo: " + e1.getMessage(); 
+            log.info(mensaje);
+            return mensaje;
+        }
+    }
 }

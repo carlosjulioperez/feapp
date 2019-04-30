@@ -24,7 +24,7 @@ import org.zkoss.zul.event.PagingEvent;
 @SuppressWarnings("unchecked")
 public class DatosRetencionComposer extends GenericForwardComposer {
 	
-	private static final Logger log = LogManager.getLogger("DatosRetencionComposer.class");
+	private static final Logger log = LogManager.getLogger(DatosRetencionComposer.class);
 
 	private AnnotateDataBinder binder;
 
