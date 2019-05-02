@@ -2,18 +2,8 @@ Tareas
 	* TODO:
 		Detalle de facturas
 		Optimizar bibliotecas empleadas
-		x hibernate-annotations
 		DEBUG en log4j2
 		
-Caused by: java.lang.ExceptionInInitializerError
-	at ec.cjpq.fe.util.HibernateUtil.<clinit>(HibernateUtil.java:27)
-		at ec.cjpq.fe.dao.EntidadDao.<init>(EntidadDao.java:38)
-
-
-WARNING] ec.gob.sri.comprobantes.ws.Comprobante$Mensajes scanned from multiple
-locations:
-jar:file:///home/carper/.m2/repository/ec/cjpq/util/cliente-file-ws/1.0/clien te-file-ws-1.0.jar !/ec/gob/sri/comprobantes/ws/Comprobante$Mensajes.class,
-jar:file:///home/carper/.m2/repository/ec/gob/sri/cliente-ws-offline/1.0/cliente-ws-offline-1.0.jar !/ec/gob/sri/comprobantes/ws/Comprobante$Mensajes.class           
 		x Ajustar la ruta de los logotipos en los reportes
 		x Eliminar comentarios en java
 		x Eliminar (paquete model) los archivos generados por hibernate
@@ -56,6 +46,8 @@ jar:file:///home/carper/.m2/repository/ec/gob/sri/cliente-ws-offline/1.0/cliente
 
 		$ java -jar /usr/local/fe/fecola.jar FA 187373
 
+	* No crear war:
+		mvn compile war:exploded
 	* Crear war:
 		mvn clean compile war:war
 

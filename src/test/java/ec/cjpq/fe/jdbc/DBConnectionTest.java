@@ -14,7 +14,7 @@ public class DBConnectionTest{
 	
 	private static final Logger log = LogManager.getLogger(DBConnectionTest.class);
      
-    private static final String QUERY = "SELECT * FROM fe_cola_aut WHERE tipo_comp='NC'";
+    private static final String QUERY = "SELECT * FROM fe_cola_aut limit 10";
  
     @Test
     public void test(){

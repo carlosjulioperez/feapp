@@ -158,6 +158,7 @@ public class EntidadDaoTest{
 	public void testConfiguracion(){
 		FeConfig config = new EntidadDao().getFeConfig((short) 1);
 		//assertEquals(config.getEmiRazSocial(), "APRACOM S.A.");
+        System.out.println(config.getEmiRazSocial());
 	    log.warn( config.getEmiRazSocial() );
 	}
 
