@@ -1,5 +1,6 @@
 Tareas
 	* TODO:
+
 		Detalle de facturas
 		Optimizar bibliotecas empleadas
 		DEBUG en log4j2
@@ -11,9 +12,15 @@ Tareas
 		x Ajustar configuración de logs
 		Considerar fe_cola al cambiar la biblioteca de logs
 
-		hibernate connection from external properties files
-			https://stackoverflow.com/questions/24176024/how-to-include-properties-from-external-file-to-hibernate-cfg-xml
-			https://stackoverflow.com/questions/25684785/how-to-read-database-configuration-parameter-using-properties-file-in-hibernate
+		+ Hibernate:
+			hibernate connection from external properties files
+				https://stackoverflow.com/questions/24176024/how-to-include-properties-from-external-file-to-hibernate-cfg-xml
+				https://stackoverflow.com/questions/25684785/how-to-read-database-configuration-parameter-using-properties-file-in-hibernate
+			
+			https://www.mkyong.com/tutorials/hibernate-tutorials
+
+			Hibernate 3 log4j2
+				https://stackoverflow.com/questions/27088083/log4j2-jpa-hibernate-logging-is-not-working
 
 		+ Ruta de archivos e imágenes:
 			/img/logo.jpg Se lee desde el sistema operativo.

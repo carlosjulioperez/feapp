@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <groupId>ec.cjpq.feapp</groupId>
+    <artifactId>feapp</artifactId>
+    <version>0.1</version>
+    <name>feapp Maven Webapp</name>
+
+    <packaging>war</packaging>
+
+    <organization>
+        <name>Carlos Julio Pérez Quizhpe</name>
+        <url>carlosjulioperez@gmail.com</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <id>carper</id>
+            <name>Carlos Julio Pérez Quizhpe</name>
+            <email>carlosjulioperez@gmail.com</email>
+            <url>carlosjulioperez@gmail.com</url>
+        </developer>
+    </developers>
+
+    <build>
+        <finalName>feapp</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.3.11.v20160721</version>
+                <configuration>
+                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <webApp>
+                        <contextPath>/feapp</contextPath>
+                    </webApp>
+                </configuration>	
+            </plugin>
+
+            <!-- Comentar ya que Tomcat 8 necesita los jars dento del war-->
+            <!--
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <packagingExcludes>WEB-INF/lib/*.jar</packagingExcludes>
+                </configuration>
+            </plugin>
+            -->
+
+        </plugins>
+
+    </build>
+
+    <dependencies>
+
+        <!-- 2018-02-02 Soporte esquema Offline -->
+        <dependency>
+            <groupId>ec.gob.sri</groupId>
+            <artifactId>cliente-ws-offline</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ec.cjpq.util</groupId>
+            <artifactId>firma-xades</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>ec.cjpq.util</groupId>
+            <artifactId>MITyCLibAPI</artifactId>
+            <version>1.0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>ec.cjpq.util</groupId>
+            <artifactId>MITyCLibCert</artifactId>
+            <version>1.0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>ec.cjpq.util</groupId>
+            <artifactId>MITyCLibTSA</artifactId>
+            <version>1.0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>ec.cjpq.util</groupId>
+            <artifactId>MITyCLibXADES</artifactId>
+            <version>1.0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>ec.cjpq.util</groupId>
+            <artifactId>iReport</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>ec.cjpq.util</groupId>
+            <artifactId>itext</artifactId>
+            <version>1.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>ec.cjpq.util</groupId>
+            <artifactId>jasperreports</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>ec.cjpq.util</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.4</version>
+        </dependency>
+
+        <!-- 2019/04/22 -->
+        <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ec.cjpq.util</groupId>
+            <artifactId>xmlsec-1.4.2-ADSI</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/net.sourceforge.barbecue/barbecue -->
+        <dependency>
+            <groupId>net.sourceforge.barbecue</groupId>
+            <artifactId>barbecue</artifactId>
+            <version>1.5-beta1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk16 -->
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk16</artifactId>
+            <version>1.43</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.bouncycastle/bctsp-jdk16 -->
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bctsp-jdk16</artifactId>
+            <version>1.43</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.sun.xml.fastinfoset/FastInfoset -->
+        <dependency>
+            <groupId>com.sun.xml.fastinfoset</groupId>
+            <artifactId>FastInfoset</artifactId>
+            <version>1.2.12</version>
+        </dependency>
+
+        <!-- http://mvnrepository.com/artifact/com.thoughtworks.xstream/xstream -->
+        <dependency>
+            <groupId>com.thoughtworks.xstream</groupId>
+            <artifactId>xstream</artifactId>
+            <version>1.4.7</version>
+        </dependency>
+
+
+        <!-- <!&#45;&#45; http://mvnrepository.com/artifact/com.sun.xml.ws/jaxws&#45;rt &#45;&#45;> -->
+        <!-- <dependency> -->
+            <!-- 	<groupId>com.sun.xml.ws</groupId> -->
+            <!-- 	<artifactId>jaxws&#45;rt</artifactId> -->
+            <!-- 	<version>2.2.8</version> -->
+            <!-- </dependency> -->
+        <!--  -->
+        <!-- <!&#45;&#45; https://mvnrepository.com/artifact/com.sun.xml.ws/jaxws&#45;tools &#45;&#45;> -->
+        <!-- <dependency> -->
+            <!--     <groupId>com.sun.xml.ws</groupId> -->
+            <!--     <artifactId>jaxws&#45;tools</artifactId> -->
+            <!--     <version>2.2.8</version> -->
+            <!-- </dependency> -->
+
+
+        <!-- https://mvnrepository.com/artifact/com.sun.mail/javax.mail -->
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.4.4</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all -->
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>1.5.5</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/junit/junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.hamcrest</groupId>
+                    <artifactId>hamcrest-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        
+        <!-- This will get hamcrest-core automatically -->
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-library</artifactId>
+			<version>1.3</version>
+			<scope>test</scope>
+		</dependency>
+
+        <!-- http://mvnrepository.com/artifact/org.projectlombok/lombok-maven -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.4</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.11.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.11.2</version>
+        </dependency>
+
+        <!-- https://logging.apache.org/log4j/2.x/manual/async.html -->
+        <dependency>
+            <groupId>com.lmax</groupId>
+            <artifactId>disruptor</artifactId>
+            <version>3.4.2</version>
+        </dependency>
+
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate</artifactId>
+		    <version>3.2.5.ga</version>
+		</dependency>
+        
+        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-annotations -->
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-annotations</artifactId>
+		    <version>3.2.1.ga</version>
+		</dependency>
+
+        <!-- https://mvnrepository.com/artifact/javax.transaction/jta -->
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>jta</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-core -->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-core</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-web -->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-web</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>javax.servlet-api</artifactId>
+		    <version>3.1.0</version>
+		</dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.3-1102-jdbc4</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.zkoss.zk/zk -->
+        <dependency>
+            <groupId>org.zkoss.zk</groupId>
+            <artifactId>zk</artifactId>
+            <version>6.5.3</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.zkoss.zk/zul -->
+        <dependency>
+            <groupId>org.zkoss.zk</groupId>
+            <artifactId>zul</artifactId>
+            <version>6.5.3</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.zkoss.zk/zkplus -->
+        <dependency>
+            <groupId>org.zkoss.zk</groupId>
+            <artifactId>zkplus</artifactId>
+            <version>6.5.3</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.zkoss.zk/zhtml -->
+        <dependency>
+            <groupId>org.zkoss.zk</groupId>
+            <artifactId>zhtml</artifactId>
+            <version>6.5.3</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.zkoss.zk/zkbind -->
+        <dependency>
+            <groupId>org.zkoss.zk</groupId>
+            <artifactId>zkbind</artifactId>
+            <version>6.5.3</version>
+        </dependency>
+
+    </dependencies>
+</project>
