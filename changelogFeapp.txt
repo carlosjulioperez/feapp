@@ -2,15 +2,17 @@ Tareas
 	* TODO:
 
 		Detalle de facturas
-		Optimizar bibliotecas empleadas
-		DEBUG en log4j2
+		x Optimizar bibliotecas empleadas
+		x DEBUG en log4j2
 		
 		x Ajustar la ruta de los logotipos en los reportes
 		x Eliminar comentarios en java
 		x Eliminar (paquete model) los archivos generados por hibernate
 		x Leer db.properties desde hibernate.xml
 		x Ajustar configuración de logs
-		Considerar fe_cola al cambiar la biblioteca de logs
+		fe_cola
+			Generar jar
+			Generar groovy script
 
 		+ Hibernate:
 			hibernate connection from external properties files
@@ -21,6 +23,8 @@ Tareas
 
 			Hibernate 3 log4j2
 				https://stackoverflow.com/questions/27088083/log4j2-jpa-hibernate-logging-is-not-working
+
+			https://www.mkyong.com/java/javalangnoclassdeffounderror-orgapachecommonslogginglogfactory/
 
 		+ Ruta de archivos e imágenes:
 			/img/logo.jpg Se lee desde el sistema operativo.

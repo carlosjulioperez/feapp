@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/oymar</property>
+        <property name="hibernate.connection.username">sql-ledger</property>
+        <property name="hibernate.connection.password"></property>
+
+        <mapping class="ec.cjpq.fe.model.Department" />
+        <mapping class="ec.cjpq.fe.model.DepartmentId" />
+        <mapping class="ec.cjpq.fe.model.EmployeeId" />
+        <mapping class="ec.cjpq.fe.model.FeColaAut" />
+        <mapping class="ec.cjpq.fe.model.FeConfig" />
+    </session-factory>
+</hibernate-configuration>
