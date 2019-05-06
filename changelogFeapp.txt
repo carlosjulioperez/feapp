@@ -1,10 +1,11 @@
 Tareas
 	* TODO:
+		https://logging.apache.org/log4j/2.x/manual/api.html#LambdaSupport
+		Java 8 lambda support for lazy logging
 
-		Detalle de facturas
+		x Detalle de facturas
 		x Optimizar bibliotecas empleadas
 		x DEBUG en log4j2
-		
 		x Ajustar la ruta de los logotipos en los reportes
 		x Eliminar comentarios en java
 		x Eliminar (paquete model) los archivos generados por hibernate

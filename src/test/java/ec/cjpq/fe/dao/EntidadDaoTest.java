@@ -141,7 +141,7 @@ public class EntidadDaoTest{
 
 	public void testGetDatosArInvoice(){
 		try {
-			String numero[] = { "001-001-000021055" };
+			String numero[] = { "001-001-000000042" };
 			Object []datos = new EntidadDao().getDatosArInvoice( numero [0]);
 			System.out.println("Fecha: " + datos[0]);
 			System.out.println("Id   : " + datos[1]);
@@ -168,7 +168,7 @@ public class EntidadDaoTest{
 	}
 
 	public void testGetFactura(){
-		int n[]={128229};
+		int n[]={659};
 		
 		boolean imprimirPorConsola = true;
 		
@@ -265,6 +265,8 @@ public class EntidadDaoTest{
     @Test
     public void runTest(){
         testConfiguracion();
+        //testGetDatosArInvoice();
+        //testGetFactura();
     }
 	
 }

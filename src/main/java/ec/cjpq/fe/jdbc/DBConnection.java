@@ -11,7 +11,7 @@ public class DBConnection {
         Properties props = new Properties();
         Connection con = null;
 
-        String resourceName = "dbConnection.properties"; // could also be a constant
+        String resourceName = "hibernate.properties"; // could also be a constant
 		ClassLoader loader = Thread.currentThread().getContextClassLoader();
 		try(InputStream resourceStream = loader.getResourceAsStream(resourceName)) {
 			props.load(resourceStream);

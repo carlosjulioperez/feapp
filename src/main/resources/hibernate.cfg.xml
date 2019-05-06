@@ -8,10 +8,10 @@
         <property name="hibernate.current_session_context_class">thread</property>
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
 
-        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/oymar</property>
-        <property name="hibernate.connection.username">sql-ledger</property>
-        <property name="hibernate.connection.password"></property>
+        <!-- <property name="hibernate.connection.driver_class">org.postgresql.Driver</property> -->
+        <!-- <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/oymar</property> -->
+        <!-- <property name="hibernate.connection.username">sql&#45;ledger</property> -->
+        <!-- <property name="hibernate.connection.password"></property> -->
 
         <mapping class="ec.cjpq.fe.model.Department" />
         <mapping class="ec.cjpq.fe.model.DepartmentId" />
