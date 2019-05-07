@@ -1,34 +1,18 @@
 Tareas
 	* TODO:
+		Leer desde un archivo properties externo la empresa
+		Actualizar el script para descomprimir el war en la carpeta tomcat/webapps
+
 		https://logging.apache.org/log4j/2.x/manual/api.html#LambdaSupport
 		Java 8 lambda support for lazy logging
 
-		x Detalle de facturas
-		x Optimizar bibliotecas empleadas
-		x DEBUG en log4j2
-		x Ajustar la ruta de los logotipos en los reportes
-		x Eliminar comentarios en java
-		x Eliminar (paquete model) los archivos generados por hibernate
-		x Leer db.properties desde hibernate.xml
-		x Ajustar configuración de logs
 		fe_cola
 			Generar jar
 			Generar groovy script
 
-		+ Hibernate:
-			hibernate connection from external properties files
-				https://stackoverflow.com/questions/24176024/how-to-include-properties-from-external-file-to-hibernate-cfg-xml
-				https://stackoverflow.com/questions/25684785/how-to-read-database-configuration-parameter-using-properties-file-in-hibernate
-			
-			https://www.mkyong.com/tutorials/hibernate-tutorials
-
-			Hibernate 3 log4j2
-				https://stackoverflow.com/questions/27088083/log4j2-jpa-hibernate-logging-is-not-working
-
-			https://www.mkyong.com/java/javalangnoclassdeffounderror-orgapachecommonslogginglogfactory/
 
 		+ Ruta de archivos e imágenes:
-			/img/logo.jpg Se lee desde el sistema operativo.
+			/img/logo.jpg  (Se lee desde el sistema operativo)
 			
 			Poner los archivos en la ruta /opt/fe/
 				empresa/dir/ca
@@ -88,3 +72,15 @@ Tareas
 		+ En una línea:
 		
 		mvn install:install-file -Dfile=/home/carper/local/projects/cjerp/feapp/lib/cliente-ws-offline.jar -DgroupId=ec.gob.sri -DartifactId=cliente-ws-offline -Dversion=1.0 -Dpackaging=jar -DgeneratePom=true
+		
+		+ Hibernate:
+			hibernate connection from external properties files
+				https://stackoverflow.com/questions/24176024/how-to-include-properties-from-external-file-to-hibernate-cfg-xml
+				https://stackoverflow.com/questions/25684785/how-to-read-database-configuration-parameter-using-properties-file-in-hibernate
+			
+			https://www.mkyong.com/tutorials/hibernate-tutorials
+
+			Hibernate 3 log4j2
+				https://stackoverflow.com/questions/27088083/log4j2-jpa-hibernate-logging-is-not-working
+
+			https://www.mkyong.com/java/javalangnoclassdeffounderror-orgapachecommonslogginglogfactory/
