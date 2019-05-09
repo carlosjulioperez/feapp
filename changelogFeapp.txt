@@ -1,15 +1,15 @@
 Tareas
 	* TODO:
-		Leer desde un archivo properties externo la empresa
-		Actualizar el script para descomprimir el war en la carpeta tomcat/webapps
 
-		https://logging.apache.org/log4j/2.x/manual/api.html#LambdaSupport
-		Java 8 lambda support for lazy logging
+		x Actualizar el script para descomprimir el war en la carpeta tomcat/webapps
 
 		fe_cola
 			Generar jar
 			Generar groovy script
-
+			Leer desde un archivo properties externo la empresa
+		
+		https://logging.apache.org/log4j/2.x/manual/api.html#LambdaSupport
+		Java 8 lambda support for lazy logging
 
 		+ Ruta de archivos e imágenes:
 			/img/logo.jpg  (Se lee desde el sistema operativo)

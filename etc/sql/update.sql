@@ -10,6 +10,9 @@ UPDATE fe_config SET cfg_tip_ambiente = 2 WHERE id = 1;
 
 UPDATE fe_config SET email_bcc = 'amvalladares@apracom-ec.com' WHERE id = 1;
 
+-- Cambiar password
+UPDATE fe_config SET email_password = 'Busicentury23' WHERE id = 1;
+
 -- Ruta del logotipo
 UPDATE fe_config SET emi_logo='/img/oy_logo.jpg' WHERE id = 1;
 select emi_logo from fe_config;
@@ -55,3 +58,6 @@ update employee set
     cod_pto_emi 	= '001'
 where login = 'aoyague';
 
+--Actualizar campos de productos después de importarlos vía CSV
+update parts set partsgroup_id=null, priceupdate='2010-01-01';
+TRUNCATE partsgroup;

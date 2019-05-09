@@ -192,8 +192,11 @@ select login, tip_ambiente, cod_establ, cod_pto_emi, sec_factura, sec_gremision,
 select id, name, login, acsrole_id from employee;
 select * from acsrole;
 
---2018-10-04 Usuarios y archivos p12 asignados
+--2018-10-04 Usuarios y archivos p12 asignados resumido
 SELECT id, login, name, email, p12_clave, p12_archivo FROM employee WHERE p12_archivo IS NOT NULL;
+
+--2019-05-08 Usuarios y archivos p12 asignados completo
+select login, tip_ambiente, cod_establ, cod_pto_emi, sec_factura, sec_gremision, sec_cretencion, sec_ncredito, sec_ndebito from employee where p12_archivo IS NOT NULL; 
 
 Copy (
 ) To '/tmp/test.csv' With CSV DELIMITER ',';
