@@ -5,8 +5,14 @@ Tareas
 
 		fe_cola
 			Generar jar
+				https://stackoverflow.com/questions/13958980/loading-a-properties-file-from-a-path-that-is-not-in-my-class-path
+
+				Actualizar bibliotecas de log
+				Especificar ruta de hibernate.properties externo
+				Constructor en DBConnection para especificar la ruta de hibernate.properties.
+				Modificar DBConnectionTest
+			
 			Generar groovy script
-			Leer desde un archivo properties externo la empresa
 		
 		https://logging.apache.org/log4j/2.x/manual/api.html#LambdaSupport
 		Java 8 lambda support for lazy logging

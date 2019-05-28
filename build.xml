@@ -8,7 +8,7 @@
     <property name="target.dir"           value="target" />
     <property name="cls.dir"              value="target/classes" />
 
-    <property name="cola.jar"             value="${dist.dir}/oy_fecola.jar"/>
+    <property name="cola.jar"             value="${dist.dir}/fecola.jar"/>
     <property name="cola.main.class"      value="ec.cjpq.fe.jdbc.ColaAut"/>
 
     <property name="autorizacionTest.jar" value="${dist.dir}/autorizacionTest.jar"/>
