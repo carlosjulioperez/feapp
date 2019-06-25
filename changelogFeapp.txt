@@ -1,8 +1,6 @@
 Tareas
 	* TODO:
 
-		x Actualizar el script para descomprimir el war en la carpeta tomcat/webapps
-
 		fe_cola
 			Generar jar
 				https://stackoverflow.com/questions/13958980/loading-a-properties-file-from-a-path-that-is-not-in-my-class-path

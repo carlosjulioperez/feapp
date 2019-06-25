@@ -6,6 +6,9 @@ import java.sql.DriverManager;
 import java.util.Properties;
 
 public class DBConnection {
+
+    class DBConnection(){
+    }
 	 
     public static Connection getConnection() {
         Properties props = new Properties();
