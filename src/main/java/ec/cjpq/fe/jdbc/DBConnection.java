@@ -1,34 +1,54 @@
 package ec.cjpq.fe.jdbc;
 
+import java.io.FileInputStream;
 import java.io.InputStream;
+import java.util.Properties;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.util.Properties;
 
 public class DBConnection {
 
-    class DBConnection(){
-    }
-	 
-    public static Connection getConnection() {
-        Properties props = new Properties();
-        Connection con = null;
+    private static Properties props = new Properties();
+    private static Connection con;
+    private static String fileName = "hibernate.properties";
+    
+    public static Connection getConnection(String... filePath) {
 
-        String resourceName = "hibernate.properties"; // could also be a constant
-		ClassLoader loader = Thread.currentThread().getContextClassLoader();
-		try(InputStream resourceStream = loader.getResourceAsStream(resourceName)) {
-			props.load(resourceStream);
- 
-            // load the Driver Class
-            Class.forName(props.getProperty("hibernate.connection.driver_class"));
- 
-            // create the connection now
-            con = DriverManager.getConnection(props.getProperty("hibernate.connection.url"),
-                    props.getProperty("hibernate.connection.username"),
-                    props.getProperty("hibernate.connection.password"));
-        } catch (Exception e) {
-            e.printStackTrace();
+        if (filePath.length > 0){
+            try (InputStream input = new FileInputStream( filePath+fileName )) {
+                props.load(input);
+
+                // load the Driver Class
+                Class.forName(props.getProperty("hibernate.connection.driver_class"));
+
+                // create the connection now
+                con = DriverManager.getConnection(props.getProperty("hibernate.connection.url"),
+                        props.getProperty("hibernate.connection.username"),
+                        props.getProperty("hibernate.connection.password"));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }else{
+
+            // ClassLoader loader = Thread.currentThread().getContextClassLoader();
+            // try(InputStream resourceStream = loader.getResourceAsStream("hibernate.properties")) {
+            try(InputStream resourceStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(fileName)) {
+
+                props.load(resourceStream);
+
+                // load the Driver Class
+                Class.forName(props.getProperty("hibernate.connection.driver_class"));
+
+                // create the connection now
+                con = DriverManager.getConnection(props.getProperty("hibernate.connection.url"),
+                        props.getProperty("hibernate.connection.username"),
+                        props.getProperty("hibernate.connection.password"));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
+
         return con;
     }
 }
