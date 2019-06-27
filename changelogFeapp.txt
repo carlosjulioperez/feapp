@@ -1,14 +1,12 @@
 Tareas
 	* TODO:
 
-		fe_cola
-			Generar jar
-				https://stackoverflow.com/questions/13958980/loading-a-properties-file-from-a-path-that-is-not-in-my-class-path
-
-				Actualizar bibliotecas de log
-				Especificar ruta de hibernate.properties externo
-				Constructor en DBConnection para especificar la ruta de hibernate.properties.
-				Modificar DBConnectionTest
+		+ fe_cola:
+			x Actualizar bibliotecas de log
+			x Especificar ruta de hibernate.properties externo
+			x Constructor en DBConnection para especificar la ruta de hibernate.properties.
+			x Modificar DBConnectionTest
+			Generar fecola.jar
 			
 			Generar groovy script
 		
