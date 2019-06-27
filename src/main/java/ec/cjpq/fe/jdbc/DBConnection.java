@@ -3,27 +3,23 @@ package ec.cjpq.fe.jdbc;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Properties;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.Properties;
 
 public class DBConnection {
 
     private static Properties props = new Properties();
     private static Connection con;
-    private static String fileName = "hibernate.properties";
     
-    public static Connection getConnection(String... filePath) {
+    public static Connection getConnection(String... args) {
 
-        if (filePath.length > 0){
-            try (InputStream input = new FileInputStream( filePath+fileName )) {
+        if (args.length > 0){
+            try (InputStream input = new FileInputStream( args[0] )) {
                 props.load(input);
             } catch (IOException e) { e.printStackTrace(); }
         }else{
-            // ClassLoader loader = Thread.currentThread().getContextClassLoader();
-            // try(InputStream resourceStream = loader.getResourceAsStream("hibernate.properties")) {
-            try(InputStream resourceStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(fileName)) {
+            try(InputStream resourceStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("hibernate.properties")) {
                 props.load(resourceStream);
             } catch (IOException e) { e.printStackTrace(); }
         }

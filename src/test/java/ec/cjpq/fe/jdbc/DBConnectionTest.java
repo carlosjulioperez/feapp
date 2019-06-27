@@ -27,7 +27,8 @@ public class DBConnectionTest{
     	Statement stmt = null;
     	ResultSet rs = null;
         try{
-        	con = DBConnection.getConnection();
+        	//con = DBConnection.getConnection();
+        	con = DBConnection.getConnection("/tmp/db.properties");
             stmt = con.createStatement();
             rs = stmt.executeQuery(QUERY2);  
 
