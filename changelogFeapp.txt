@@ -6,10 +6,8 @@ Tareas
 			x Especificar ruta de hibernate.properties externo
 			x Constructor en DBConnection para especificar la ruta de hibernate.properties.
 			x Modificar DBConnectionTest
-			Generar fecola.jar
+			No crear un jar sino invocar la clase java desde tomcat/webapps
 			
-			Generar groovy script
-		
 		https://logging.apache.org/log4j/2.x/manual/api.html#LambdaSupport
 		Java 8 lambda support for lazy logging
 
@@ -48,7 +46,6 @@ Tareas
 		mvn compile war:exploded
 	* Crear war:
 		mvn clean compile war:war
-
 	* Jetty:
 		mvn jetty:run -Djetty.http.port=9090
 
@@ -75,6 +72,16 @@ Tareas
 		
 		mvn install:install-file -Dfile=/home/carper/local/projects/cjerp/feapp/lib/cliente-ws-offline.jar -DgroupId=ec.gob.sri -DartifactId=cliente-ws-offline -Dversion=1.0 -Dpackaging=jar -DgeneratePom=true
 		
+		+ Ejecutar programa Java desde war desplegado:
+			carper@mac:~/local/projects/cjerp/feapp/target/feapp/WEB-INF$ java -cp classes:lib/* ec.cjpq.fe.jdbc.ColaAut
+
+			BC - COLA DE AUTORIZACION PARA SISTEMA DE FACTURACION ELECTRONICA
+
+			AYUDA:
+			======
+			Enviar el comprobante a la cola:
+			   java -jar fecola.jar <tipo_comprobante> <numero_transaccion_SQL-Ledger>
+
 		+ Hibernate:
 			hibernate connection from external properties files
 				https://stackoverflow.com/questions/24176024/how-to-include-properties-from-external-file-to-hibernate-cfg-xml

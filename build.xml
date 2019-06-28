@@ -3,16 +3,7 @@
 <project name="feapp" default="zip">
     <property name="appname"              value="feapp" />
     <property name="dist.dir"             value="../dist" />
-    <property name="libHT.dir"            value="../libHT/"/>
-
     <property name="target.dir"           value="target" />
-    <property name="cls.dir"              value="target/classes" />
-
-    <property name="cola.jar"             value="${dist.dir}/fecola.jar"/>
-    <property name="cola.main.class"      value="ec.cjpq.fe.jdbc.ColaAut"/>
-
-    <property name="autorizacionTest.jar" value="${dist.dir}/autorizacionTest.jar"/>
-    <property name="proceso.main.class"   value="ec.cjpq.fe.util.ProcesoMain"/>
 
     <tstamp>
         <format property="fecha" pattern="yyyy.MM.dd-HH.mm.ss" locale="es,EC"/>
@@ -24,29 +15,6 @@
         <zip destfile="${zip.file}">
             <fileset dir="." excludes="${target.dir}/**, lib/**" />
         </zip>
-    </target>
-
-    <target name="fecola" description="Crea el jar ejecutable para mandar a la cola los comprobantes">
-        <jar destfile="${cola.jar}" basedir="${cls.dir}" includes="**/jdbc/*, **/log4j.xml" >
-            <manifest>
-                <attribute name="Autor" value="Carlos Julio Pérez Quizhpe"/>
-                <attribute name="Contactos" value="carlosjulioperez@gmail.com, claro:099 3208265"/>
-                <attribute name="Cliente" value="BC"/>
-                <attribute name="Main-Class" value="${cola.main.class}"/>
-            </manifest>
-            <zipgroupfileset dir="${libHT.dir}" includes="postgresql-9.3-1102.jdbc4.jar, log4j-1.2.16.jar"/>
-        </jar>
-    </target>
-
-    <target name="jar_test_autorizacion" description="Crea el jar ejecutable para los test de autorizacion">
-        <jar destfile="${autorizacionTest.jar}" basedir="${cls.dir}" excludes="**/test/**, **/ui/**, **/jdbc/**, **/shiro/**, **/shiro.ini " >
-            <manifest>
-                <attribute name="Autor" value="Carlos Julio Pérez Quizhpe"/>
-                <attribute name="Contactos" value="carlosjulioperez@gmail.com, claro:099 3208265"/>
-                <attribute name="Cliente" value="BC"/>
-                <attribute name="Main-Class" value="${proceso.main.class}"/>
-            </manifest>
-        </jar>
     </target>
 
 </project>
