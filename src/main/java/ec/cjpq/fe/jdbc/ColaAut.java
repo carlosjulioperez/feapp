@@ -20,12 +20,13 @@ public class ColaAut {
 		if (args.length==0){
 			StringBuilder sb = new StringBuilder();
 			sb.append("\n");
-			sb.append("BC - COLA DE AUTORIZACION PARA SISTEMA DE FACTURACION ELECTRONICA \n");
+			sb.append("FEAPP - COLA DE AUTORIZACION PARA SISTEMA DE FACTURACION ELECTRONICA \n");
 			sb.append("\n");
 			sb.append("AYUDA:\n");
 			sb.append("======\n");
-			sb.append("Enviar el comprobante a la cola:\n");
-			sb.append("   java -jar fecola.jar <tipo_comprobante> <numero_transaccion_SQL-Ledger>\n\n");
+			sb.append("Enviar el comprobante a la cola de autorizaciones:\n");
+			sb.append("   java -cp classes:lib/* ec.cjpq.fe.jdbc.ColaAut <tipo_comprobante> <numero_transaccion_SQL-Ledger>\n\n");
+			//sb.append("   java -jar fecola.jar <tipo_comprobante> <numero_transaccion_SQL-Ledger>\n\n");
 			sb.append("\n");
 			System.out.println(sb.toString());
 			return;

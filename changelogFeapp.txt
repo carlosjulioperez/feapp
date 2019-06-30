@@ -6,7 +6,12 @@ Tareas
 			x Especificar ruta de hibernate.properties externo
 			x Constructor en DBConnection para especificar la ruta de hibernate.properties.
 			x Modificar DBConnectionTest
-			No crear un jar sino invocar la clase java desde tomcat/webapps
+			x No crear un jar sino invocar la clase java desde tomcat/webapps
+			
+			Probar ColaAut con ruta de archivo desde la consola
+			Generar feapp
+			Generar script para llamada de ColaAut desde consola
+			Modificar código SL para invocar script anterior
 			
 		https://logging.apache.org/log4j/2.x/manual/api.html#LambdaSupport
 		Java 8 lambda support for lazy logging
@@ -73,6 +78,8 @@ Tareas
 		mvn install:install-file -Dfile=/home/carper/local/projects/cjerp/feapp/lib/cliente-ws-offline.jar -DgroupId=ec.gob.sri -DartifactId=cliente-ws-offline -Dversion=1.0 -Dpackaging=jar -DgeneratePom=true
 		
 		+ Ejecutar programa Java desde war desplegado:
+			$ mvn clean compile war:war
+
 			carper@mac:~/local/projects/cjerp/feapp/target/feapp/WEB-INF$ java -cp classes:lib/* ec.cjpq.fe.jdbc.ColaAut
 
 			BC - COLA DE AUTORIZACION PARA SISTEMA DE FACTURACION ELECTRONICA
