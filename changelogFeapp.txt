@@ -1,6 +1,22 @@
 Tareas
 	* TODO:
 
+		Crear shell script para llamar a fecola
+
+		$ sudo vim /opt/tomcat-latest/webapps/feapp/WEB-INF/classes/hibernate.properties
+		$ sudo chmod -R 755 /opt/tomcat-latest/webapps/
+
+		$ sudo mkdir /opt/SL/sql-ledgerCJ/logs
+		$ sudo chown -R tomcat8: /opt/SL/sql-ledgerCJ/logs
+		$ sudo chmod -R 777 /opt/SL/sql-ledgerCJ/logs
+
+		COPY fe_config FROM '/tmp/fe_config_hpm.csv' DELIMITER ',' CSV HEADER;
+		
+		Definir el e-mail del cliente
+
+		+ 2019-06-24:
+			x Crear en constructor en DBConnection y diferenciar por ruta de properties
+
 		+ fe_cola:
 			x Actualizar bibliotecas de log
 			x Especificar ruta de hibernate.properties externo
