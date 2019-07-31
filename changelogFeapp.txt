@@ -1,5 +1,7 @@
 Tareas
 	* TODO:
+		hpm telefono recuperación: 0982657889 0999556991
+		Verificar el roolling de los logs en fe
 
 		Crear shell script para llamar a fecola
 
@@ -7,7 +9,7 @@ Tareas
 		$ sudo chmod -R 755 /opt/tomcat-latest/webapps/
 
 		$ sudo mkdir /opt/SL/sql-ledgerCJ/logs
-		$ sudo chown -R tomcat8: /opt/SL/sql-ledgerCJ/logs
+		$ sudo chown -R apache: /opt/SL/sql-ledgerCJ/logs
 		$ sudo chmod -R 777 /opt/SL/sql-ledgerCJ/logs
 
 		COPY fe_config FROM '/tmp/fe_config_hpm.csv' DELIMITER ',' CSV HEADER;
