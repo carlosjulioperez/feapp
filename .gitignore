@@ -1,6 +1,5 @@
 *.log
 target/*
-lib/*
 logs/*
 .DS_Store
 .DS_Store?

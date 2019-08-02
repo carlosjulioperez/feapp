@@ -1,5 +1,9 @@
 Tareas
 	* TODO:
+		
+		x Modificar la generación de log4j2.xml de forma normal
+		x https://stackoverflow.com/questions/21206993/very-simple-log4j2-xml-configuration-file-using-console-and-file-appender
+		Copiar dependencias de maven
 
 		Crear shell script para llamar a fecola
 
@@ -11,7 +15,6 @@ Tareas
 		$ sudo chmod -R 777 /opt/SL/sql-ledgerCJ/logs
 
 		COPY fe_config FROM '/tmp/fe_config_hpm.csv' DELIMITER ',' CSV HEADER;
-		
 		Definir el e-mail del cliente
 
 		+ 2019-06-24:
@@ -91,7 +94,7 @@ Tareas
 
 		+ En una línea:
 		
-		mvn install:install-file -Dfile=/home/carper/local/projects/cjerp/feapp/lib/cliente-ws-offline.jar -DgroupId=ec.gob.sri -DartifactId=cliente-ws-offline -Dversion=1.0 -Dpackaging=jar -DgeneratePom=true
+		mvn install:install-file -Dfile=/home/carper/local/project/feapp/lib/cliente-ws-offline.jar -DgroupId=ec.gob.sri -DartifactId=cliente-ws-offline -Dversion=1.0 -Dpackaging=jar -DgeneratePom=true
 		
 		+ Ejecutar programa Java desde war desplegado:
 			$ mvn clean compile war:war

@@ -1,39 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
     <Appenders>
-        <Console name="LogToConsole" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
         </Console>
-
-        <RollingRandomAccessFile name="LogToRollingRandomAccessFile" fileName="logs/feapp.log"
-            filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
-            <PatternLayout>
-                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
-            </PatternLayout>
-            <Policies>
-                <TimeBasedTriggeringPolicy/>
-                <SizeBasedTriggeringPolicy size="1 MB"/>
-            </Policies>
-            <DefaultRolloverStrategy max="10"/>
-        </RollingRandomAccessFile>
-
+        <File name="MyFile" fileName="feapp.log" immediateFlush="false" append="false">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
     </Appenders>
     <Loggers>
-
-        <!-- https://www.boraji.com/index.php/hibernate&#45;5&#45;log4j&#45;2&#45;configuration&#45;example -->
-        <!-- Log everything in hibernate -->
-        <Logger name="org.hibernate" level="info" additivity="false">
-            <AppenderRef ref="LogToConsole" />
-        </Logger>
-
-        <!-- asynchronous loggers -->
-        <AsyncLogger name="ec.cjpq" level="debug" additivity="false">
-            <AppenderRef ref="LogToRollingRandomAccessFile"/>
-            <AppenderRef ref="LogToConsole"/>
-        </AsyncLogger>
-
-        <!-- synchronous loggers -->
-        <Root level="error">
-            <AppenderRef ref="LogToConsole"/>
+        <Root level="warn">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="MyFile"/>
         </Root>
     </Loggers>
 </Configuration>
+
+<!-- <Configuration status="WARN"> -->
+<!--     <Appenders> -->
+<!--         <Console name="LogToConsole" target="SYSTEM_OUT"> -->
+<!--             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %&#45;5level %logger{36} &#45; %msg%n"/> -->
+<!--         </Console> -->
+<!--  -->
+<!--         <RollingRandomAccessFile name="LogToRollingRandomAccessFile" fileName="logs/feapp.log" -->
+<!--             filePattern="logs/$${date:yyyy&#45;MM}/app&#45;%d{MM&#45;dd&#45;yyyy}&#45;%i.log.gz"> -->
+<!--             <PatternLayout> -->
+<!--                 <Pattern>%d %p %c{1.} [%t] %m%n</Pattern> -->
+<!--             </PatternLayout> -->
+<!--             <Policies> -->
+<!--                 <TimeBasedTriggeringPolicy/> -->
+<!--                 <SizeBasedTriggeringPolicy size="1 MB"/> -->
+<!--             </Policies> -->
+<!--             <DefaultRolloverStrategy max="10"/> -->
+<!--         </RollingRandomAccessFile> -->
+<!--  -->
+<!--     </Appenders> -->
+<!--     <Loggers> -->
+<!--  -->
+<!--         <!&#45;&#45; https://www.boraji.com/index.php/hibernate&#38;#45;5&#38;#45;log4j&#38;#45;2&#38;#45;configuration&#38;#45;example &#45;&#45;> -->
+<!--         <!&#45;&#45; Log everything in hibernate &#45;&#45;> -->
+<!--         <Logger name="org.hibernate" level="info" additivity="false"> -->
+<!--             <AppenderRef ref="LogToConsole" /> -->
+<!--         </Logger> -->
+<!--  -->
+<!--         <!&#45;&#45; asynchronous loggers &#45;&#45;> -->
+<!--         <AsyncLogger name="ec.cjpq" level="debug" additivity="false"> -->
+<!--             <AppenderRef ref="LogToRollingRandomAccessFile"/> -->
+<!--             <AppenderRef ref="LogToConsole"/> -->
+<!--         </AsyncLogger> -->
+<!--  -->
+<!--         <!&#45;&#45; synchronous loggers &#45;&#45;> -->
+<!--         <Root level="error"> -->
+<!--             <AppenderRef ref="LogToConsole"/> -->
+<!--         </Root> -->
+<!--     </Loggers> -->
+<!-- </Configuration> -->

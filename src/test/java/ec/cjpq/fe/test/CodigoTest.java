@@ -1,22 +1,26 @@
 package ec.cjpq.fe.util;
 
 import java.math.BigDecimal;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import org.junit.Test;
 
 import ec.cjpq.cjfews.comprobante.Configuracion;
 import ec.cjpq.cjfews.comprobante.InfoTributaria;
 import ec.cjpq.cjfews.comprobante.factura.Factura;
 import ec.cjpq.fe.util.Comprobante;
 import ec.cjpq.fe.util.Util;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class CodigoTest {
 	
+	private static final Logger log = LogManager.getLogger(CodigoTest.class);
+
 	private String getMensaje(){
 		
 		StringBuilder sb = new StringBuilder();
@@ -170,6 +174,7 @@ public class CodigoTest {
         String numeroLote = "Lot017277V-0817";
         numeroLote = numeroLote.split("-")[0];
 	    System.out.println(numeroLote);
+        log.warn(numeroLote);
     }
     
     @Test
