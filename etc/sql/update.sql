@@ -17,6 +17,11 @@ UPDATE fe_config SET email_password = 'Busicentury23' WHERE id = 1;
 UPDATE fe_config SET emi_logo='/img/oy_logo.jpg' WHERE id = 1;
 select emi_logo from fe_config;
 
+-- Cambiar usuario y password
+UPDATE fe_config SET emi_ruc ='0992815086001', emi_raz_social = 'BUSINESS CENTURY S.A. BUSICENTURY' WHERE id = 1;
+UPDATE fe_config SET emi_ruc ='1301896963001', emi_raz_social = 'DE LA CRUZ CEDEÑO MANUEL ANTONIO' WHERE id = 1;
+UPDATE fe_config SET email_user='yo.candidato@gmail.com', email_password = '4Z1vvgyd' WHERE id = 1;
+
 -- NOTA: PARA LAS PRUEBAS EST Y SUC LA TOMA DE fe_config
 --1 pruebas, 2 producción
 
@@ -34,16 +39,19 @@ UPDATE fe_config SET
     emi_cod_pto_emi = '003'
 WHERE id = 1; 
 
+Busicentury23 | /usr/local/fe/p12s/carlos_omar_juarez_arguello.p12
+Delacruz2019 | /usr/local/fe/p12s/manuel_antonio_de_la_cruz_cedeno.p12
+
 --PRUEBAS
 update employee set 
-    p12_archivo     = '/usr/local/fe/p12s/monica_martillo.p12',
-    p12_clave       = 'MRMC0908',
+    p12_archivo     = '/usr/local/fe/p12s/carlos_omar_juarez_arguello.p12',
+    p12_clave       = 'Busicentury23',
     sec_factura     = 0,
     sec_gremision   = 0,
     sec_ncredito    = 0,
     sec_ndebito     = 0,
     sec_cretencion	= 0
-where login = 'aoyague';
+where login = 'carper';
 
 update employee set 
 	tip_ambiente	= 1,
