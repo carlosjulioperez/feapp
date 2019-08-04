@@ -2,20 +2,23 @@ Tareas
 	* TODO:
 		
 		x Modificar la generación de log4j2.xml de forma normal
-		x https://stackoverflow.com/questions/21206993/very-simple-log4j2-xml-configuration-file-using-console-and-file-appender
-		Copiar dependencias de maven
+		https://stackoverflow.com/questions/21206993/very-simple-log4j2-xml-configuration-file-using-console-and-file-appender
+		https://stackoverflow.com/questions/17418494/log4j2-xml-configuration-log-to-file-and-console-with-different-levels
+
+
+		x Copiar dependencias de maven
+		Verificar el roolling de los logs en fe
 		
 		hpm telefono recuperación: 0982657889 0999556991
-		Verificar el roolling de los logs en fe
 
 		Crear shell script para llamar a fecola
 
 		$ sudo vim /opt/tomcat-latest/webapps/feapp/WEB-INF/classes/hibernate.properties
 		$ sudo chmod -R 755 /opt/tomcat-latest/webapps/
 
-		$ sudo mkdir /opt/SL/sql-ledgerCJ/logs
-		$ sudo chown -R apache: /opt/SL/sql-ledgerCJ/logs
-		$ sudo chmod -R 777 /opt/SL/sql-ledgerCJ/logs
+		$ sudo touch /opt/SL/sql-ledgerCJ/feapp.log
+		$ sudo chown -R apache: /opt/SL/sql-ledgerCJ/feapp.log
+		$ sudo chmod -R 777 /opt/SL/sql-ledgerCJ/feapp.log
 
 		COPY fe_config FROM '/tmp/fe_config_hpm.csv' DELIMITER ',' CSV HEADER;
 		Definir el e-mail del cliente
