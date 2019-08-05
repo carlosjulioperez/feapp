@@ -13,7 +13,6 @@ peru326:        9
 gambalit:       10 
 tradetecsa:     28
 
-
 -- Listar todas las columnas
 select column_name from information_schema.columns
 
@@ -61,6 +60,7 @@ select * from tax where validto >= current_date or validto is null;
 -- Consulta de la Factura
 
 -- Consulta de productos de factura 2017/11/28
+select * from ar where id = 4104;
 
 SELECT p.partnumber, m.model, i.description, i.qty, i.sellprice, 
 ( COALESCE ( 
@@ -75,9 +75,9 @@ SELECT p.partnumber, m.model, i.description, i.qty, i.sellprice,
 FROM invoice i
 LEFT OUTER JOIN parts AS p ON i.parts_id = p.id
 LEFT OUTER JOIN makemodel AS m ON i.parts_id = m.parts_id 
-WHERE i.trans_id = 152698;
+WHERE i.trans_id = 4104;
 
-select * from invoice where trans_id = 152698;
+select * from invoice where trans_id = 4104;
 
  partnumber | model  |             description              | qty | sellprice | iva  | discount | sellprice |     lotnum      
 ------------+--------+--------------------------------------+-----+-----------+------+----------+-----------+-----------------

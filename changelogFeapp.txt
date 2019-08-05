@@ -1,27 +1,40 @@
 Tareas
 	* TODO:
 		
+		https://espolec-my.sharepoint.com/:w:/g/personal/cjperez_espol_edu_ec/ETvu7OLFnpxFqHDZkJXx2b8B8GsJYQan98ErQBSuQeqMXg?e=ryPl8s
+
 		x Modificar la generación de log4j2.xml de forma normal
-		https://stackoverflow.com/questions/21206993/very-simple-log4j2-xml-configuration-file-using-console-and-file-appender
 		https://stackoverflow.com/questions/17418494/log4j2-xml-configuration-log-to-file-and-console-with-different-levels
 
-
-		x Copiar dependencias de maven
-		Verificar el roolling de los logs en fe
-		
 		hpm telefono recuperación: 0982657889 0999556991
 
-		Crear shell script para llamar a fecola
+		x Crear shell script para llamar a fecola
 
-		$ sudo vim /opt/tomcat-latest/webapps/feapp/WEB-INF/classes/hibernate.properties
 		$ sudo chmod -R 755 /opt/tomcat-latest/webapps/
+		$ sudo vim /opt/tomcat-latest/webapps/feapp/WEB-INF/classes/hibernate.properties
 
-		$ sudo touch /opt/SL/sql-ledgerCJ/feapp.log
-		$ sudo chown -R apache: /opt/SL/sql-ledgerCJ/feapp.log
-		$ sudo chmod -R 777 /opt/SL/sql-ledgerCJ/feapp.log
+		$ sudo mkdir /opt/log
+		$ sudo touch /opt/log/feapp.log
+		$ sudo chown -R apache: /opt/log/feapp.log
+		$ sudo chmod -R 777 /opt/log/feapp.log
+
+		$ sudo chown -R tomcat8: /usr/local/fe/fecola.sh
+		$ sudo chmod -R 755 /usr/local/fe/fecola.sh
+
+		$ sudo vim /opt/SL/sql-ledgerCJ/bin/mozilla/arap.pl
+		my $salida = `/usr/local/fe/fecola.sh FA $form->{id}`;
+
+		/usr/local/fe/fecola.sh FA 3265
 
 		COPY fe_config FROM '/tmp/fe_config_hpm.csv' DELIMITER ',' CSV HEADER;
 		Definir el e-mail del cliente
+
+		+ oymar:
+			Actualizar fecola.sh y arap.pl
+			Probar productos con y sin IVA
+			sin iva 001-001-000001369 / 3265
+
+		Modificación de autorización quitando el contador
 
 		+ 2019-06-24:
 			x Crear en constructor en DBConnection y diferenciar por ruta de properties
@@ -32,11 +45,6 @@ Tareas
 			x Constructor en DBConnection para especificar la ruta de hibernate.properties.
 			x Modificar DBConnectionTest
 			x No crear un jar sino invocar la clase java desde tomcat/webapps
-			
-			Probar ColaAut con ruta de archivo desde la consola
-			Generar feapp
-			Generar script para llamada de ColaAut desde consola
-			Modificar código SL para invocar script anterior
 			
 		https://logging.apache.org/log4j/2.x/manual/api.html#LambdaSupport
 		Java 8 lambda support for lazy logging
