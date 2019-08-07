@@ -69,7 +69,7 @@ public class CjfewsImpl {
 				xs = XmlUtil.getFacturaXStream();
 				Factura factura = (Factura)xs.fromXML(new File(xmlGen));
 				archivo = rideUtil.generar(factura, numeroAutorizacion, fechaAutorizacion, xmlAut, true);
-				//archivo = rideUtil.generar(factura, numeroAutorizacion, fechaAutorizacion, xmlAut, false); //TODO
+				//archivo = rideUtil.generar(factura, numeroAutorizacion, fechaAutorizacion, xmlAut, false);
 			}
 			else if ( tipo.equals("GR") ){
 				xs = XmlUtil.getGuiaRemisionXStream();

@@ -106,7 +106,7 @@ public class WsUtil {
 	        	//RecepcionComprobantes port1 = new RecepcionComprobantesService(getURL(wsRecepcion), qNRecepcion).getRecepcionComprobantesPort();
 	        	RecepcionComprobantesOffline port1 = new RecepcionComprobantesOfflineService(getURL(wsRecepcion), qNRecepcion).getRecepcionComprobantesOfflinePort();
 
-				//TODO: VALIDAR CUANDO WS DEL SRI ESTE LENTO
+				//VALIDAR CUANDO WS DEL SRI ESTE LENTO
 				((BindingProvider) port1).getRequestContext().put("com.sun.xml.internal.ws.connect.timeout", 5000);
 				((BindingProvider) port1).getRequestContext().put("com.sun.xml.internal.ws.request.timeout", 5000);
 

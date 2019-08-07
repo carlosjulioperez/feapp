@@ -111,7 +111,7 @@ public class DatosRetencionComposer extends GenericForwardComposer {
 			Util.mostrarMensaje("NO ha asignado un email a este proveedor...");
 		
 		//}else if (bean.getSecret()!=null || bean.getSecret().length()>0){
-//TODO: 1 COMENTADO EN 2016-08-04 por pruebas con cvera
+//1 COMENTADO EN 2016-08-04 por pruebas con cvera
 //		}else if (bean.getSecret().length()>0){
 //			Util.mostrarMensaje("YA se ha generado un comprobante electrónico a este registro...");
 		}else{

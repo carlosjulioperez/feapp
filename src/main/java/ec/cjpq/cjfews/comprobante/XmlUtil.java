@@ -19,7 +19,7 @@ import ec.cjpq.cjfews.comprobante.retencion.InfoCompRetencion;
 
 public class XmlUtil {
 	
-	//TODO: Aplicar código en fepe
+	// Aplicar código en fepe
 	public static XStream getFacturaXStream(){
 		XStream xs = new XStream(new StaxDriver());
 	

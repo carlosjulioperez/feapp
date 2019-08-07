@@ -17,7 +17,7 @@ public class ProcesoTest {
     @Test
 	public void runTest(){
 		Configuracion configuracion = new ConfiguracionBean().getConfiguracion();
-		Factura factura = new DocumentoBean(configuracion).getFactura(828);
+		Factura factura = new DocumentoBean(configuracion).getFactura(4104);
         log.warn(factura.getInfoFactura());
 	}
 }

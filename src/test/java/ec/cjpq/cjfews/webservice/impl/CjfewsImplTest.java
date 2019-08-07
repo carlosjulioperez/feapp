@@ -24,7 +24,8 @@ public class CjfewsImplTest{
 	private static final Logger log = LogManager.getLogger(CjfewsImplTest.class);
 	private Configuracion configuracion;
 	
-    @Before
+    //Descomentar para test
+    //@Before
     public void setUp() {
     	configuracion = new ConfiguracionBean().getConfiguracion();
     }
@@ -37,7 +38,6 @@ public class CjfewsImplTest{
 				"1803201901099217915500120050020000054031234567810"
 			};
 
-			//TODOs: CAMBIAR LAS RUTAS DE FE en MAC
 			//Probar Retenciones 2017-08-21
 			//byte[] bytes = new CjfewsImpl().descargaRide(configuracion, docs[2]);
                     
@@ -93,7 +93,7 @@ public class CjfewsImplTest{
 		log.warn(resultado);
 	}
 
-    @Test
+    //@Test
 	public void runTestest(){
 		descargarRIDE(); //OK
         

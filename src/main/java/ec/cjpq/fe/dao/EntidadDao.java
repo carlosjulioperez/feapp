@@ -77,7 +77,7 @@ public class EntidadDao {
 		return numero;
 	}
 
-	//TODOs: Obtener el ID por medio de SQL nativo y actualizar la numeracion de acuerdo al tipo de documento
+	// Obtener el ID por medio de SQL nativo y actualizar la numeracion de acuerdo al tipo de documento
 	public int getSecuenciaComprobanteEmpleado(Comprobante tipo, String login){
         int numero = 0;
         EmployeeId employeeId = getEmployeeByLogin(login);

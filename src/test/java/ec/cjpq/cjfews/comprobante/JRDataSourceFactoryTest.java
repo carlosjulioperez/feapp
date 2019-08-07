@@ -12,7 +12,7 @@ public class JRDataSourceFactoryTest{
 	
     private static Logger log = LogManager.getLogger(JRDataSourceFactoryTest.class);
 
-    @Test
+    //@Test
 	public void test(){
 		Factura[] facturas = JRDataSourceFactory.getFacturaArray();
 		Factura factura = facturas[0];

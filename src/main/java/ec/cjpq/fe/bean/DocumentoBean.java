@@ -301,7 +301,7 @@ public class DocumentoBean {
 				e.printStackTrace();
 				String mensaje = Util.stack2String(e);
 				log.warn(mensaje);
-				//TODOs: Descomentar en produccion
+				//Descomentar en produccion
 				//Util.mostrarMensaje(mensaje);
 			} 
 		}

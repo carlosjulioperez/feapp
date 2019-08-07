@@ -247,7 +247,7 @@ public class RideUtil {
 				p.put("xmlAdjunto", 		archivoFirmado);
 				p.put("pdfAdjunto", 		nombreFisicoPDF);
 
-				//TODOs: SEGUIR DESDE AQUI... el PDF no se generó...
+				// SEGUIR DESDE AQUI... el PDF no se generó...
 //				log.warn(">>> Parámetros...");
 //				log.warn("nombreAdjunto = " +documento);
 //				log.warn("xmlAdjunto = " +archivoFirmado);

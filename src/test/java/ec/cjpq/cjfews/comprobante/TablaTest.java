@@ -9,7 +9,7 @@ import org.junit.Test;
 public class TablaTest{
 	private static Logger log = LogManager.getLogger(TablaTest.class);
 
-    @Test
+    //@Test
 	public void testGetValor(){
         log.warn(Tabla.getValor("FP_19"));
 		// System.out.println(Tabla.getValor("FP_19"));

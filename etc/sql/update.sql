@@ -69,3 +69,5 @@ where login = 'aoyague';
 --Actualizar campos de productos después de importarlos vía CSV
 update parts set partsgroup_id=null, priceupdate='2010-01-01';
 TRUNCATE partsgroup;
+
+UPDATE  ar SET intnotes='FP,20,88,0,dias' WHERE id=4104;

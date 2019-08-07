@@ -149,7 +149,7 @@ public class PanelComposer extends GenericForwardComposer {
 				try{
 					//Descarga del archivo y copia en disco local /tmp
 
-					//TODOs Comentar Firmar con token
+					// Comentar Firmar con token
 					//byte[] bytes = new CjfewsImpl().descargaRide(configuracion, documento);
                     DataHandler dataHandler = new CjfewsImpl().descargaRide(configuracion, documento);
                     final InputStream in = dataHandler.getInputStream();

@@ -51,7 +51,7 @@ public class Validacion {
         try {
             @SuppressWarnings("unused")
 			ValidarFirmaXML vXml = new ValidarFirmaXML();
-            //TODOs: CDODIGO ORIGINAL: results = vXml.validar(doc, "./", null, new TimeStampValidator()) ;
+            // CDODIGO ORIGINAL: results = vXml.validar(doc, "./", null, new TimeStampValidator()) ;
             results = null;
         } catch(Exception e){
             log.warn(Util.stack2String(e));

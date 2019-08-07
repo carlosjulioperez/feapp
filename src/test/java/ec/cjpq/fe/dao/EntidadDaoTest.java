@@ -168,7 +168,7 @@ public class EntidadDaoTest{
 	}
 
 	public void testGetFactura(){
-		int n[]={659};
+		int n[]={4104};
 		
 		boolean imprimirPorConsola = true;
 		
@@ -264,9 +264,9 @@ public class EntidadDaoTest{
 
     @Test
     public void runTest(){
-        testConfiguracion();
+        //testConfiguracion();
         //testGetDatosArInvoice();
-        //testGetFactura();
+        testGetFactura();
     }
 	
 }

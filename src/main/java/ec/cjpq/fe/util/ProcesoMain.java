@@ -20,7 +20,7 @@ public class ProcesoMain {
 	
 	private static String condicion = null;
 	
-	//TODO: PARAMETRO el nombre del usuario
+	//ARAMETRO el nombre del usuario
 	
 	private static void autorizarComprobante(){
 		

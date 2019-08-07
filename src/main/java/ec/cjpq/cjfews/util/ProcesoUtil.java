@@ -23,7 +23,7 @@ import org.apache.logging.log4j.Logger;
 public class ProcesoUtil {
 	
 	private static Logger log = LogManager.getLogger(ProcesoUtil.class);
-	//TODO: Considerar la fecha de emisión (sistema) en la clave de acceso para todos los compribantes electrónicos
+	// Considerar la fecha de emisión (sistema) en la clave de acceso para todos los compribantes electrónicos
 	//Determinar si esto origina el error de secuencial registrado...
 
     private String getClaveInterna(){
@@ -179,7 +179,7 @@ public class ProcesoUtil {
 		try{
 
 			//Generar la clave de acceso...
-			//TODO: Modelo para Fecha de Emisión...
+			// Modelo para Fecha de Emisión...
 
 			String fechaEmision = comprobanteRetencion.getInfoCompRetencion().getFechaEmision().replaceAll("/", "");
             

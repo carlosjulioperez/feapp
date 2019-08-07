@@ -1,5 +1,9 @@
 Tareas
-	* TODO:
+	* Pendiente:
+		x Corregir ruta de logs
+		Debug para generación de XML con detalle de FA
+		Probar con datos de AP
+		Modificación de autorización quitando el contador
 		
 		https://espolec-my.sharepoint.com/:w:/g/personal/cjperez_espol_edu_ec/ETvu7OLFnpxFqHDZkJXx2b8B8GsJYQan98ErQBSuQeqMXg?e=ryPl8s
 
@@ -33,8 +37,6 @@ Tareas
 			Actualizar fecola.sh y arap.pl
 			Probar productos con y sin IVA
 			sin iva 001-001-000001369 / 3265
-
-		Modificación de autorización quitando el contador
 
 		+ 2019-06-24:
 			x Crear en constructor en DBConnection y diferenciar por ruta de properties
@@ -108,7 +110,7 @@ Tareas
 
 		+ En una línea:
 		
-		mvn install:install-file -Dfile=/home/carper/local/project/feapp/lib/cliente-ws-offline.jar -DgroupId=ec.gob.sri -DartifactId=cliente-ws-offline -Dversion=1.0 -Dpackaging=jar -DgeneratePom=true
+		mvn install:install-file -Dfile=/home/carper/local/projects/cjerp/feapp/lib/cliente-ws-offline.jar -DgroupId=ec.gob.sri -DartifactId=cliente-ws-offline -Dversion=1.0 -Dpackaging=jar -DgeneratePom=true
 		
 		+ Ejecutar programa Java desde war desplegado:
 			$ mvn clean compile war:war
