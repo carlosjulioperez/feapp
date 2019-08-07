@@ -58,10 +58,12 @@ select * from tax where validto >= current_date or validto is null;
 --current_date es la fecha actual de PostgreSQL
 
 -- Consulta de la Factura
-
--- Consulta de productos de factura 2017/11/28
 select * from ar where id = 4104;
 
+-- Cabecera 2018-08-07
+
+
+-- Detalle 2018-08-07
 SELECT p.partnumber, m.model, i.description, i.qty, i.sellprice, 
 ( COALESCE ( 
 	(SELECT rate FROM tax t, chart c, partstax p 
