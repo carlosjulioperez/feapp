@@ -28,10 +28,7 @@ SELECT * FROM defaults;
 SELECT fldvalue FROM defaults WHERE fldname='businessnumber') AS numeroRuc
 SELECT fldvalue FROM defaults WHERE fldname='address' AS puntoPartida;
 
-
 select * from tipodoc;
-
-select * from ar where invnumber like '005-002-000001729'; --152698
 
 select * from ar where transdate >= '01-06-2018';
 select * from ar where tipodoc_id IS NOT NULL;  
@@ -58,28 +55,51 @@ select * from tax where validto >= current_date or validto is null;
 --current_date es la fecha actual de PostgreSQL
 
 -- Consulta de la Factura
-select * from ar where id = 4104;
+select * from ar where invnumber like '004-003-000001029';
 
--- Cabecera 2018-08-07
+select * from ar where id = 9631; --4104
 
+-- Cabecera 2018-08-09
+select ar.id, ar.invnumber, to_char(ar.transdate,'dd/MM/YYYY'),
+c.name, c.taxnumber, c.email, c.phone, ar.amount, ar.cashdiscount, 
+ar.ponumber, ar.notes, ar.ordnumber, c.cc, ar.description, ar.intnotes 
+from ar, customer c 
+where ar.id=4104 and invoice=true 
+and ar.customer_id = c.id 
+order by transdate desc ;
 
--- Detalle 2018-08-07
-SELECT p.partnumber, m.model, i.description, i.qty, i.sellprice, 
+-- Detalle 2018-08-09
+SELECT p.partnumber, m.model, 
+(CASE WHEN (i.unit IS NULL OR i.unit = '') THEN '' ELSE '('||i.unit||') ' END)
+ || i.description AS description, i.qty, i.fxsellprice, 
 ( COALESCE ( 
-	(SELECT rate FROM tax t, chart c, partstax p 
+	(SELECT t.rate FROM tax t, chart c, partstax p 
 	WHERE t.chart_id = c.id AND 
-	rate > 0 AND 
+	t.rate > 0 AND 
 	c.category = 'L' AND 
 	p.chart_id = c.id AND 
 	(t.validto >= current_date or t.validto is null) AND 
-	p.parts_id = i.parts_id) ,0) ) AS iva,
-    i.discount, i.sellprice, lotnum
-FROM invoice i
-LEFT OUTER JOIN parts AS p ON i.parts_id = p.id
+	p.parts_id = i.parts_id) ,0) ) AS iva, 
+ i.discount, i.sellprice, lotnum 
+FROM invoice i 
+LEFT OUTER JOIN parts AS p ON i.parts_id = p.id 
 LEFT OUTER JOIN makemodel AS m ON i.parts_id = m.parts_id 
-WHERE i.trans_id = 4104;
+WHERE i.trans_id = 4104 ;
 
 select * from invoice where trans_id = 4104;
+
+select * from chart where id in (79,80,221);
+select * from chart where accno like '2.1.3.02.001';
+
+hpm_prueba=# select * from chart where accno like '2.1.3.02.001';
+ id  |    accno     |        description        | charttype | category |                  link 
+                 | gifi_accno | contra 
+-----+--------------+---------------------------+-----------+----------+-----------------------
+-----------------+------------+--------
+ 152 | 2.1.3.02.001 | IVA 12% Cobrado por Pagar | A         | L        | AR_tax:AP_tax:IC_taxpa
+rt:IC_taxservice |            | f
+
+UPDATE chart SET link='AR_tax:IC_taxpart:IC_taxservice' WHERE id = 152;
 
  partnumber | model  |             description              | qty | sellprice | iva  | discount | sellprice |     lotnum      
 ------------+--------+--------------------------------------+-----+-----------+------+----------+-----------+-----------------
