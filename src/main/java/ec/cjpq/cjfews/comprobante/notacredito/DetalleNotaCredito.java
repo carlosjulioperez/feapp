@@ -1,8 +1,10 @@
 package ec.cjpq.cjfews.comprobante.notacredito;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import lombok.Data;
+
 import ec.cjpq.cjfews.comprobante.DetAdicional;
 import ec.cjpq.cjfews.comprobante.Impuesto;
 
@@ -16,7 +18,7 @@ public class DetalleNotaCredito {
 	private String precioUnitario;
 	private String descuento;
 	private String precioTotalSinImpuesto;
-	private List<DetAdicional>detallesAdicionales;
-	private List<Impuesto> impuestos;
+	private List<DetAdicional>detallesAdicionales = new ArrayList<DetAdicional>();
+	private List<Impuesto> impuestos = new ArrayList<Impuesto>();
 	
 }

@@ -140,7 +140,6 @@ public class EntidadDao {
 			sb.append("and ar.customer_id = c.id ");
 			sb.append("order by transdate desc ");
 			cabecera = (Object[]) session.createSQLQuery(sb.toString()).setInteger(0, numero).uniqueResult();
-            log.warn(cabecera);
 
 			//Detalle de las facturas (productos) con el valor del IVA que aplica, iva0=NULL
 			sb = new StringBuilder();
@@ -166,7 +165,6 @@ public class EntidadDao {
 			sb.append("WHERE i.trans_id = ? ");
 			
 			detalles = session.createSQLQuery(sb.toString()).setInteger(0, numero).list();
-		    log.warn(detalles);
 
 			tx.commit();
 		}catch (HibernateException e) {

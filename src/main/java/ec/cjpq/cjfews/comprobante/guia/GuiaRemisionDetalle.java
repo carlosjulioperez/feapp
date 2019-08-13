@@ -1,10 +1,11 @@
 package ec.cjpq.cjfews.comprobante.guia;
 
+import java.util.ArrayList;
 import java.util.List;
-
 import javax.xml.bind.annotation.XmlType;
 
 import lombok.Data;
+
 import ec.cjpq.cjfews.comprobante.DetAdicional;
 
 @Data
@@ -16,6 +17,6 @@ public class GuiaRemisionDetalle {
     private String descripcion;
     private String cantidad;
     
-    private List<DetAdicional> detallesAdicionales;
+    private List<DetAdicional> detallesAdicionales = new ArrayList<DetAdicional>();
 
 }

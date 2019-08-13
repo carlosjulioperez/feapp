@@ -1,5 +1,6 @@
 package ec.cjpq.cjfews.comprobante.notacredito;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import lombok.Data;
@@ -24,7 +25,7 @@ public class InfoNotaCredito {
 	private String totalSinImpuestos;
 	private String valorModificacion;
 	private String moneda;
-	private List<TotalImpuesto> totalConImpuestos;
+	private List<TotalImpuesto> totalConImpuestos = new ArrayList<TotalImpuesto>();
 	private String motivo;
 
 	public String getNombreDocumentoModificado(){

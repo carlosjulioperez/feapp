@@ -1,5 +1,6 @@
 package ec.cjpq.cjfews.comprobante.guia;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import lombok.Data;
@@ -18,6 +19,6 @@ public class Destinatario {
 	private String numDocSustento;
 	private String numAutDocSustento;
 	private String fechaEmisionDocSustento;
-	private List<GuiaRemisionDetalle> detalles;
+	private List<GuiaRemisionDetalle> detalles = new ArrayList<GuiaRemisionDetalle>();
 	
 }

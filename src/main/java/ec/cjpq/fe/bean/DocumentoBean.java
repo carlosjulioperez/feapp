@@ -121,8 +121,6 @@ public class DocumentoBean {
 				factura.setId("comprobante");
 				factura.setVersion("1.0.0");
 
-                log.warn(factura.getId());
-
 				//------------------------------------------------
 				InfoTributaria infoT = getInfoTributaria();
 				infoT.setSecuencial			( Util.getSecuencial(""+ (configuracion.getCfgSecuenciaFactura() + 1) ));
