@@ -17,10 +17,10 @@ Tareas
 		$ sudo chmod -R 755 /opt/tomcat-latest/webapps/
 		$ sudo vim /opt/tomcat-latest/webapps/feapp/WEB-INF/classes/hibernate.properties
 
-		$ sudo mkdir /opt/log
-		$ sudo touch /opt/log/feapp.log
-		$ sudo chown -R apache: /opt/log/feapp.log
-		$ sudo chmod -R 777 /opt/log/feapp.log
+		$ sudo mkdir /opt/SL/sql-ledgerCJ/logs
+		$ sudo chown -R apache: /opt/SL/sql-ledgerCJ/logs
+		$ sudo touch /opt/SL/sql-ledgerCJ/logs/feapp.log
+		$ sudo chmod -R 777 /opt/SL/sql-ledgerCJ/logs/feapp.log
 
 		$ sudo chown -R tomcat8: /usr/local/fe/fecola.sh
 		$ sudo chmod -R 755 /usr/local/fe/fecola.sh

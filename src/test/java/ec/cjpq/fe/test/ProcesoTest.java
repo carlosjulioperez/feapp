@@ -17,7 +17,7 @@ public class ProcesoTest {
     @Test
 	public void runTest(){
 		Configuracion configuracion = new ConfiguracionBean().getConfiguracion();
-		Factura factura = new DocumentoBean(configuracion).getFactura(9631); //4104 9631
+		Factura factura = new DocumentoBean(configuracion).getFactura(4104); //hpm 4104 bc 9631
         log.warn(factura.getInfoFactura().getTotalConImpuestos());
         //log.warn(factura.getTotalComprobante());
 	}
