@@ -1,18 +1,7 @@
 Tareas
 	* Pendiente:
-		x Corregir ruta de logs
-		Debug para generación de XML con detalle de FA
-		Probar con datos de AP
-		Modificación de autorización quitando el contador
 		
-		https://espolec-my.sharepoint.com/:w:/g/personal/cjperez_espol_edu_ec/ETvu7OLFnpxFqHDZkJXx2b8B8GsJYQan98ErQBSuQeqMXg?e=ryPl8s
-
-		x Modificar la generación de log4j2.xml de forma normal
-		https://stackoverflow.com/questions/17418494/log4j2-xml-configuration-log-to-file-and-console-with-different-levels
-
 		hpm telefono recuperación: 0982657889 0999556991
-
-		x Crear shell script para llamar a fecola
 
 		$ sudo chmod -R 755 /opt/tomcat-latest/webapps/
 		$ sudo vim /opt/tomcat-latest/webapps/feapp/WEB-INF/classes/hibernate.properties

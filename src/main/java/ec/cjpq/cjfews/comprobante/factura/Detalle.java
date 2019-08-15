@@ -18,7 +18,7 @@ public class Detalle {
 	private String precioUnitario;
 	private String descuento;
 	private String precioTotalSinImpuesto;
-	private List<DetAdicional>detallesAdicionales = new ArrayList<DetAdicional>();
+	private List<DetAdicional>detallesAdicionales;
 	private List<Impuesto> impuestos = new ArrayList<Impuesto>();
 	
 }

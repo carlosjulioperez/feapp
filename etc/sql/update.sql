@@ -44,8 +44,8 @@ Delacruz2019 | /usr/local/fe/p12s/manuel_antonio_de_la_cruz_cedeno.p12
 
 --PRUEBAS
 update employee set 
-    p12_archivo     = '/usr/local/fe/p12s/carlos_omar_juarez_arguello.p12',
-    p12_clave       = 'Busicentury23',
+    p12_archivo     = '/usr/local/fe/p12s/manuel_antonio_de_la_cruz_cedeno.p12',
+    p12_clave       = 'Delacruz2019',
     sec_factura     = 0,
     sec_gremision   = 0,
     sec_ncredito    = 0,
