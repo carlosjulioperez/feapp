@@ -60,6 +60,7 @@ Tareas
 		$ mvn clean test -Dtest=xxxxTest#testA
 		
 		$ mvn test -Dtest=ec.cjpq.cjfews.comprobante.TablaTest
+		$ mvn test -Dtest=ec.cjpq.cjfews.comprobante.ParametroTest
 		$ mvn test -Dtest=ec.cjpq.fe.jdbc.DBConnectionTest
 		$ mvn test -Dtest=ec.cjpq.fe.dao.EntidadDaoTest
 		$ mvn test -Dtest=ec.cjpq.fe.util.CodigoTest
