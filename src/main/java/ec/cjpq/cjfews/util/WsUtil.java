@@ -110,6 +110,8 @@ public class WsUtil {
 				((BindingProvider) port1).getRequestContext().put("com.sun.xml.internal.ws.connect.timeout", 5000);
 				((BindingProvider) port1).getRequestContext().put("com.sun.xml.internal.ws.request.timeout", 5000);
 
+                log.warn(archivoFirmado);
+                log.warn(claveAccesoComprobante);
 	            RespuestaSolicitud respuestaSolicitud = port1.validarComprobante(Util.getArchivoToByte(new File(archivoFirmado)));
 	        	
 	            String estado = respuestaSolicitud.getEstado();
