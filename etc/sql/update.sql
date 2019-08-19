@@ -28,9 +28,12 @@ UPDATE fe_config SET email_user='yo.candidato@gmail.com', email_password = '4Z1v
 --1 pruebas
 UPDATE fe_config SET 
 	cfg_tip_ambiente = 1,
-	emi_cod_establ  = '001',
+	emi_cod_establ  = '003',
     emi_cod_pto_emi = '001'
 WHERE id = 1; 
+
+UPDATE fe_config SET cfg_sec_factura = 3 WHERE id = 1; 
+UPDATE fe_config SET cfg_sec_factura = cfg_sec_factura + 1 WHERE id = 1; 
 
 --2 producción
 UPDATE fe_config SET 
@@ -52,6 +55,8 @@ update employee set
     sec_ndebito     = 0,
     sec_cretencion	= 0
 where login = 'carper';
+
+update employee set sec_factura = sec_factura + 1 where login = 'carper';
 
 update employee set 
 	tip_ambiente	= 1,

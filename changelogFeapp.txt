@@ -22,11 +22,6 @@ Tareas
 		COPY fe_config FROM '/tmp/fe_config_hpm.csv' DELIMITER ',' CSV HEADER;
 		Definir el e-mail del cliente
 
-		+ oymar:
-			Actualizar fecola.sh y arap.pl
-			Probar productos con y sin IVA
-			sin iva 001-001-000001369 / 3265
-
 		+ 2019-06-24:
 			x Crear en constructor en DBConnection y diferenciar por ruta de properties
 
@@ -66,11 +61,12 @@ Tareas
 		$ mvn test -Dtest=ec.cjpq.fe.util.CodigoTest
 		$ mvn test -Dtest=ec.cjpq.fe.util.ProcesoTest
 		$ mvn test -Dtest=ec.cjpq.cjfews.util.RideUtilTest
-		$ mvn test -Dtest=ec.cjpq.cjfews.webservice.impl.CjfewsImplTest
 		$ mvn test -Dtest=ec.cjpq.cjfews.test.UtilTest
 		$ mvn test -Dtest=ec.cjpq.cjfews.comprobante.JRDataSourceFactoryTest
-
-		$ java -jar /usr/local/fe/fecola.jar FA 187373
+		
+		$ mvn test -Dtest=ec.cjpq.cjfews.webservice.impl.CjfewsImplTest
+			Emplea fe_config con la secuencia de comprobantes.
+			Emplea employee en el entorno web.
 
 	* No crear war:
 		mvn compile war:exploded

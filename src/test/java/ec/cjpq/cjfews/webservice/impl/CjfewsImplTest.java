@@ -25,7 +25,7 @@ public class CjfewsImplTest{
 	private Configuracion configuracion;
 	
     //Descomentar para test
-    //@Before
+    @Before
     public void setUp() {
     	configuracion = new ConfiguracionBean().getConfiguracion();
     }
@@ -57,7 +57,7 @@ public class CjfewsImplTest{
 	}
 	
 	public void autorizarFactura(){
-		int numero = 500;
+		int numero = 4104;
 		Factura factura = new DocumentoBean(configuracion).getFactura( numero );
         log.warn(factura.getId());
         log.warn(factura.getVersion());
@@ -93,11 +93,11 @@ public class CjfewsImplTest{
 		log.warn(resultado);
 	}
 
-    //@Test
+    @Test
 	public void runTestest(){
-		descargarRIDE(); //OK
+		//descargarRIDE(); //OK
         
-		//autorizarFactura(); //
+		autorizarFactura(); //2019-08-18
         //autorizarGuiaRemision(); //OK 2018-06-06 GR-0930893714-04062018-004001000000003.xml
 		//autorizarComprobanteRetencion(); //OK 2018-06-06 RE-0990021007001-01062018-001001000000001.xml
 		//autorizarNotaCredito(); //OK 2018-06-06 NC-0990497214001-22052018-001001000000001.xml
