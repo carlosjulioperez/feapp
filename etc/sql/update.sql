@@ -75,4 +75,5 @@ where login = 'aoyague';
 update parts set partsgroup_id=null, priceupdate='2010-01-01';
 TRUNCATE partsgroup;
 
-UPDATE  ar SET intnotes='FP,20,88,0,dias' WHERE id=4104;
+UPDATE ar SET intnotes='FP,20,88,0,dias' WHERE id=4104;
+UPDATE ar SET transdate='2019-08-20' WHERE id = 4104;

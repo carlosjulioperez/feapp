@@ -3,7 +3,6 @@ package ec.cjpq.cjfews.util;
 import java.util.Date;
 import java.util.Map;
 import java.util.Properties;
-
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
@@ -19,9 +18,11 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
-import ec.cjpq.cjfews.comprobante.Configuracion;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import ec.cjpq.cjfews.comprobante.Configuracion;
+import ec.cjpq.fe.util.Util;
 
 public class EmailUtil{
 

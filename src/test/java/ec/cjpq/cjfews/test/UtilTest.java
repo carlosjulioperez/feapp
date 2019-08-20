@@ -3,7 +3,7 @@ package ec.cjpq.cjfews.test;
 import java.io.File;
 import java.io.IOException;
 
-import ec.cjpq.cjfews.util.Util;
+import ec.cjpq.fe.util.Util;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;

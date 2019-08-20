@@ -16,7 +16,9 @@ import ec.cjpq.cjfews.comprobante.notadebito.NotaDebito;
 import ec.cjpq.cjfews.comprobante.retencion.ComprobanteRetencion;
 import ec.cjpq.cjfews.util.ProcesoUtil;
 import ec.cjpq.cjfews.util.RideUtil;
-import ec.cjpq.cjfews.util.Util;
+
+import ec.cjpq.fe.util.Util;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

@@ -38,6 +38,8 @@ import es.mityc.javasign.xml.refs.ObjectToSign;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import ec.cjpq.fe.util.Util;
+
 public class Firma {
 
 	private static final Logger log = LogManager.getLogger(Firma.class);

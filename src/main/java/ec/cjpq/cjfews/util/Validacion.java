@@ -18,6 +18,7 @@ import es.mityc.firmaJava.libreria.xades.ResultadoValidacion;
 import es.mityc.firmaJava.libreria.xades.ValidarFirmaXML;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import ec.cjpq.fe.util.Util;
 
 public class Validacion {
 

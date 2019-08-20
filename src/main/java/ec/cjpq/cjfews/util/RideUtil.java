@@ -23,6 +23,8 @@ import net.sf.jasperreports.engine.util.JRLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import ec.cjpq.fe.util.Util;
+
 public class RideUtil {
 
 	private static final Logger log = LogManager.getLogger(RideUtil.class);

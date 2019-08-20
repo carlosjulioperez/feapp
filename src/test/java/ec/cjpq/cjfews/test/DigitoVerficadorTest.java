@@ -1,6 +1,6 @@
 package ec.cjpq.cjfews.test;
 
-import ec.cjpq.cjfews.util.Util;
+import ec.cjpq.fe.util.Util;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;

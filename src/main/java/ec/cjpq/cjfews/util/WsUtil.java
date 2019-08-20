@@ -1,22 +1,7 @@
 package ec.cjpq.cjfews.util;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
-import java.net.MalformedURLException;
-import java.net.URL;
-
-import javax.xml.namespace.QName;
-import javax.xml.ws.BindingProvider;
-
 import com.thoughtworks.xstream.XStream;
-import ec.cjpq.cjfews.comprobante.Configuracion;
-import ec.cjpq.cjfews.comprobante.factura.Factura;
-import ec.cjpq.cjfews.comprobante.guia.GuiaRemision;
-import ec.cjpq.cjfews.comprobante.notacredito.NotaCredito;
-import ec.cjpq.cjfews.comprobante.notadebito.NotaDebito;
-import ec.cjpq.cjfews.comprobante.retencion.ComprobanteRetencion;
+
 import ec.gob.sri.comprobantes.ws.Comprobante;
 import ec.gob.sri.comprobantes.ws.RecepcionComprobantesOffline;
 import ec.gob.sri.comprobantes.ws.RecepcionComprobantesOfflineService;
@@ -25,8 +10,26 @@ import ec.gob.sri.comprobantes.ws.aut.Autorizacion;
 import ec.gob.sri.comprobantes.ws.aut.AutorizacionComprobantesOffline;
 import ec.gob.sri.comprobantes.ws.aut.AutorizacionComprobantesOfflineService;
 import ec.gob.sri.comprobantes.ws.aut.RespuestaComprobante;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.net.MalformedURLException;
+import java.net.URL;
+import javax.xml.namespace.QName;
+import javax.xml.ws.BindingProvider;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import ec.cjpq.cjfews.comprobante.Configuracion;
+import ec.cjpq.cjfews.comprobante.factura.Factura;
+import ec.cjpq.cjfews.comprobante.guia.GuiaRemision;
+import ec.cjpq.cjfews.comprobante.notacredito.NotaCredito;
+import ec.cjpq.cjfews.comprobante.notadebito.NotaDebito;
+import ec.cjpq.cjfews.comprobante.retencion.ComprobanteRetencion;
+import ec.cjpq.fe.util.Util;
 
 public class WsUtil {
 
@@ -110,7 +113,6 @@ public class WsUtil {
 				((BindingProvider) port1).getRequestContext().put("com.sun.xml.internal.ws.connect.timeout", 5000);
 				((BindingProvider) port1).getRequestContext().put("com.sun.xml.internal.ws.request.timeout", 5000);
 
-                log.warn(Util.getArchivoToByte(new File(archivoFirmado)));
 	            RespuestaSolicitud respuestaSolicitud = port1.validarComprobante(Util.getArchivoToByte(new File(archivoFirmado)));
 	        	
 	            String estado = respuestaSolicitud.getEstado();

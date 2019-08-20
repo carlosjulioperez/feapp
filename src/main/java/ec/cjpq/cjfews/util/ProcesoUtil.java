@@ -20,6 +20,8 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import ec.cjpq.fe.util.Util;
+
 public class ProcesoUtil {
 	
 	private static Logger log = LogManager.getLogger(ProcesoUtil.class);

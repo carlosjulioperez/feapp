@@ -9,7 +9,7 @@ import ec.cjpq.cjfews.comprobante.notacredito.DetalleNotaCredito;
 import ec.cjpq.cjfews.comprobante.notacredito.NotaCredito;
 import ec.cjpq.cjfews.comprobante.notadebito.NotaDebito;
 import ec.cjpq.cjfews.comprobante.notadebito.NotaDebitoImpuesto;
-import ec.cjpq.cjfews.util.Util;
+import ec.cjpq.fe.util.Util;
 
 public class CalculoUtil {
 	

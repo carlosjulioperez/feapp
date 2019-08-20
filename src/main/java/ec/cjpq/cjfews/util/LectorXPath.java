@@ -11,6 +11,8 @@ import org.w3c.dom.Document;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import ec.cjpq.fe.util.Util;
+
 public class LectorXPath {
 
 	private static final Logger log = LogManager.getLogger(LectorXPath.class);
