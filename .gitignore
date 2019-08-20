@@ -11,3 +11,4 @@ logs/*
 [._]s[a-v][a-z]
 [._]sw[a-p]
 
+act.sh
