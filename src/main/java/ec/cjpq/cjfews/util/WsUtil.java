@@ -194,7 +194,7 @@ public class WsUtil {
 			    	mensajeRespuesta.append(estado+"\n");
 			    	
 			    	// Se asegura que sea el primer mensaje devuelto...
-			    	if ( (i == 0) && estado.equals(Constante.AUTORIZADO.toString()) ){
+			    	if ( i == 0 && estado.equals(Constante.AUTORIZADO.toString()) ){
 			    		
 			    		String men1 = "El comprobante ha sido AUTORIZADO...\n"; 
 			    		log.warn(men1);
@@ -269,8 +269,13 @@ public class WsUtil {
 			    		mensajeRespuesta.append("\n" + getMensajesAutorizacion(item));
 			            break;
 			    	}
+
+                    //2019-08-21
+			    	if ( estado.equals("EN PROCESO")){
+			    		mensajeRespuesta.append("\n" + getMensajesAutorizacion(item));
+			            break;
+			    	}
 			    	i++;
-			    	
 			    }
 			    log.warn(mensajeRespuesta.toString());
 			}

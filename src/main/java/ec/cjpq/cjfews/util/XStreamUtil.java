@@ -1,8 +1,5 @@
 package ec.cjpq.cjfews.util;
 
-import com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl;
-import java.io.Writer;
-
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.core.util.QuickWriter;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
@@ -13,6 +10,8 @@ import ec.gob.sri.comprobantes.ws.aut.Autorizacion;
 import ec.gob.sri.comprobantes.ws.aut.Mensaje;
 import ec.gob.sri.comprobantes.ws.aut.RespuestaComprobante;
 import ec.gob.sri.comprobantes.ws.aut.RespuestaLote;
+
+import java.io.Writer;
 
 public class XStreamUtil
 {
@@ -57,7 +56,7 @@ public class XStreamUtil
     });
     xstream.alias("respuesta", RespuestaComprobante.class);
     xstream.alias("autorizacion", Autorizacion.class);
-    xstream.alias("fechaAutorizacion", XMLGregorianCalendarImpl.class);
+    xstream.alias("fechaAutorizacion", com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl.class);
     xstream.alias("mensaje", Mensaje.class);
     xstream.registerConverter(new RespuestaDateConverter());
     
@@ -81,7 +80,7 @@ public class XStreamUtil
     });
     xstream.alias("respuesta", RespuestaLote.class);
     xstream.alias("autorizacion", Autorizacion.class);
-    xstream.alias("fechaAutorizacion", XMLGregorianCalendarImpl.class);
+    xstream.alias("fechaAutorizacion", com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl.class);
     xstream.alias("mensaje", Mensaje.class);
     xstream.registerConverter(new RespuestaDateConverter());
     
