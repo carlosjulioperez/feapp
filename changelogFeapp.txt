@@ -121,3 +121,31 @@ Tareas
 				https://stackoverflow.com/questions/27088083/log4j2-jpa-hibernate-logging-is-not-working
 
 			https://www.mkyong.com/java/javalangnoclassdeffounderror-orgapachecommonslogginglogfactory/
+	
+	* Agregar las formas de pago:
+		El usuario deberá ingresar el código,la descripción y el valor
+		separado por comas en el campo Guía de Remisión de facturas, por cada
+		forma de pago que se desee registrar:
+
+		Ejemplo:
+		FP,01,1500.25,30,dias
+		Ver ficha técnica
+
+		01 SIN UTILIZACION DEL SISTEMA FINANCIERO
+		16 TARJETAS DE DEBITO
+		17 DINERO ELECTRONICO
+		18 TARJETA PREPAGO
+		19 TARJETA DE CRÉDITO
+		20 OTROS CON UTILIZACION DEL SISTEMA FINANCIERO
+		21 ENDOSO DE TÍTULOS
+
+		* XML:
+		<pagos>
+			<pago>
+				<formaPago>07</formaPago>
+				<total>56,00</total>
+				<plazo>30</plazo>
+				<unidadTiempo>dias</unidadTiempo>
+			</pago>
+		</pagos>
+

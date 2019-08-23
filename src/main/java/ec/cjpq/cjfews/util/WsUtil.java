@@ -265,7 +265,6 @@ public class WsUtil {
 			    	
 			    	if ( estado.equals("NO AUTORIZADO")){
 			            ArchivoUtils.stringToArchivo(configuracion.getDirectorioNoAutorizados() + File.separator + documento, xmlAutorizacion);
-
 			    		mensajeRespuesta.append("\n" + getMensajesAutorizacion(item));
 			            break;
 			    	}
