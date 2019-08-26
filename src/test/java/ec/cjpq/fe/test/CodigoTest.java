@@ -1,20 +1,22 @@
 package ec.cjpq.fe.util;
 
 import java.math.BigDecimal;
-
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Random;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import org.junit.Test;
 
 import ec.cjpq.cjfews.comprobante.Configuracion;
 import ec.cjpq.cjfews.comprobante.InfoTributaria;
 import ec.cjpq.cjfews.comprobante.factura.Factura;
 import ec.cjpq.fe.util.Comprobante;
 import ec.cjpq.fe.util.Util;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class CodigoTest {
@@ -176,9 +178,23 @@ public class CodigoTest {
 	    System.out.println(numeroLote);
         log.warn(numeroLote);
     }
-    
+
+
+    public String getClaveInterna(int longitud) {
+        //String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        String SALTCHARS = "1234567890";
+        StringBuilder salt = new StringBuilder();
+        Random rnd = new Random();
+        while (salt.length() < longitud) { // length of the random string.
+            int index = (int) (rnd.nextFloat() * SALTCHARS.length());
+            salt.append(SALTCHARS.charAt(index));
+        }
+        return salt.toString();
+    } 
+
     @Test
     public void runTest(){
-        testNumeroLote();
+        //testNumeroLote();
+        log.warn(getClaveInterna(8));
     }
 }

@@ -54,8 +54,8 @@ public class Util {
 		InputStream ios = null;
 		try {
 			ios = new FileInputStream(file);
-            log.warn(file);
-            log.warn(ios);
+            //log.warn(file);
+            //log.warn(ios);
 			if (ios.read(buffer) == -1) {
                 String message = "EOF reached while trying to read the whole file";
                 log.warn(message);

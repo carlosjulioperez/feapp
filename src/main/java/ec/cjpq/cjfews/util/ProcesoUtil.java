@@ -9,6 +9,11 @@ import java.nio.charset.Charset;
 import java.util.Date;
 import java.util.Random;
 
+import org.apache.commons.lang.StringUtils;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import ec.cjpq.cjfews.comprobante.Configuracion;
 import ec.cjpq.cjfews.comprobante.XmlUtil;
 import ec.cjpq.cjfews.comprobante.factura.Factura;
@@ -16,10 +21,6 @@ import ec.cjpq.cjfews.comprobante.guia.GuiaRemision;
 import ec.cjpq.cjfews.comprobante.notacredito.NotaCredito;
 import ec.cjpq.cjfews.comprobante.notadebito.NotaDebito;
 import ec.cjpq.cjfews.comprobante.retencion.ComprobanteRetencion;
-import org.apache.commons.lang.StringUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import ec.cjpq.fe.util.Util;
 
 public class ProcesoUtil {
@@ -31,6 +32,20 @@ public class ProcesoUtil {
     private String getClaveInterna(){
         return "12345678";
     }
+   
+    //2019-08-22
+    //https://stackoverflow.com/questions/20536566/creating-a-random-string-with-a-z-and-0-9-in-java
+    //public String getClaveInterna(int longitud) {
+    //    //String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    //    String SALTCHARS = "1234567890";
+    //    StringBuilder salt = new StringBuilder();
+    //    Random rnd = new Random();
+    //    while (salt.length() < longitud) { // length of the random string.
+    //        int index = (int) (rnd.nextFloat() * SALTCHARS.length());
+    //        salt.append(SALTCHARS.charAt(index));
+    //    }
+    //    return salt.toString();
+    //} 
 
 	public String procesarFactura(Factura factura, Configuracion c){
 		String retorno = null;
@@ -100,9 +115,9 @@ public class ProcesoUtil {
 
 			if (valor) {
 				xmlFirmado = c.getDirectorioFirmados() + File.separator	+ xmlFirmado;
-				log.warn("Archivo firmado en: " + xmlFirmado);
+				//log.warn("Archivo firmado en: " + xmlFirmado);
 
-				WsUtil ws = new WsUtil(c, documento);
+				AutorizacionComprobantesWs ws = new AutorizacionComprobantesWs(c, documento);
 				ws.setFactura(factura);
 				retorno = ws.consumoWs(xmlFirmado);
 			} else
@@ -164,7 +179,7 @@ public class ProcesoUtil {
 				xmlFirmado = c.getDirectorioFirmados() + File.separator	+ xmlFirmado;
 				log.warn("Archivo firmado en: " + xmlFirmado);
 
-				WsUtil ws = new WsUtil(c, documento);
+				AutorizacionComprobantesWs ws = new AutorizacionComprobantesWs(c, documento);
 				ws.setGuiaRemision(guiaRemision);
 				retorno = ws.consumoWs(xmlFirmado);
 			} else
@@ -228,7 +243,7 @@ public class ProcesoUtil {
 				xmlFirmado = c.getDirectorioFirmados() + File.separator	+ xmlFirmado;
 				log.warn("Archivo firmado en: " + xmlFirmado);
 
-				WsUtil ws = new WsUtil(c, documento);
+				AutorizacionComprobantesWs ws = new AutorizacionComprobantesWs(c, documento);
 				ws.setComprobanteRetencion(comprobanteRetencion);
 				retorno = ws.consumoWs(xmlFirmado);
 			} else
@@ -289,7 +304,7 @@ public class ProcesoUtil {
 				xmlFirmado = c.getDirectorioFirmados() + File.separator	+ xmlFirmado;
 				log.warn("Archivo firmado en: " + xmlFirmado);
 
-				WsUtil ws = new WsUtil(c, documento);
+				AutorizacionComprobantesWs ws = new AutorizacionComprobantesWs(c, documento);
 				ws.setNotaCredito(notaCredito);
 				retorno = ws.consumoWs(xmlFirmado);
 			} else
@@ -352,7 +367,7 @@ public class ProcesoUtil {
 				xmlFirmado = c.getDirectorioFirmados() + File.separator	+ xmlFirmado;
 				log.warn("Archivo firmado en: " + xmlFirmado);
 
-				WsUtil ws = new WsUtil(c, documento);
+				AutorizacionComprobantesWs ws = new AutorizacionComprobantesWs(c, documento);
 				ws.setNotaDebito(notaDebito);
 				retorno = ws.consumoWs(xmlFirmado);
 			} else

@@ -125,7 +125,7 @@ public class Firma {
 
         // Guardamos la firma a un fichero en el home del usuario
         String filePath = directorioDestino + File.separatorChar + archivoFirmado;
-        log.warn("Firma grabada en: " + filePath);
+        //log.warn("Firma grabada en: " + filePath);
         saveDocumentToFile(docSigned, filePath);
         valor = true;
         

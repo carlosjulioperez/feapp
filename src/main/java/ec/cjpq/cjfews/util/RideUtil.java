@@ -68,7 +68,7 @@ public class RideUtil {
 			JasperPrint jasperPrint  = JasperFillManager.fillReport(jasperReport, p, new JRBeanArrayDataSource(facturas));
 			JasperExportManager.exportReportToPdfFile(jasperPrint, nombreFisico);
 			
-			log.warn("Se ha generado el comprobante FA-RIDE: " + nombreFisico);
+			//log.warn("Se ha generado el comprobante FA-RIDE: " + nombreFisico);
 		} catch (JRException e) {
 			log.warn(Util.stack2String(e));
 		}
@@ -213,10 +213,14 @@ public class RideUtil {
 					).toString();
 				p.put("cuerpoMensaje", cuerpo);
 				
-				log.warn("Enviando correo con documentos adjuntos a :"+email);
-				boolean valor = new EmailUtil().sendEmail(configuracion, p);
-				if (valor)
-					log.warn("Se ha enviado el correo de forma exitosa a :"+email);
+				new EmailUtil().sendEmail(configuracion, p);
+				
+				//log.warn("Enviando correo con documentos adjuntos a :"+email);
+                //boolean valor = new EmailUtil().sendEmail(configuracion, p);
+				//if (valor)
+				//	log.warn("Se ha enviado el correo de forma exitosa a :"+email);
+                //else
+				//	log.warn("NO se pudo enviar el correo a :"+email);
 			}
 		}else
 			log.warn("No ha especificado el correo electrónico del cliente...");

@@ -223,7 +223,7 @@ public class DocumentoBean {
 					impuesto.setBaseImponible(baseImp.toString());
 					impuesto.setValor(val.toString());
 					//TODO Debug Detalle
-                    log.warn(detalle);
+                    //log.warn(detalle);
                     detalle.getImpuestos().add(impuesto);
 					
 					factura.getDetalles().add(detalle);

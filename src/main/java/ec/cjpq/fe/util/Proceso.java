@@ -107,7 +107,7 @@ public class Proceso {
 						//Esta es la forma de traer la secuencia, pero por empleado...
 						int secuencia = new EntidadDao().getSecuenciaComprobanteEmpleado(tipo, employee.getLogin() );
 						//Actualizar la secuencia del empleado
-						log.warn(String.format("Nueva secuencia de comprobante %s: %s", tipo.toString(), secuencia));
+						//log.warn(String.format("Nueva secuencia de comprobante %s: %s", tipo.toString(), secuencia));
 						
 						//Actualizo el POJO configuracion para que otras clases lean la secuencia recién acrtualizada...
 						switch (tipo) {
@@ -153,7 +153,7 @@ public class Proceso {
 					}
 		
 					//Grabar el mensaje...
-					log.warn(resultado);
+					//log.warn(resultado);
 					
 					item.setMensaje(resultado);
 					new EntidadDao().actualizarColaAutorizacion(item);
