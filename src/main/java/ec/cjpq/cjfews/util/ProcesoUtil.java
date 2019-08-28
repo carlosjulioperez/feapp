@@ -1,5 +1,9 @@
 package ec.cjpq.cjfews.util;
 
+import ec.gob.sri.comprobantes.ws.RecepcionComprobantesOffline;
+import ec.gob.sri.comprobantes.ws.RecepcionComprobantesOfflineService;
+import ec.gob.sri.comprobantes.ws.RespuestaSolicitud;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
@@ -8,6 +12,7 @@ import java.io.Writer;
 import java.nio.charset.Charset;
 import java.util.Date;
 import java.util.Random;
+import javax.xml.ws.BindingProvider;
 
 import org.apache.commons.lang.StringUtils;
 
@@ -21,6 +26,7 @@ import ec.cjpq.cjfews.comprobante.guia.GuiaRemision;
 import ec.cjpq.cjfews.comprobante.notacredito.NotaCredito;
 import ec.cjpq.cjfews.comprobante.notadebito.NotaDebito;
 import ec.cjpq.cjfews.comprobante.retencion.ComprobanteRetencion;
+import ec.cjpq.fe.util.Comprobante;
 import ec.cjpq.fe.util.Util;
 
 public class ProcesoUtil {
@@ -33,6 +39,58 @@ public class ProcesoUtil {
         return "12345678";
     }
    
+	public String firmarEnviarAutorizar(String archivoFirmado){
+		String valor = "";
+		//log.warn("Leyendo archivo XML...");
+		File f = new File(archivoFirmado);
+		
+		String claveAccesoComprobante = Util.getValorXML(f, "/*/infoTributaria/claveAcceso");
+        if ( claveAccesoComprobante != null ){
+        	
+	        try {
+
+	        	RecepcionComprobantesOffline port1 = new RecepcionComprobantesOfflineService(getURL(wsRecepcion), qNRecepcion).getRecepcionComprobantesOfflinePort();
+
+				//VALIDAR CUANDO WS DEL SRI ESTE LENTO
+				((BindingProvider) port1).getRequestContext().put("com.sun.xml.internal.ws.connect.timeout", 5000);
+				((BindingProvider) port1).getRequestContext().put("com.sun.xml.internal.ws.request.timeout", 5000);
+
+                //TODO
+	            RespuestaSolicitud respuestaSolicitud = port1.validarComprobante(Util.getArchivoToByte(new File(archivoFirmado)));
+	        	
+	            String estado = respuestaSolicitud.getEstado();
+            	//log.warn("Estado de solicitud: " + estado);
+
+	            if (estado.equals(Constante.RECIBIDA.toString())){
+	            	valor = autorizacion(claveAccesoComprobante);
+	            }else{
+	                StringBuilder mensajes = new StringBuilder();
+	                RespuestaSolicitud.Comprobantes comprobantes = respuestaSolicitud.getComprobantes();
+					for (Comprobante comp : comprobantes.getComprobante()) {
+						mensajes.append(comp.getClaveAcceso());
+						mensajes.append("\n");
+						for (ec.gob.sri.comprobantes.ws.Mensaje m : comp.getMensajes().getMensaje())
+							mensajes.append(m.getMensaje() + ": " + m.getInformacionAdicional() + "\n");
+						mensajes.append("\n");
+					}
+					String men = "Error, Los comprobantes no fueron recibidos. " + mensajes.toString(); 
+					log.warn(men);
+					valor = men;
+	            }
+	        } catch (Exception e) {
+	        	String men = Util.stack2String(e);
+	        	log.warn(men);
+	        	//log.warn("Tiempo agotado para conectarse a los servidores del SRI...");
+	            valor = men;
+	        }
+        }else{
+        	String men = "El archivo XML ingresado, no contiene los elementos de búsqueda apropiados..."; 
+        	log.warn(men);
+        	valor = men;
+        }
+        return valor;
+	}
+
     //2019-08-22
     //https://stackoverflow.com/questions/20536566/creating-a-random-string-with-a-z-and-0-9-in-java
     //public String getClaveInterna(int longitud) {
