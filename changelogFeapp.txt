@@ -2,6 +2,7 @@ Tareas
 	* Pendiente:
 		~/local/sri/ComprobantesElectronicosOffline/ComprobantesDesktop.jar.src/
 		~/local/utils/sri/ComprobantesElectronicosOffline/ComprobantesDesktop.jar.src/
+		ec.gob.sri.comprobantes.util
 		
 		hpm telefono recuperación: 0982657889 0999556991
 
