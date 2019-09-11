@@ -195,6 +195,11 @@ public class CodigoTest {
     @Test
     public void runTest(){
         //testNumeroLote();
-        log.warn(getClaveInterna(8));
+        //log.warn(getClaveInterna(8));
+        
+        String codDoc = "01";
+        String tipoComprobante = codDoc.substring(1);
+        log.warn(tipoComprobante);
+
     }
 }
