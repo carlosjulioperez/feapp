@@ -462,4 +462,7 @@ COPY customer FROM '/tmp/customer.csv' DELIMITERS ',' CSV;
 SELECT * FROM customer where customernumber like '%602923567001';
 SELECT * FROM customer where customernumber like '%990658749001';
 
+--Reporte de auditoría de transacciones:
 
+select a.*,e.login,e.name from audittrail a, employee e where employee_id=e.id AND trans_id=188460 order by transdate;
+select a.*, ar.amount, e.login,e.name from audittrail a, ar, employee e where ar.id=trans_id AND a.employee_id=e.id AND trans_id=188460 order by transdate;
