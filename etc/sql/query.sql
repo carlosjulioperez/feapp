@@ -465,4 +465,7 @@ SELECT * FROM customer where customernumber like '%990658749001';
 --Reporte de auditoría de transacciones:
 
 select a.*,e.login,e.name from audittrail a, employee e where employee_id=e.id AND trans_id=188460 order by transdate;
-select a.*, ar.amount, e.login,e.name from audittrail a, ar, employee e where ar.id=trans_id AND a.employee_id=e.id AND trans_id=188460 order by transdate;
+
+select a.*, ar.amount, e.login,e.name from audittrail a, ar, employee e where ar.id=trans_id AND a.employee_id=e.id AND ar.id=212124 order by transdate;
+
+select a.*,b.*, e.login,e.name from audittrail a, acc_trans b, employee e where a.employee_id=e.id AND a.trans_id = b.trans_id AND a.trans_id=188460 order by a.transdate;
